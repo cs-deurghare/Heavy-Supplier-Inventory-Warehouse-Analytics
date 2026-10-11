@@ -1,7 +1,8 @@
 # Heavy Supplier, Inventory & Warehouse Analytics
 
+![Project](https://img.shields.io/badge/Project-Heavy%20Supplier%20Analytics-blue?style=for-the-badge)
 ![Sprint](https://img.shields.io/badge/Sprint-Week%2001%20Complete-brightgreen?style=for-the-badge)
-
+![Status](https://img.shields.io/badge/Status-Validated-success?style=for-the-badge)
 
 A CadetX Virtual Work Experience project analyzing a heavy machinery supplier's sales, inventory, purchasing, and warehouse operations across 12 relational data tables, to support data-driven decisions on stock management, supplier performance, and customer value.
 
@@ -19,12 +20,12 @@ This repository holds the code, cleaned data, documentation, and findings produc
 
 This project is delivered by a four-person analytics team working in an agile sprint structure with rotating weekly leadership:
 
-| Role | Focus |
-| :--- | :--- |
-| BI Analyst | Sales, customer, and supplier data integration and reporting |
-| BI Analyst | Product, inventory, and warehouse data integration and reporting |
-| Data Analyst | Data quality, field-level cleaning, and validation |
-| Data Scientist | Dataset structure review and forecasting readiness |
+| Name | Role | Focus |
+| :--- | :--- | :--- |
+| Chandrashekhar Deurghare | BI Analyst | Product, inventory, and warehouse data integration and reporting |
+| Salim Bello Muhammad | BI Analyst | Sales, customer, and supplier data integration and reporting |
+| Olufunmilola Florence Peters | Data Analyst | Data quality, field-level cleaning, and validation |
+| Abdibasid Mohamed Ali | Data Scientist | Dataset structure review and forecasting readiness |
 
 Leadership of each weekly sprint rotates across the team.
 
@@ -83,6 +84,9 @@ All findings and decisions are documented in the Week 1 notebook and sprint note
 
 ---
 
+## 8. Status
+
+Week 1 deliverables are complete, validated, and submitted. Subsequent weeks build directly on the cleaned and validated data established here.
 ## 8. Status
 
 Week 1 deliverables are complete, validated, and submitted. Subsequent weeks build directly on the cleaned and validated data established here.

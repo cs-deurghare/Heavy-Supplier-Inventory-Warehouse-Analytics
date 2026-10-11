@@ -1,8 +1,7 @@
 # Heavy Supplier, Inventory & Warehouse Analytics
 
-![Project](https://img.shields.io/badge/Project-Heavy%20Supplier%20Analytics-blue?style=for-the-badge)
 ![Sprint](https://img.shields.io/badge/Sprint-Week%2001%20Complete-brightgreen?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Validated-success?style=for-the-badge)
+
 
 A CadetX Virtual Work Experience project analyzing a heavy machinery supplier's sales, inventory, purchasing, and warehouse operations across 12 relational data tables, to support data-driven decisions on stock management, supplier performance, and customer value.
 

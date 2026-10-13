@@ -100,7 +100,8 @@ All findings and decisions are documented in the Week 1 notebook and sprint note
 ├── week02/                  # Week 2 deliverables
 ├── processed_data/          # Cleaned tables, ready for merging and analysis
 ├── raw_data/                # Original source tables
-└── README.md
+└── README.md   
+└── merged_dataset.csv       # Clean complete dataset by year
 ```
 
 ---

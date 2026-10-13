@@ -1,79 +1,33 @@
-# Sprint Notes — Week 02
+# Sprint Notes — Week 2
 
-**Role:** Scrum Master & BI Analyst  
-**Owner:** Chandrashekhar  
-**Team Members:** Salim, Olufunmilola, Abdibasid  
-**Sprint Focus:** ERP Data Cleaning, Dimensional Merging, & Master Dataset Integration  
+**Sprint focus:** Data integration — merging Sales/Customer/Supplier and Product/Inventory/Branch data into one validated dataset.
 
 ---
 
-## 1. Executive Summary
-During Week 02, the team successfully executed data integration across 12 raw ERP tables. As Scrum Master and Lead BI Analyst, Chandrashekhar led the technical pipeline execution, created core dimensions, resolved join dependencies, and finalized `merged_dataset.csv` alongside all sprint documentation.
+## 1. What Was Done
 
----
+- Merged `sales_orders_header`, `sales_orders_lines`, `customers`, `products`, `suppliers`, and `invoices` into a single sales-side table (130,402 rows), with every join validated to prevent accidental row duplication.
+- Combined the sales-side merge with `dim_product_inventory.csv` (product, inventory, and branch data) to produce the team's final `merged_dataset.csv` — 130,402 rows, 72 columns.
+- Documented every join decision and key in a join log, alongside pass/fail validation checks.
 
-## 2. Team Member Allocations & Contributions
+## 2. Issues Found and How We Treated Them
 
-### A. Chandrashekhar (Scrum Master & Lead BI Analyst)
-- **Primary Task:** Dimension Table Creation & Overall Pipeline Assembly.
-- **Key Deliverables:** 
-  - Merged `inventory_master`, `products`, and `branches` tables into `dim_product_inventory.csv`.
-  - Resolved overlapping column issues (`reorder_level_x`, `safety_stock_x`) by dropping redundant fields.
-  - Assembled the master integration notebook (`02_data_integration_validation.ipynb`) and finalized `merged_dataset.csv`.
+| Issue | Detail | Resolution |
+| :--- | :--- | :--- |
+| **Duplicate invoice records** | 197 `invoice_id` values appeared more than once | Set aside before merging so they could not silently multiply rows; only unambiguous invoice records were joined in |
+| **Column name collisions** | `branch_id` and `payment_terms` existed in two different tables with different meanings (order's fulfilling branch vs. customer's home branch) | Renamed explicitly after merging (`branch_id` / `customer_home_branch_id`, `order_payment_terms` / `customer_payment_terms`) to remove ambiguity |
+| **Row-count inflation in an early draft** | An initial `merged_dataset.csv` uploaded to the repo had ~782,000 rows instead of the expected ~130,000 — traced to a join without a uniqueness check, which multiplied rows instead of matching them 1:1 | Rebuilt using `validate='many_to_one'` on every merge, which raises an error instead of silently duplicating rows when a key isn't unique |
+| **Floating-point precision artifacts** | Monetary columns (`gst_amount`, `grand_total`, `line_grand_total`, `total_gst_amount`, `invoice_grand_total`, `total_paid`) contained values like `28392.000000000004` instead of `28392`, from floating-point arithmetic during GST calculations | Rounded all monetary float columns to 2 decimal places across both the sales merge and the final merged dataset |
+| **Stock mismatches (carried from Week 1)** | 6 discrepancies remained between `stock_ledger` and `inventory_master` after initial reconciliation — 3 original, 3 introduced during corrections | Flagged for the Data Analyst to re-run validation on the corrected data and confirm final counts |
 
-### B. Salim (BI Analyst / Data Integration Specialist)
-- **Primary Task:** Sales, Customer, and Supplier Module Integration.
-- **Key Deliverables:** 
-  - Merged `sales_orders_lines` with `sales_orders_header` using `so_id`.
-  - Joined Customer profiles (`customers`) and Supplier references (`suppliers`) to the transaction base.
-  - Prepared the sales pipeline base for final master assembly.
+## 3. Team Collaboration
 
-### C. Olufunmilola (Data Analyst / Quality Assurance)
-- **Primary Task:** Data Cleaning & Schema Validation.
-- **Key Deliverables:**
-  - Audited raw datasets for data type inconsistencies, duplicates, and missing values.
-  - Standardized customer type classifications and transaction date formats across tables.
+- Sales/customer/supplier merge and documentation: BI Analyst (Salim)
+- Product/inventory/branch merge: BI Analyst (Chandrashekhar)
+- Field-level cleaning and stock mismatch investigation: Data Analyst (Olufunmilola)
+- Merged dataset structure review: Data Scientist (Abdibasid)
+- Corrected files were shared via Google Drive for full team review before being pushed to GitHub, so everyone validated the final dataset before submission.
 
-### D. Abdibasid (Data Analyst / Financial Reconciliation)
-- **Primary Task:** Invoice Reconciliation & Purchase Order Audit.
-- **Key Deliverables:**
-  - Audited `invoices` table to handle duplicate `invoice_id` occurrences using composite keys (`invoice_key`).
-  - Conducted null value analysis on `purchase_orders_header` (`received_date` fields).
+## 4. Status
 
----
-
-## 3. Sprint Goals & Achievement Status
-- [x] Merge core dimensions: `inventory_master`, `products`, and `branches` into `dim_product_inventory.csv`.
-- [x] Integrate Sales pipeline (`sales_orders_lines`, `sales_orders_header`, `customers`, `invoices`).
-- [x] Finalize `merged_dataset.csv` pipeline in `02_data_integration_validation.ipynb`.
-- [x] Conduct schema validation and null check verification.
-- [x] Finalize `data_dictionary.md` and `sprint_notes_week02.md` documentation.
-
----
-
-## 3. Key Decisions & Technical Resolution Notes
-
-### A. Null Value Investigation (`received_date`)
-- **Finding:** Exactly 2,370 rows in `purchase_orders_header` contained null values in `received_date`.
-- **Resolution:** Verified that all null instances correspond strictly to POs with `po_status = 'Cancelled'`. No fake dates (e.g., `1900-01-01`) were imputed to preserve metrics for Supplier Lead Time analytics.
-
-### B. Composite Key Resolution
-- **Finding:** Standard invoice joins produced duplicate risks due to multiple line linkages.
-- **Resolution:** Maintained composite key structure (`invoice_key = invoice_id + so_id`) ensuring 100% join integrity without revenue inflation.
-
-### C. Overlapping Column Disambiguation
-- **Finding:** Redundant attributes (`reorder_level`, `safety_stock`) across `inventory_master` and `products` caused column suffixing (`_x`, `_y`).
-- **Resolution:** Cleaned overlapping columns before left-joining to produce clean, production-ready schema naming.
-
-### D. Duplicate Invoice Prevention
-- **Finding:** Joins on `invoice_id` alone risk revenue duplication across multi-line orders.
-- **Resolution:** Implemented composite matching on `so_id` to maintain exact line-level financial accuracy.
-
----
-
-## 4. Final Submission Artifacts
-1. `02_data_integration_validation.ipynb` — Full reproducible Python Notebook
-2. `dim_product_inventory.csv` — Reusable product-inventory dimension table
-3. `merged_dataset.csv` — Comprehensive master analytical dataset
-4. `data_dictionary.md` — Schema definition document
-5. `sprint_notes_week02.md` — Sprint governance report
+Week 2 deliverables are complete, reviewed by the team, and ready for submission. The corrected `merged_dataset.csv` (with the row-duplication and precision issues fixed) replaces the earlier draft in the repository.

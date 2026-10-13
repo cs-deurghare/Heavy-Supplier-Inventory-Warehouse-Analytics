@@ -1,7 +1,7 @@
 # Heavy Supplier, Inventory & Warehouse Analytics
 
 ![Project](https://img.shields.io/badge/Project-Heavy%20Supplier%20Analytics-blue?style=for-the-badge)
-![Sprint](https://img.shields.io/badge/Sprint-Week%2001%20Complete-brightgreen?style=for-the-badge)
+![Sprint](https://img.shields.io/badge/Sprint-Week%2002%20Complete-brightgreen?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Validated-success?style=for-the-badge)
 
 A CadetX Virtual Work Experience project analyzing a heavy machinery supplier's sales, inventory, purchasing, and warehouse operations across 12 relational data tables, to support data-driven decisions on stock management, supplier performance, and customer value.
@@ -10,7 +10,7 @@ A CadetX Virtual Work Experience project analyzing a heavy machinery supplier's 
 
 ## 1. Project Overview
 
-This repository holds the code, cleaned data, documentation, and findings produced by the team over the course of a 12-week programme. Week 1 focused on **profiling, cleaning, and validating** the raw dataset to establish a reliable foundation for every analysis that follows.
+This repository holds the code, cleaned data, documentation, and findings produced by the team over the course of a 12-week programme. Week 1 focused on **profiling, cleaning, and validating** the raw dataset. Week 2 built on that foundation to **merge and integrate** the data into a single analysis-ready dataset.
 
 **Dataset:** 12 source tables covering sales orders, customers, products, suppliers, purchase orders, invoices, payments, stock ledger, branches, and inventory.
 
@@ -64,7 +64,28 @@ All findings and decisions are documented in the Week 1 notebook and sprint note
 
 ---
 
-## 6. Tools Used
+## 6. Week 2 Deliverables
+
+| Deliverable | Description |
+| :--- | :--- |
+| `02_sales_customer_supplier_merge.ipynb` | Notebook merging sales orders, customers, suppliers, and invoices into one table |
+| `03_final_integration.ipynb` | Notebook combining the sales-side merge with product, inventory, and branch data |
+| `merged_dataset.csv` (split by year) | Final combined dataset — sales, customer, supplier, product, inventory, and branch data in one table (130,402 rows, 72 columns) |
+| `sprint_notes_week02.md` | Sprint progress notes, issues found, and how each was resolved |
+| `join_log_week02.csv` / validation files | Documented join keys and pass/fail validation checks |
+
+### Week 2 Findings & How We Treated Them
+
+| Finding | What We Found | How We Treated It |
+| :--- | :--- | :--- |
+| **Column name collisions** | `branch_id` and `payment_terms` appeared in two tables with different meanings | Renamed explicitly after merging to remove ambiguity |
+| **Row-count inflation** | An early merge produced ~782,000 rows instead of the expected ~130,000, from a join without a uniqueness check | Rebuilt using `validate='many_to_one'` on every merge to catch non-unique keys instead of silently duplicating rows |
+| **Floating-point precision artifacts** | Monetary columns contained values like `28392.000000000004` instead of `28392` | Rounded all monetary columns to 2 decimal places across the dataset |
+| **Stock discrepancies (carried from Week 1)** | 6 mismatches remained between `stock_ledger` and `inventory_master` | Flagged for re-validation after corrections |
+
+---
+
+## 7. Tools Used
 
 - **Python 3** with **pandas** for profiling, cleaning, and validation
 - **Jupyter Notebook** for a documented, reproducible workflow
@@ -72,7 +93,7 @@ All findings and decisions are documented in the Week 1 notebook and sprint note
 
 ---
 
-## 7. Repository Structure
+## 8. Repository Structure
 
 ```
 ├── week-01/                 # Week 1 notebook, data dictionary, KPI proposal, sprint notes
@@ -84,9 +105,6 @@ All findings and decisions are documented in the Week 1 notebook and sprint note
 
 ---
 
-## 8. Status
+## 9. Status
 
-Week 1 deliverables are complete, validated, and submitted. Subsequent weeks build directly on the cleaned and validated data established here.
-## 8. Status
-
-Week 1 deliverables are complete, validated, and submitted. Subsequent weeks build directly on the cleaned and validated data established here.
+Week 1 and Week 2 deliverables are complete, validated, and submitted. Subsequent weeks build directly on the cleaned, merged, and validated data established here.

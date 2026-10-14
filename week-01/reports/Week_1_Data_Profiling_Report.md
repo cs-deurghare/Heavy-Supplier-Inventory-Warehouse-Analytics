@@ -83,22 +83,7 @@ The initial profiling identified **2,370 missing cells**, all reported in the `r
 |---|---|---:|---:|---:|
 | `purchase_orders_header` | `received_date` | 2,370 | 24,000 | 9.88% |
 
-The missing percentage is calculated as:
-
-\[
-\text{Missing Percentage}
-=
-\frac{\text{Missing Values}}{\text{Total Rows}}
-\times 100
-\]
-
-For the purchase order received date:
-
-\[
-\frac{2,370}{24,000}\times100
-\approx 9.88\%
-\]
-
+The missing percentage is calculated as:$$\text{Missing Percentage} = \left( \frac{\text{Missing Values}}{\text{Total Rows}} \right) \times 100$$For the purchase order received date:$$\left( \frac{2,370}{24,000} \right) \times 100 \approx 9.88\%$$
 **Interpretation:** Approximately 9.88% of purchase order records have no recorded received date. This may affect calculations involving supplier lead time, order completion, and delivery performance.
 
 **Recommended action:**

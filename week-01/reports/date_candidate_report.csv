@@ -1,0 +1,12 @@
+dataset,column,original_non_null_values,unparseable_non_null_values
+customers,last_purchase_date,500,0
+invoices,invoice_date,18033,0
+invoices,due_date,18033,0
+payments,payment_date,19257,0
+products,last_purchase_date,30,0
+purchase_orders_header,order_date,24000,0
+purchase_orders_header,expected_delivery_date,24000,0
+purchase_orders_header,received_date,21630,0
+sales_orders_header,order_date,20000,0
+sales_orders_header,delivery_date,20000,0
+stock_ledger,movement_date,237230,0

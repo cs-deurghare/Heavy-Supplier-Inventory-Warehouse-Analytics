@@ -1,0 +1,13 @@
+dataset,rows,fully_duplicated_rows,fully_duplicated_percent
+branches,6,0,0.0
+customers,500,0,0.0
+inventory_master,180,0,0.0
+invoices,18033,0,0.0
+payments,19257,0,0.0
+products,30,0,0.0
+purchase_orders_header,24000,0,0.0
+purchase_orders_lines,155495,0,0.0
+sales_orders_header,20000,0,0.0
+sales_orders_lines,130402,0,0.0
+stock_ledger,237230,0,0.0
+suppliers,8,0,0.0

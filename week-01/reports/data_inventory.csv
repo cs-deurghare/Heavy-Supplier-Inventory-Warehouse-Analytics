@@ -1,0 +1,13 @@
+dataset,rows,columns,duplicate_full_rows,missing_cells,columns_with_missing_values,memory_mb
+stock_ledger,237230,9,0,0,0,91.76
+purchase_orders_lines,155495,9,0,0,0,24.76
+sales_orders_lines,130402,9,0,0,0,20.77
+purchase_orders_header,24000,10,0,2370,1,9.71
+sales_orders_header,20000,11,0,0,0,9.19
+payments,19257,5,0,0,0,4.43
+invoices,18033,10,0,0,0,7.28
+customers,500,15,0,0,0,0.29
+inventory_master,180,8,0,0,0,0.03
+products,30,23,0,0,0,0.02
+suppliers,8,12,0,0,0,0.0
+branches,6,14,0,0,0,0.0

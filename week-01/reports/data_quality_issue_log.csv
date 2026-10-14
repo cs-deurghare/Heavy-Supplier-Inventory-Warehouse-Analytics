@@ -1,0 +1,21 @@
+dataset,issue,count,severity,recommended_action
+purchase_orders_header,Missing cells detected,2370,Review,Use the column profile to identify affected fields and determine whether missingness is acceptable.
+customers,Repeated values in candidate key: branch_id,494,Investigate,Confirm the table grain and whether this column is expected to be unique.
+inventory_master,Repeated values in candidate key: product_id,150,Investigate,Confirm the table grain and whether this column is expected to be unique.
+inventory_master,Repeated values in candidate key: branch_id,174,Investigate,Confirm the table grain and whether this column is expected to be unique.
+invoices,Repeated values in candidate key: invoice_id,197,Investigate,Confirm the table grain and whether this column is expected to be unique.
+invoices,Repeated values in candidate key: customer_id,17533,Investigate,Confirm the table grain and whether this column is expected to be unique.
+invoices,Repeated values in candidate key: branch_id,18027,Investigate,Confirm the table grain and whether this column is expected to be unique.
+payments,Repeated values in candidate key: payment_id,202,Investigate,Confirm the table grain and whether this column is expected to be unique.
+payments,Repeated values in candidate key: invoice_id,3221,Investigate,Confirm the table grain and whether this column is expected to be unique.
+purchase_orders_header,Repeated values in candidate key: supplier_id,23992,Investigate,Confirm the table grain and whether this column is expected to be unique.
+purchase_orders_header,Repeated values in candidate key: branch_id,23994,Investigate,Confirm the table grain and whether this column is expected to be unique.
+purchase_orders_lines,Repeated values in candidate key: po_id,131495,Investigate,Confirm the table grain and whether this column is expected to be unique.
+purchase_orders_lines,Repeated values in candidate key: product_id,155465,Investigate,Confirm the table grain and whether this column is expected to be unique.
+sales_orders_header,Repeated values in candidate key: customer_id,19500,Investigate,Confirm the table grain and whether this column is expected to be unique.
+sales_orders_header,Repeated values in candidate key: branch_id,19994,Investigate,Confirm the table grain and whether this column is expected to be unique.
+sales_orders_lines,Repeated values in candidate key: so_id,110402,Investigate,Confirm the table grain and whether this column is expected to be unique.
+sales_orders_lines,Repeated values in candidate key: product_id,130372,Investigate,Confirm the table grain and whether this column is expected to be unique.
+stock_ledger,Repeated values in candidate key: product_id,237200,Investigate,Confirm the table grain and whether this column is expected to be unique.
+stock_ledger,Repeated values in candidate key: branch_id,237224,Investigate,Confirm the table grain and whether this column is expected to be unique.
+stock_ledger,Repeated values in candidate key: reference_id,193521,Investigate,Confirm the table grain and whether this column is expected to be unique.

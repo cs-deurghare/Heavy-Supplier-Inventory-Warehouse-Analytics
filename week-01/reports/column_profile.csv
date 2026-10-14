@@ -1,0 +1,136 @@
+dataset,column,data_type,non_null_count,missing_count,missing_percent,unique_non_null_values,example_values
+branches,branch_id,str,6,0,0.0,6,DEL001 | PUN001 | CHN001
+branches,branch_name,str,6,0,0.0,6,Delhi Central | Pune Distribution | Chennai South Hub
+branches,city,str,6,0,0.0,6,Delhi | Pune | Chennai
+branches,state,str,6,0,0.0,6,Delhi | Maharashtra | Tamil Nadu
+branches,region,str,6,0,0.0,4,North | West | South
+branches,warehouse_type,str,6,0,0.0,4,Central | Regional | Branch
+branches,warehouse_capacity,str,6,0,0.0,6,45230 sqft | 38750 sqft | 41890 sqft
+branches,service_center_available,str,6,0,0.0,2,Yes | No
+branches,manager_id,int64,6,0,0.0,6,9593 | 6114 | 7922
+branches,total_employees,int64,6,0,0.0,6,92 | 74 | 81
+branches,avg_monthly_revenue,int64,6,0,0.0,6,5234890 | 4389120 | 4567780
+branches,monthly_operational_cost,int64,6,0,0.0,6,3189000 | 2654000 | 2739000
+branches,market_demand_index,int64,6,0,0.0,4,9 | 8 | 7
+branches,warehouse_capacity_sqft,int64,6,0,0.0,6,45230 | 38750 | 41890
+customers,customer_id,str,500,0,0.0,500,C0001 | C0002 | C0003
+customers,customer_type,str,500,0,0.0,5,Retail | Fleet Owner | Government
+customers,industry_segment,str,500,0,0.0,6,Construction | Manufacturing | Logistics
+customers,city,str,500,0,0.0,21,Kolkata | Hyderabad | Surat
+customers,state,str,500,0,0.0,16,West Bengal | Telangana | Gujarat
+customers,pincode,int64,500,0,0.0,500,991035 | 464589 | 202475
+customers,region,str,500,0,0.0,6,East | South | West
+customers,branch_id,str,500,0,0.0,6,KOL001 | HYD001 | DEL001
+customers,credit_limit,int64,500,0,0.0,500,45896 | 531506 | 1306933
+customers,current_balance,int64,500,0,0.0,499,43284 | 426735 | 733495
+customers,payment_terms,str,500,0,0.0,5,Advance | Net 30 | Net 60
+customers,customer_since,str,500,0,0.0,467,2024-04-10 | 2022-01-19 | 2017-02-14
+customers,last_purchase_date,str,500,0,0.0,449,2024-04-25 | 2024-12-04 | 2019-06-11
+customers,total_purchase_value,int64,500,0,0.0,500,3892818 | 3168730 | 3584708
+customers,customer_rating,int64,500,0,0.0,5,4 | 2 | 3
+inventory_master,product_id,str,180,0,0.0,30,P001 | P002 | P003
+inventory_master,branch_id,str,180,0,0.0,6,DEL001 | PUN001 | CHN001
+inventory_master,opening_stock,int64,180,0,0.0,127,196 | 198 | 187
+inventory_master,reorder_level,int64,180,0,0.0,75,59 | 70 | 62
+inventory_master,safety_stock,int64,180,0,0.0,63,46 | 43 | 44
+inventory_master,max_stock,int64,180,0,0.0,148,340 | 349 | 311
+inventory_master,current_stock,int64,180,0,0.0,180,115928 | 109389 | 99373
+inventory_master,warehouse_bin,str,180,0,0.0,95,C15 | D16 | A11
+invoices,invoice_id,str,18033,0,0.0,17836,INV-325361 | INV-568476 | INV-786913
+invoices,so_id,str,18033,0,0.0,18033,SO-990591 | SO-431510 | SO-495859
+invoices,customer_id,str,18033,0,0.0,500,C0070 | C0031 | C0013
+invoices,branch_id,str,18033,0,0.0,6,AHM001 | KOL001 | HYD001
+invoices,invoice_date,str,18033,0,0.0,2203,2022-05-28 | 2022-05-08 | 2023-10-02
+invoices,due_date,str,18033,0,0.0,2235,2022-06-27 | 2022-06-07 | 2023-11-01
+invoices,total_order_value,int64,18033,0,0.0,16248,1345720 | 2194850 | 2620800
+invoices,total_gst_amount,float64,18033,0,0.0,16951,374439.6 | 609423.0000000001 | 733824.0000000001
+invoices,grand_total,float64,18033,0,0.0,16938,1720159.6 | 2804273.0 | 3354624.0
+invoices,payment_status,str,18033,0,0.0,3,Unpaid | Paid | Partially Paid
+payments,payment_id,str,19257,0,0.0,19055,PAY-207775 | PAY-942474 | PAY-657121
+payments,invoice_id,str,19257,0,0.0,16036,INV-786913 | INV-697615 | INV-747829
+payments,payment_date,str,19257,0,0.0,2243,2023-10-07 | 2021-11-23 | 2024-12-26
+payments,payment_amount,float64,19257,0,0.0,18778,3354624.0 | 1387911.0 | 1475.0
+payments,payment_method,str,19257,0,0.0,5,Cheque | Credit Card | Bank Transfer
+products,product_id,str,30,0,0.0,30,P001 | P002 | P003
+products,product_name,str,30,0,0.0,30,Hydraulic Pump HP-300 | Engine Oil Filter OF-90 | Air Filter AF-120
+products,category,str,30,0,0.0,15,Hydraulic | Filters | Undercarriage
+products,machine_type,str,30,0,0.0,6,Excavator | Loader | Bulldozer
+products,brand,str,30,0,0.0,6,CAT | JCB | Komatsu
+products,model_compatibility,str,30,0,0.0,18,CAT 320D | JCB 3DX | Komatsu PC210
+products,unit_cost,int64,30,0,0.0,30,18950 | 450 | 820
+products,unit_price,int64,30,0,0.0,28,24500 | 720 | 1250
+products,margin_percentage,float64,30,0,0.0,30,29.2 | 37.3 | 52.4
+products,gst_rate,int64,30,0,0.0,2,28 | 18
+products,weight_kg,float64,30,0,0.0,29,38.5 | 0.4 | 0.8
+products,dimensions_cm,str,30,0,0.0,29,40x25x25 | 10x8x8 | 18x12x12
+products,material_type,str,30,0,0.0,10,steel | paper | synthetic
+products,warranty_months,int64,30,0,0.0,5,12 | 6 | 18
+products,reorder_level,int64,30,0,0.0,20,15 | 80 | 60
+products,safety_stock,int64,30,0,0.0,17,10 | 40 | 30
+products,max_stock_level,int64,30,0,0.0,19,40 | 200 | 150
+products,lead_time_days,int64,30,0,0.0,19,21 | 7 | 30
+products,criticality_level,str,30,0,0.0,3,High | Medium | Low
+products,usage_frequency,str,30,0,0.0,3,Medium | High | Low
+products,uom,str,30,0,0.0,3,piece | set | cartridge
+products,last_purchase_price,int64,30,0,0.0,30,18500 | 430 | 800
+products,last_purchase_date,str,30,0,0.0,30,2019-03-15 | 2019-07-22 | 2020-01-10
+purchase_orders_header,po_id,str,24000,0,0.0,24000,PO-141186 | PO-215234 | PO-296826
+purchase_orders_header,supplier_id,str,24000,0,0.0,8,SUP0001 | SUP0005 | SUP0008
+purchase_orders_header,branch_id,str,24000,0,0.0,6,PUN001 | DEL001 | AHM001
+purchase_orders_header,order_date,str,24000,0,0.0,2192,2019-04-10 | 2020-12-30 | 2022-04-05
+purchase_orders_header,expected_delivery_date,str,24000,0,0.0,2207,2019-04-29 | 2021-01-27 | 2022-05-01
+purchase_orders_header,received_date,str,21630,2370,9.88,2207,2019-04-29 | 2021-01-27 | 2022-05-01
+purchase_orders_header,po_status,str,24000,0,0.0,2,Received | Cancelled
+purchase_orders_header,total_cost,float64,24000,0,0.0,24000,22955232.11 | 19406544.39 | 1295425.79
+purchase_orders_header,total_gst_amount,float64,24000,0,0.0,24000,6427464.990800001 | 5428358.444200001 | 362719.2212
+purchase_orders_header,grand_total,float64,24000,0,0.0,24000,29382697.1008 | 24834902.8342 | 1658145.0112
+purchase_orders_lines,po_id,str,155495,0,0.0,24000,PO-141186 | PO-215234 | PO-296826
+purchase_orders_lines,line_number,int64,155495,0,0.0,12,1 | 2 | 3
+purchase_orders_lines,product_id,str,155495,0,0.0,30,P004 | P022 | P030
+purchase_orders_lines,quantity,int64,155495,0,0.0,281,234 | 79 | 46
+purchase_orders_lines,unit_cost,float64,155495,0,0.0,142292,34709.54 | 12317.84 | 13840.45
+purchase_orders_lines,gst_rate,int64,155495,0,0.0,2,28 | 18
+purchase_orders_lines,line_total,float64,155495,0,0.0,155224,8122032.36 | 973109.36 | 636660.7000000001
+purchase_orders_lines,gst_amount,float64,155495,0,0.0,155254,2274169.0608 | 272470.62080000003 | 178264.99600000004
+purchase_orders_lines,line_grand_total,float64,155495,0,0.0,155269,10396201.4208 | 1245579.9808 | 814925.6960000001
+sales_orders_header,so_id,str,20000,0,0.0,20000,SO-990591 | SO-431510 | SO-495859
+sales_orders_header,customer_id,str,20000,0,0.0,500,C0070 | C0031 | C0013
+sales_orders_header,branch_id,str,20000,0,0.0,6,AHM001 | KOL001 | HYD001
+sales_orders_header,order_date,str,20000,0,0.0,2192,2022-05-24 | 2022-05-01 | 2023-10-01
+sales_orders_header,delivery_date,str,20000,0,0.0,2204,2022-05-28 | 2022-05-08 | 2023-10-02
+sales_orders_header,order_status,str,20000,0,0.0,2,Delivered | Cancelled
+sales_orders_header,payment_terms,str,20000,0,0.0,5,Net 30 | Advance | Net 45
+sales_orders_header,total_order_value,int64,20000,0,0.0,17905,1345720 | 2194850 | 2620800
+sales_orders_header,total_gst_amount,float64,20000,0,0.0,18749,374439.6 | 609423.0000000001 | 733824.0000000001
+sales_orders_header,grand_total,float64,20000,0,0.0,18735,1720159.6 | 2804273.0 | 3354624.0
+sales_orders_header,sales_channel,str,20000,0,0.0,4,Counter Sale | Dealer Network | Online
+sales_orders_lines,so_id,str,130402,0,0.0,20000,SO-990591 | SO-431510 | SO-495859
+sales_orders_lines,line_number,int64,130402,0,0.0,12,1 | 2 | 3
+sales_orders_lines,product_id,str,130402,0,0.0,30,P018 | P026 | P013
+sales_orders_lines,quantity,int64,130402,0,0.0,20,19 | 2 | 3
+sales_orders_lines,unit_price,int64,130402,0,0.0,28,11300 | 310 | 1450
+sales_orders_lines,gst_rate,int64,130402,0,0.0,2,28 | 18
+sales_orders_lines,line_total,int64,130402,0,0.0,534,214700 | 620 | 930
+sales_orders_lines,gst_amount,float64,130402,0,0.0,534,60116.00000000001 | 111.6 | 167.4
+sales_orders_lines,line_grand_total,float64,130402,0,0.0,534,274816.0 | 731.6 | 1097.4
+stock_ledger,movement_id,str,237230,0,0.0,237230,MOV-OUT-184742 | MOV-OUT-208422 | MOV-IN-111128
+stock_ledger,product_id,str,237230,0,0.0,30,P001 | P002 | P003
+stock_ledger,branch_id,str,237230,0,0.0,6,AHM001 | CHN001 | DEL001
+stock_ledger,movement_type,str,237230,0,0.0,3,OUT | IN | ADJUSTMENT
+stock_ledger,movement_date,str,237230,0,0.0,2218,2019-01-03 | 2019-01-05 | 2019-01-23
+stock_ledger,quantity,int64,237230,0,0.0,300,8 | 12 | 174
+stock_ledger,reference_type,str,237230,0,0.0,3,SO | PO | ADJ
+stock_ledger,reference_id,str,237230,0,0.0,43709,SO-157767 | SO-168735 | PO-181094
+stock_ledger,running_balance,int64,237230,0,0.0,98171,228 | 216 | 390
+suppliers,supplier_id,str,8,0,0.0,8,SUP0001 | SUP0002 | SUP0003
+suppliers,supplier_name,str,8,0,0.0,8,Shenzhen OEM Supplies | Guangzhou Local Vendor Supplies | Shanghai Distributor Supplies
+suppliers,supplier_type,str,8,0,0.0,3,OEM | Local Vendor | Distributor
+suppliers,product_category,str,8,0,0.0,3,Medium Parts | Small Parts | Large Parts
+suppliers,city,str,8,0,0.0,8,Shenzhen | Guangzhou | Shanghai
+suppliers,province,str,8,0,0.0,6,Guangdong | Shanghai | Zhejiang
+suppliers,region,str,8,0,0.0,3,South China | East China | North China
+suppliers,pincode,int64,8,0,0.0,8,586808 | 966203 | 655757
+suppliers,lead_time_days,int64,8,0,0.0,7,19 | 10 | 16
+suppliers,reliability_score,int64,8,0,0.0,3,5 | 4 | 3
+suppliers,import_duty_rate,int64,8,0,0.0,4,8 | 12 | 5
+suppliers,china_tax_id,str,8,0,0.0,8,90SUZHOU398241 | 89TIANJI357980 | 96SHENZH983302

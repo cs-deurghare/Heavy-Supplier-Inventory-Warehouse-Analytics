@@ -1,0 +1,4 @@
+integration,total_records,match,mismatch,no_child_data,status
+SO header ↔ SO lines (grand_total ±₹1),20000,20000,0,0,✅ Pass
+PO header ↔ PO lines (grand_total ±₹1),24000,24000,0,0,✅ Pass
+"Invoice grand_total ≈ payment amount (Paid, ±₹1)",12264,12264,0,0,✅ Pass

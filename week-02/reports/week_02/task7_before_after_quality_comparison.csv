@@ -1,0 +1,13 @@
+dataset,rows_before,rows_after,row_delta,missing_cells_before,missing_cells_after,columns_before,columns_after,new_columns_added
+branches,6,6,0,0,0,13,13,0
+customers,500,500,0,0,0,15,15,0
+inventory_master,180,180,0,0,0,8,8,0
+invoices,18033,18033,0,0,0,10,12,2
+payments,19257,19257,0,0,0,5,7,2
+products,30,30,0,0,0,23,23,0
+purchase_orders_header,24000,24000,0,2370,2370,10,10,0
+purchase_orders_lines,155495,155495,0,0,0,9,9,0
+sales_orders_header,20000,20000,0,0,0,11,11,0
+sales_orders_lines,130402,130402,0,0,0,9,9,0
+stock_ledger,237230,237230,0,0,0,9,9,0
+suppliers,8,8,0,0,0,12,12,0

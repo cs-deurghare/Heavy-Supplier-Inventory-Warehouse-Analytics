@@ -1,0 +1,9 @@
+task,dataset,action,result,records_affected,decision
+Task 1,all,Baseline row-count verification,All 12 datasets match Week-1 counts,0,No action — informational
+Task 2,purchase_orders_header,Investigated missing received_date,100% of nulls belong to Cancelled POs; 0 Received POs have null,2370,Retain all rows. Null received_date is valid for Cancelled status.
+Task 3-A,invoices,Investigated 196 repeated invoice_id values,All repeated IDs link to distinct transactions. 0 fully identical rows.,393,Retain all rows. Added row_key surrogate and duplicate_invoice_id_flag.
+Task 3-B,payments,Investigated 201 repeated payment_id values,All repeated IDs link to distinct transactions. 0 fully identical rows.,403,Retain all rows. Added row_key surrogate and duplicate_payment_id_flag.
+Task 4,multiple,Validated 6 candidate primary keys + 17 FK relationships,6/6 PKs valid; 17/17 FKs pass,0,No deletions. All failures documented for business-rule confirmation.
+Task 5,inventory_master + stock_ledger,Reconciled current_stock vs latest ledger running_balance,14 mismatches found out of 180 pairs,14,Mismatches documented. No correction applied — requires business sign-off on authoritative balance source.
+Task 6,"SO, PO, invoices, payments",Integrated header-lines and invoices-payments with cardinality checks,"['✅ Pass', '✅ Pass', '✅ Pass']",0,No deletions. Mismatches documented for business review.
+Task 6-D,multiple,Parsed 12 date columns to datetime64,12/12 columns parsed cleanly,0,Dates stored as datetime64. New nulls (if any) logged for investigation.

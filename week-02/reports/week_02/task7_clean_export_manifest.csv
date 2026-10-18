@@ -1,0 +1,13 @@
+dataset,rows,columns,output_file
+branches,6,13,branches_clean.csv
+customers,500,15,customers_clean.csv
+inventory_master,180,8,inventory_master_clean.csv
+invoices,18033,12,invoices_clean.csv
+payments,19257,7,payments_clean.csv
+products,30,23,products_clean.csv
+purchase_orders_header,24000,10,purchase_orders_header_clean.csv
+purchase_orders_lines,155495,9,purchase_orders_lines_clean.csv
+sales_orders_header,20000,11,sales_orders_header_clean.csv
+sales_orders_lines,130402,9,sales_orders_lines_clean.csv
+stock_ledger,237230,9,stock_ledger_clean.csv
+suppliers,8,12,suppliers_clean.csv

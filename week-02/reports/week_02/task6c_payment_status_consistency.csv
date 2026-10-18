@@ -1,0 +1,6 @@
+check,rows
+Paid but paid < grand_total,0
+Paid but paid > grand_total (overpaid),0
+Unpaid but has payments,0
+Partially Paid but fully paid,0
+Partially Paid but no payments,0

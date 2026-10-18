@@ -1,0 +1,13 @@
+check,passed,status,detail
+"Task 1 — All 12 datasets loaded, row counts match Week-1",True,✅ Pass,"605,141 rows loaded"
+Task 2 — Missing received_date fully explained by Cancelled status,True,✅ Pass,"2,370 nulls = Cancelled POs only"
+Task 3-A — Repeated invoice_id: no fully identical duplicate rows,True,✅ Pass,196 IDs flagged; 0 identical duplicates
+Task 3-B — Repeated payment_id: no fully identical duplicate rows,True,✅ Pass,201 IDs flagged; 0 identical duplicates
+Task 4-A — All candidate primary keys unique & non-null,True,✅ Pass,0 key failures
+Task 4-B — All 17 FK relationships: zero unmatched references,True,✅ Pass,0 FK failures
+Task 5 — Inventory balance reconciliation completed,True,✅ Pass,14 product-branch pairs differ (documented)
+Task 6-A — SO grand_total matches SO lines sum (±₹1),True,✅ Pass,0 mismatches
+Task 6-B — PO grand_total matches PO lines sum (±₹1),True,✅ Pass,0 mismatches
+Task 6-C — Paid invoice total matches payment total (±₹1),True,✅ Pass,0 mismatches
+Task 6-D — Date columns parsed without new nulls,True,✅ Pass,0 columns introduced new nulls
+Task 7 — All cleaned datasets exported,True,✅ Pass,12 files written

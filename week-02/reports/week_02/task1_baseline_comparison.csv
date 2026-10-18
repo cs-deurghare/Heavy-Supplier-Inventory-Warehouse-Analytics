@@ -1,0 +1,13 @@
+dataset,week1_rows,current_rows,difference,status
+branches,6,6,0,✅ Match
+customers,500,500,0,✅ Match
+inventory_master,180,180,0,✅ Match
+invoices,18033,18033,0,✅ Match
+payments,19257,19257,0,✅ Match
+products,30,30,0,✅ Match
+purchase_orders_header,24000,24000,0,✅ Match
+purchase_orders_lines,155495,155495,0,✅ Match
+sales_orders_header,20000,20000,0,✅ Match
+sales_orders_lines,130402,130402,0,✅ Match
+stock_ledger,237230,237230,0,✅ Match
+suppliers,8,8,0,✅ Match

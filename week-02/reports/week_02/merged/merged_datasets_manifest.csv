@@ -1,0 +1,6 @@
+file,rows,columns
+sales_orders_full.csv,130402,42
+purchase_orders_full.csv,155495,41
+invoices_with_payments.csv,18033,36
+inventory_with_ledger.csv,180,22
+stock_ledger_enriched.csv,237230,15

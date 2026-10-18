@@ -1,0 +1,18 @@
+child_dataset,child_column,parent_dataset,parent_column,child_total_rows,null_in_child,unmatched_refs,status
+customers,branch_id,branches,branch_id,500,0,0,✅ Pass
+inventory_master,product_id,products,product_id,180,0,0,✅ Pass
+inventory_master,branch_id,branches,branch_id,180,0,0,✅ Pass
+purchase_orders_header,supplier_id,suppliers,supplier_id,24000,0,0,✅ Pass
+purchase_orders_header,branch_id,branches,branch_id,24000,0,0,✅ Pass
+purchase_orders_lines,po_id,purchase_orders_header,po_id,155495,0,0,✅ Pass
+purchase_orders_lines,product_id,products,product_id,155495,0,0,✅ Pass
+sales_orders_header,customer_id,customers,customer_id,20000,0,0,✅ Pass
+sales_orders_header,branch_id,branches,branch_id,20000,0,0,✅ Pass
+sales_orders_lines,so_id,sales_orders_header,so_id,130402,0,0,✅ Pass
+sales_orders_lines,product_id,products,product_id,130402,0,0,✅ Pass
+invoices,so_id,sales_orders_header,so_id,18033,0,0,✅ Pass
+invoices,customer_id,customers,customer_id,18033,0,0,✅ Pass
+invoices,branch_id,branches,branch_id,18033,0,0,✅ Pass
+payments,invoice_id,invoices,invoice_id,19257,0,0,✅ Pass
+stock_ledger,product_id,products,product_id,237230,0,0,✅ Pass
+stock_ledger,branch_id,branches,branch_id,237230,0,0,✅ Pass

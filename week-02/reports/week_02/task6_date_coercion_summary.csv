@@ -1,0 +1,13 @@
+dataset,column,dtype_after,nulls_before,nulls_after,new_nulls_from_parse,status
+customers,customer_since,datetime64[us],0,0,0,✅ OK
+customers,last_purchase_date,datetime64[us],0,0,0,✅ OK
+invoices,invoice_date,datetime64[us],0,0,0,✅ OK
+invoices,due_date,datetime64[us],0,0,0,✅ OK
+payments,payment_date,datetime64[us],0,0,0,✅ OK
+products,last_purchase_date,datetime64[us],0,0,0,✅ OK
+purchase_orders_header,order_date,datetime64[us],0,0,0,✅ OK
+purchase_orders_header,expected_delivery_date,datetime64[us],0,0,0,✅ OK
+purchase_orders_header,received_date,datetime64[us],2370,2370,0,✅ OK
+sales_orders_header,order_date,datetime64[us],0,0,0,✅ OK
+sales_orders_header,delivery_date,datetime64[us],0,0,0,✅ OK
+stock_ledger,movement_date,datetime64[us],0,0,0,✅ OK

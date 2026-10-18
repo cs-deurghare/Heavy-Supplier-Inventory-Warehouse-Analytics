@@ -1,0 +1,31 @@
+product_id,category,product_name,total_units_sold,avg_inventory_level,inventory_turnover_ratio
+P029,Sensors,Pressure Sensor PS-90,47066,105392.54,0.45
+P019,Hydraulic,Swing Motor SWM-350,45971,103144.74,0.45
+P016,Cooling,Radiator RD-250,46306,105805.84,0.44
+P021,Hydraulic,Boom Cylinder BC-400,46364,104712.51,0.44
+P027,Seals,O-Ring Set OR-50,45678,104697.95,0.44
+P028,Electrical,Light Assembly LA-18,46164,104000.25,0.44
+P030,Engine,Fuel Pump FP-350,45897,105259.62,0.44
+P015,Engine,Engine Block EB-600,45222,105420.16,0.43
+P006,Electrical,Alternator ALT-500,46731,108085.75,0.43
+P004,Undercarriage,Track Chain TC-45,45575,106220.55,0.43
+P011,Hydraulic,Hydraulic Cylinder HC-200,46612,108351.36,0.43
+P010,Engine,Turbocharger TB-900,46964,110025.95,0.43
+P008,Attachments,Bucket Tooth BT-10,45376,104435.36,0.43
+P007,Hydraulic,Hydraulic Hose HH-60,46468,109000.48,0.43
+P026,Lubricants,Grease Cartridge GC-5,44844,105324.47,0.43
+P020,Pins & Bushes,Pivot Pin PP-12,45340,104502.89,0.43
+P022,Hydraulic,Control Valve CV-75,45819,107455.09,0.43
+P013,Seals,Seal Kit SK-15,44081,105506.21,0.42
+P002,Filters,Engine Oil Filter OF-90,45342,108827.15,0.42
+P001,Hydraulic,Hydraulic Pump HP-300,45389,106815.86,0.42
+P003,Filters,Air Filter AF-120,45684,108174.99,0.42
+P009,Electrical,Starter Motor SM-700,44946,105769.65,0.42
+P017,Belts,Fan Belt FB-30,45578,109372.85,0.42
+P025,Cabin,Cabin Glass CG-20,45598,108656.07,0.42
+P012,Brakes,Brake Pad BP-40,45972,110329.55,0.42
+P018,Undercarriage,Wheel Rim WR-24,45027,107976.29,0.42
+P014,Transmission,Transmission Assembly TA-800,45035,110234.56,0.41
+P005,Engine,Fuel Injector FI-220,45026,109825.17,0.41
+P023,Undercarriage,Idler Wheel IW-55,44437,110287.69,0.4
+P024,Undercarriage,Track Roller TR-60,44022,109324.43,0.4

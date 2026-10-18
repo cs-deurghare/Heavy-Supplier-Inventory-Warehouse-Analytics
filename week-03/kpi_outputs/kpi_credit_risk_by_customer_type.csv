@@ -1,0 +1,6 @@
+customer_type,invoices,invoice_value,outstanding,unpaid_invoices,outstanding_pct_of_value,unpaid_pct_of_invoices
+Corporate,3589,5865847362.6,1256285234.89,396,21.4,11.0
+Fleet Owner,3379,5495099289.4,1124720951.5,350,20.5,10.4
+Dealer,3567,5867524564.4,1172186964.96,365,20.0,10.2
+Government,3975,6256016038.0,1246265410.21,401,19.9,10.1
+Retail,3130,5115150606.2,1004845395.17,286,19.6,9.1

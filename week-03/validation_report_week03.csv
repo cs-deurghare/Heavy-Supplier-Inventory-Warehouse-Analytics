@@ -1,11 +1,23 @@
 Check_Item,Expected,Actual,Status
-Master Dataset Row Count,"130,402",130402,PASS
-Master Dataset Unique Orders,"20,000",20000,PASS
-Sales/Customer KPI Data Types,Numeric / Float (Rounded),Clean Numeric,PASS
-Inventory Turnover Calculation,No Infinite / Null values,Validated,PASS
-Stock Health Classification,Categorized / No Nulls,Validated (quantile-based),PASS
-Supplier Columns Present,supplier_id / supplier_name expected,Resolved -- joined via purchase_orders_lines -> purchase_orders_header -> suppliers; 100% of rows populated,PASS
-current_stock vs max_stock Scale Consistency,Comparable units,Scale mismatch found (~100k vs ~300) -- quantile-based classification adopted as the finalized interim method; flagged for recalibration in Phase 2,PASS (documented limitation)
-No Ambiguous Merge Columns,No _x/_y/_dim suffixed columns,0 found -- all cross-table name collisions explicitly renamed,PASS
-Exploratory Charts Generation,Saved in exploratory_charts/,Generated Successfully,PASS
-Notebook Executes End-to-End,No errors on fresh run,Validated,PASS
+sales rows (line grain),130402,130402,PASS
+"sales key (so_id,line_number) unique",0,0,PASS
+unique orders,20000,20000,PASS
+invoice rows,18033,18033,PASS
+PO rows (line grain),155495,155495,PASS
+inventory pairs,180,180,PASS
+ledger rows,237230,237230,PASS
+no ambiguous _x/_y columns,0,0,PASS
+order header total == sum of lines (all orders),0,0,PASS
+delivered+cancelled == all orders,20000,20000,PASS
+net revenue (delivered lines) == delivered order totals,0,0,PASS
+profit == qty*(price-cost),0,0,PASS
+invoices == delivered orders,18033,18033,PASS
+invoiced orders are exactly the Delivered ones,0,0,PASS
+reliable + unreliable == invoices,18033,18033,PASS
+no negative outstanding,0,0,PASS
+Paid invoices (reliable) fully paid,0,0,PASS
+suppliers per product,8 (all suppliers buy every product),min 8 / max 8,PASS
+PO headers,24000,24000,PASS
+cancelled POs have no received_date,0,0,PASS
+scale diagnostic: all pairs exceed max_stock,180,180,PASS
+stock vs ledger mismatches,14,14,PASS

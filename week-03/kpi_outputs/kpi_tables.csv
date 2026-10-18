@@ -1,0 +1,14 @@
+kpi,value
+orders_total,20000.0
+orders_delivered,18033.0
+orders_cancelled,1967.0
+cancellation_rate_pct,9.84
+net_revenue_ex_gst,22958987430.0
+gross_revenue_incl_gst,29253993162.4
+gst_collected,6295005732.4
+cancelled_value_ex_gst,2488405130.0
+avg_order_value_net,1273165.17
+gross_profit,4950006740.0
+gross_margin_pct_of_net_rev,21.56
+avg_delivery_lead_time_days,8.06
+median_delivery_lead_time_days,8.0

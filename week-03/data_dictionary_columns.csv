@@ -1,0 +1,157 @@
+file,column,dtype,example
+inventory_with_ledger.csv,product_id,str,P001
+inventory_with_ledger.csv,branch_id,str,DEL001
+inventory_with_ledger.csv,opening_stock,int64,196
+inventory_with_ledger.csv,reorder_level,int64,59
+inventory_with_ledger.csv,safety_stock,int64,46
+inventory_with_ledger.csv,max_stock,int64,340
+inventory_with_ledger.csv,current_stock,int64,115928
+inventory_with_ledger.csv,warehouse_bin,str,C15
+inventory_with_ledger.csv,ledger_latest_balance,int64,115928
+inventory_with_ledger.csv,latest_movement_date,str,2025-01-19
+inventory_with_ledger.csv,total_movements,int64,1311
+inventory_with_ledger.csv,total_adjustment_qty,int64,298
+inventory_with_ledger.csv,total_in_qty,int64,121433
+inventory_with_ledger.csv,total_out_qty,int64,5859
+inventory_with_ledger.csv,product_name,str,Hydraulic Pump HP-300
+inventory_with_ledger.csv,category,str,Hydraulic
+inventory_with_ledger.csv,unit_cost,int64,18950
+inventory_with_ledger.csv,unit_price,int64,24500
+inventory_with_ledger.csv,balance_difference,int64,0
+inventory_with_ledger.csv,balance_mismatch,bool,False
+inventory_with_ledger.csv,stock_value_cost,int64,2196835600
+inventory_with_ledger.csv,below_reorder,bool,False
+invoices_with_payments.csv,row_key,int64,1
+invoices_with_payments.csv,invoice_id,str,INV-325361
+invoices_with_payments.csv,so_id,str,SO-990591
+invoices_with_payments.csv,customer_id,str,C0070
+invoices_with_payments.csv,branch_id,str,AHM001
+invoices_with_payments.csv,invoice_date,str,2022-05-28
+invoices_with_payments.csv,due_date,str,2022-06-27
+invoices_with_payments.csv,total_order_value,int64,1345720
+invoices_with_payments.csv,total_gst_amount,float64,374439.6
+invoices_with_payments.csv,grand_total,float64,1720159.6
+invoices_with_payments.csv,payment_status,str,Unpaid
+invoices_with_payments.csv,duplicate_invoice_id_flag,bool,False
+invoices_with_payments.csv,payment_count,float64,1.0
+invoices_with_payments.csv,total_paid_amount,float64,3354624.0
+invoices_with_payments.csv,first_payment_date,str,2023-10-07
+invoices_with_payments.csv,last_payment_date,str,2023-10-07
+invoices_with_payments.csv,payment_methods,str,Cheque
+invoices_with_payments.csv,payment_total_reliable,bool,True
+invoices_with_payments.csv,outstanding_amount,float64,1720159.6
+invoices_with_payments.csv,customer_type,str,Government
+invoices_with_payments.csv,industry_segment,str,Logistics
+invoices_with_payments.csv,customer_city,str,Ahmedabad
+invoices_with_payments.csv,customer_state,str,Gujarat
+invoices_with_payments.csv,customer_region,str,West
+invoices_with_payments.csv,customer_rating,int64,3
+invoices_with_payments.csv,branch_name,str,Ahmedabad West Hub
+invoices_with_payments.csv,branch_city,str,Ahmedabad
+invoices_with_payments.csv,region,str,West
+invoices_with_payments.csv,order_date,str,2022-05-24
+invoices_with_payments.csv,delivery_date,str,2022-05-28
+invoices_with_payments.csv,order_status,str,Delivered
+invoices_with_payments.csv,sales_channel,str,Counter Sale
+invoices_with_payments.csv,payment_terms,str,Net 30
+invoices_with_payments.csv,as_of_date,str,2025-03-14
+invoices_with_payments.csv,is_overdue,bool,True
+invoices_with_payments.csv,days_overdue,int64,991
+purchase_orders_full.csv,po_id,str,PO-141186
+purchase_orders_full.csv,line_number,int64,1
+purchase_orders_full.csv,product_id,str,P004
+purchase_orders_full.csv,quantity,int64,234
+purchase_orders_full.csv,unit_cost,float64,34709.54
+purchase_orders_full.csv,gst_rate,int64,28
+purchase_orders_full.csv,line_total,float64,8122032.36
+purchase_orders_full.csv,gst_amount,float64,2274169.0608
+purchase_orders_full.csv,line_grand_total,float64,10396201.4208
+purchase_orders_full.csv,supplier_id,str,SUP0001
+purchase_orders_full.csv,branch_id,str,PUN001
+purchase_orders_full.csv,order_date,str,2019-04-10
+purchase_orders_full.csv,expected_delivery_date,str,2019-04-29
+purchase_orders_full.csv,received_date,str,2019-04-29
+purchase_orders_full.csv,po_status,str,Received
+purchase_orders_full.csv,total_cost,float64,22955232.11
+purchase_orders_full.csv,total_gst_amount,float64,6427464.990800001
+purchase_orders_full.csv,grand_total,float64,29382697.1008
+purchase_orders_full.csv,product_name,str,Track Chain TC-45
+purchase_orders_full.csv,category,str,Undercarriage
+purchase_orders_full.csv,machine_type,str,Bulldozer
+purchase_orders_full.csv,brand,str,Volvo
+purchase_orders_full.csv,uom,str,set
+purchase_orders_full.csv,unit_price,int64,39800
+purchase_orders_full.csv,margin_percentage,float64,22.5
+purchase_orders_full.csv,criticality_level,str,High
+purchase_orders_full.csv,lead_time_days,int64,30
+purchase_orders_full.csv,supplier_name,str,Shenzhen OEM Supplies
+purchase_orders_full.csv,supplier_type,str,OEM
+purchase_orders_full.csv,product_category,str,Medium Parts
+purchase_orders_full.csv,supplier_city,str,Shenzhen
+purchase_orders_full.csv,supplier_province,str,Guangdong
+purchase_orders_full.csv,supplier_region,str,South China
+purchase_orders_full.csv,supplier_lead_days,int64,19
+purchase_orders_full.csv,reliability_score,int64,5
+purchase_orders_full.csv,branch_name,str,Pune Distribution
+purchase_orders_full.csv,branch_city,str,Pune
+purchase_orders_full.csv,branch_state,str,Maharashtra
+purchase_orders_full.csv,branch_region,str,West
+purchase_orders_full.csv,delivery_delay_days,float64,0.0
+purchase_orders_full.csv,lead_time_actual_days,float64,19.0
+sales_orders_full.csv,so_id,str,SO-990591
+sales_orders_full.csv,line_number,int64,1
+sales_orders_full.csv,product_id,str,P018
+sales_orders_full.csv,quantity,int64,19
+sales_orders_full.csv,unit_price,int64,11300
+sales_orders_full.csv,gst_rate,int64,28
+sales_orders_full.csv,line_total,int64,214700
+sales_orders_full.csv,gst_amount,float64,60116.00000000001
+sales_orders_full.csv,line_grand_total,float64,274816.0
+sales_orders_full.csv,customer_id,str,C0070
+sales_orders_full.csv,branch_id,str,AHM001
+sales_orders_full.csv,order_date,str,2022-05-24
+sales_orders_full.csv,delivery_date,str,2022-05-28
+sales_orders_full.csv,order_status,str,Delivered
+sales_orders_full.csv,payment_terms,str,Net 30
+sales_orders_full.csv,total_order_value,int64,1345720
+sales_orders_full.csv,total_gst_amount,float64,374439.6
+sales_orders_full.csv,grand_total,float64,1720159.6
+sales_orders_full.csv,sales_channel,str,Counter Sale
+sales_orders_full.csv,product_name,str,Wheel Rim WR-24
+sales_orders_full.csv,category,str,Undercarriage
+sales_orders_full.csv,machine_type,str,Bulldozer
+sales_orders_full.csv,brand,str,CAT
+sales_orders_full.csv,uom,str,piece
+sales_orders_full.csv,unit_cost,int64,8200
+sales_orders_full.csv,margin_percentage,float64,37.8
+sales_orders_full.csv,criticality_level,str,High
+sales_orders_full.csv,customer_type,str,Government
+sales_orders_full.csv,industry_segment,str,Logistics
+sales_orders_full.csv,customer_city,str,Ahmedabad
+sales_orders_full.csv,customer_state,str,Gujarat
+sales_orders_full.csv,customer_region,str,West
+sales_orders_full.csv,customer_payment_terms,str,Net 30
+sales_orders_full.csv,customer_rating,int64,3
+sales_orders_full.csv,branch_name,str,Ahmedabad West Hub
+sales_orders_full.csv,branch_city,str,Ahmedabad
+sales_orders_full.csv,branch_state,str,Gujarat
+sales_orders_full.csv,branch_region,str,West
+sales_orders_full.csv,warehouse_type,str,Service Hub
+sales_orders_full.csv,line_profit,int64,58900
+sales_orders_full.csv,line_margin_pct,float64,27.43362831858407
+sales_orders_full.csv,days_to_deliver,int64,4
+stock_ledger_enriched.csv,movement_id,str,MOV-OUT-184742
+stock_ledger_enriched.csv,product_id,str,P001
+stock_ledger_enriched.csv,branch_id,str,AHM001
+stock_ledger_enriched.csv,movement_type,str,OUT
+stock_ledger_enriched.csv,movement_date,str,2019-01-03
+stock_ledger_enriched.csv,quantity,int64,8
+stock_ledger_enriched.csv,reference_type,str,SO
+stock_ledger_enriched.csv,reference_id,str,SO-157767
+stock_ledger_enriched.csv,running_balance,int64,228
+stock_ledger_enriched.csv,product_name,str,Hydraulic Pump HP-300
+stock_ledger_enriched.csv,category,str,Hydraulic
+stock_ledger_enriched.csv,unit_cost,int64,18950
+stock_ledger_enriched.csv,unit_price,int64,24500
+stock_ledger_enriched.csv,movement_value_cost,int64,151600
+stock_ledger_enriched.csv,movement_value_price,int64,196000

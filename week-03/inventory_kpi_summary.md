@@ -1,62 +1,47 @@
-# Week 3 — Product, Inventory & Warehouse KPI Summary
-**Source:** `merged_dataset.csv` — 130,402 rows, 2019–2024, 30 tracked products
+# Week 3 — Product, Inventory & Warehouse KPI Summary (revised)
+**Source:** `merged/inventory_with_ledger.csv` (180 product–branch pairs), `stock_ledger_enriched.csv`, `sales_orders_full.csv`, `purchase_orders_full.csv`
 
----
+## 1. What changed and why
+The first version reported a stock-health split (51% Optimal / 24% Low / 24% Overstock) and inventory turnover of 0.40–0.45. **Neither is a valid finding and both have been withdrawn:**
+- The stock-health classes were cut at the 25th and 75th percentile of `current_stock`, so they come out as roughly 25/50/25 **by construction** whatever the data says.
+- Turnover was units sold ÷ ~107,000 units of stock. As shown below, the stock level is not on the same scale as sales, so the ratio carries no performance information.
 
-## 1. Data-Quality Finding: Stock Field Scale Mismatch
+## 2. The stock scale problem — and its cause
+| Field | Mean | Range |
+|---|---:|---|
+| `current_stock` | 107,240 | 88,853 – 121,013 |
+| `opening_stock` | 183 | 80 – 300 |
+| `max_stock` | 322 | 131 – 582 |
+| `reorder_level` | 65 | 24 – 119 |
+| `safety_stock` | 45 | 16 – 85 |
 
-| Field | Range (full dataset) |
-| :--- | :--- |
-| `current_stock` | 88,853 – 121,013 |
-| `max_stock` | 131 – 582 |
-| `reorder_level` | 24 – 119 |
-| `safety_stock` | 16 – 85 |
+180 of 180 pairs sit above `max_stock`; none is below reorder level.
 
-`current_stock` is on a completely different numeric scale than the other three thresholds. A
-direct comparison (e.g. `current_stock >= max_stock` → "Overstock") would classify every single
-row as overstocked, which is not a usable result. Most likely explanation: these fields represent
-different units or aggregation levels in the source data rather than a single entry error.
+**Cause (answers locked Q11): the fields are not in different units; the inflow is on a different scale from the outflow.**
+| Flow | Units |
+|---|---:|
+| Units sold (Delivered orders) | 1,234,939 |
+| Units received on purchase orders | 22,387,123 (**18.1× sold**) |
+| Ledger IN / OUT | 20,397,795 / 1,124,832 (18.1×) |
 
-**Finalized approach for this submission:** stock health is classified using the 25th/75th
-percentile of `current_stock` alone, rather than compared against `max_stock`. This is documented
-as a known limitation, carried forward as a Phase 2 question for the Data Analyst to trace to its
-source rather than left open in this deliverable.
+Stock starts at ~200 units (matching the thresholds) and then receives roughly 18 times more than it ships. Every product shows the same pattern (received ÷ sold = 17.4–19.2). Thresholds were set for the sales scale; PO quantities appear to be on a different scale. **Until the data owner confirms which side is right, stock-based KPIs (turnover, cover, stock health, stock value) should not be reported as performance findings.** Stock value at cost is ≈₹281B, against net sales of ₹23B.
 
-## 2. Inventory Turnover by Product
+`kpi_inventory_turnover.csv` keeps `received_to_sold_ratio` (the diagnostic) and an `indicative_turnover` column explicitly labelled as not valid.
 
-All 30 tracked products show a turnover ratio tightly clustered between **0.40 and 0.45** —
-no single product stands out as a clear fast- or slow-mover at this level of aggregation.
+## 3. Ledger vs inventory master
+14 of 180 pairs differ (range −515 to +16 units). **13 of the 14 are negative** (ledger higher than `current_stock`), so the error is one-directional rather than random. The ledger chain itself is consistent in file order; only `ADJUSTMENT` rows (unsigned quantity, about half of which reduce stock) break it. Note that the affected pairs depend on ordering ledger rows by date then file position, **not** by `movement_id`; the set differs from earlier reports that used `movement_id`.
+Full list: `kpi_stock_ledger_mismatches.csv`. Open for Warehouse/Ops: confirm the `ADJUSTMENT` sign convention and which source is authoritative.
 
-| Rank | Product | Category | Turnover Ratio |
-| :--- | :--- | :--- | :--- |
-| 1 | Pressure Sensor PS-90 | Sensors | 0.45 |
-| 2 | Swing Motor SWM-350 | Hydraulic | 0.45 |
-| 3 | Radiator RD-250 | Cooling | 0.44 |
-| 4 | Boom Cylinder BC-400 | Hydraulic | 0.44 |
-| 5 | O-Ring Set OR-50 | Seals | 0.44 |
+## 4. Branch view (Delivered net revenue, stock, mismatches)
+| Branch | Net revenue | Orders | Avg stock/product | Mismatched pairs | Capacity (sq ft) | Employees |
+|---|---:|---:|---:|---:|---:|---:|
+| Chennai South Hub | ₹4.68B | 3,677 | 107,808 | 1 | 41,890 | 81 |
+| Kolkata East Depot | ₹4.34B | 3,413 | 104,127 | 1 | 29,880 | 49 |
+| Ahmedabad West Hub | ₹3.99B | 3,115 | 105,166 | 2 | 34,120 | 63 |
+| Delhi Central | ₹3.50B | 2,682 | 109,622 | 3 | 45,230 | 92 |
+| Pune Distribution | ₹3.37B | 2,668 | 108,542 | 4 | 38,750 | 74 |
+| Hyderabad Logistics | ₹3.08B | 2,478 | 108,176 | 3 | 36,210 | 57 |
 
-Full table in `kpi_inventory_turnover.csv`.
+Capacity and headcount come from the branches master (`data/branches.csv`) when it is available next to the notebook. Revenue per employee is highest at Kolkata (₹88.6M) and lowest at Delhi (₹38.0M) — a possible Phase 2 question.
 
-## 3. Stock Health Distribution
-
-| Status | Row Count | % of Rows |
-| :--- | :--- | :--- |
-| Optimal Stock | 66,770 | 51.2% |
-| Overstock | 31,841 | 24.4% |
-| Low Stock | 31,791 | 24.4% |
-
-Roughly even split between Low Stock and Overstock outside the optimal band — worth a closer
-look once the scale question above is resolved, since the current classification is based on
-relative distribution within the dataset rather than a fixed, meaningful threshold.
-
-## 4. Warehouse Capacity by Branch
-
-Six branches tracked, with average current stock ranging ~104,000–110,000 units and warehouse
-capacity and headcount varying by region. Full table in `kpi_warehouse_capacity.csv`.
-
----
-
-**Status:** Finalized for this submission using the quantile-based method above. The turnover and
-stock-health figures are directionally useful and ready to present; tracing the `current_stock`
-scale to its source is carried forward as a Phase 2 data-quality question rather than a blocker
-on this deliverable.
+**Files:** `kpi_stock_scale_check.csv`, `kpi_stock_scale_flows.csv`, `kpi_inventory_turnover.csv`, `kpi_stock_ledger_mismatches.csv`, `kpi_branch_summary.csv`; chart `08_received_vs_sold_by_product.png`.

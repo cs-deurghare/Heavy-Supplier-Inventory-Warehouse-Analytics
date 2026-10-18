@@ -1,0 +1,4 @@
+payment_status,invoices,invoice_value_incl_gst,pct_of_invoices,pct_of_value
+Paid,12536,20300651760.2,69.5,69.4
+Partially Paid,3660,5969109945.8,20.3,20.4
+Unpaid,1837,2984231456.4,10.2,10.2

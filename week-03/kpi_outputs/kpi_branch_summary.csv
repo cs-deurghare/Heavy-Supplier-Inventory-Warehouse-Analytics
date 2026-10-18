@@ -1,0 +1,7 @@
+branch_id,branch_name,net_revenue,orders,products,avg_current_stock,stock_value_cost,mismatched_pairs,region,total_employees,warehouse_capacity_sqft
+AHM001,Ahmedabad West Hub,3986314570,3115,30,105166.4,46129795000,2,West,63,34120.0
+CHN001,Chennai South Hub,4682202010,3677,30,107808.17,47798163500,1,South,81,41890.0
+DEL001,Delhi Central,3500031300,2682,30,109622.33,47709094440,3,North,92,45230.0
+HYD001,Hyderabad Logistics,3077048220,2478,30,108176.37,47224691630,3,South,57,36210.0
+KOL001,Kolkata East Depot,4339861320,3413,30,104126.83,44702846930,1,East,49,29880.0
+PUN001,Pune Distribution,3373530010,2668,30,108542.1,47728085910,4,West,74,38750.0

@@ -1,8 +1,0 @@
-supplier_id,supplier_name,supplier_type,order_lines,products_supplied,total_line_revenue
-SUP0007,Suzhou Local Vendor Supplies,Local Vendor,47634,11,11103384442.4
-SUP0004,Ningbo Distributor Supplies,Distributor,17486,4,10966928904.0
-SUP0001,Shenzhen OEM Supplies,OEM,30326,7,4527167823.0
-SUP0002,Guangzhou Local Vendor Supplies,Local Vendor,13095,3,2895402258.4
-SUP0005,Tianjin OEM Supplies,OEM,8786,2,2133709952.0
-SUP0006,Qingdao Distributor Supplies,Distributor,8672,2,718654428.0
-SUP0003,Shanghai Distributor Supplies,Distributor,4403,1,79506748.0

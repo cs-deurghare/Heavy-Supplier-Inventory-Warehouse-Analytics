@@ -1,0 +1,7 @@
+metric,value
+As-of date (latest invoice due date),2025-03-14
+Invoices with reliable payment data,17640
+Invoices excluded (repeated invoice_id),393
+"Invoice value excluded, incl. GST (₹)",654355301.8
+"Total outstanding, reliable rows (₹)",5804303956.73
+Overdue invoices (reliable),5375

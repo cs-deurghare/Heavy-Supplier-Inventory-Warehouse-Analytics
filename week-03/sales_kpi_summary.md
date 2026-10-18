@@ -1,108 +1,104 @@
-# Week 3 — Sales, Customer & Supplier KPI Summary
-**Source:** `sales_customer_supplier_merged.csv` — 130,402 line items / 20,000 unique orders, 2019–2024
+# Week 3 — Sales, Customer & Payment KPI Summary (revised)
+**Source:** `merged/sales_orders_full.csv` (130,402 lines, 20,000 orders) and `merged/invoices_with_payments.csv` (18,033 invoices), 2019–2024
+**Notebook:** `03_kpi_calculations.ipynb` — all figures below are reproduced there and written to `kpi_outputs/`.
 
----
+> **Revision note.** The first version reported "revenue" of ₹32.42B. That figure was `grand_total`
+> (**including GST**) summed over **all** orders, **including 1,967 Cancelled orders**. Revenue is now
+> **net of GST and excludes Cancelled orders**; the other figures are shown separately.
 
-## 1. Top-Line KPIs
+## 1. Definitions
+| Term | Definition | Value |
+|---|---|---:|
+| **Net revenue** | ex-GST value of Delivered orders | **₹22.96B** |
+| Gross revenue | incl. GST, Delivered orders | ₹29.25B |
+| GST collected | Delivered orders | ₹6.30B |
+| Cancelled value | ex-GST value of Cancelled orders (not revenue) | ₹2.49B |
 
+## 2. Top-line KPIs (Delivered orders unless stated)
 | KPI | Value |
-| :--- | :--- |
-| Total Revenue (2019–2024) | ₹32,424,754,555.80 |
-| Average Order Value | ₹1,621,237.73 |
-| Total Orders | 20,000 |
-| Average Delivery Lead Time | 8.06 days |
-| Median Delivery Lead Time | 8.0 days |
+|---|---:|
+| Orders (total / delivered / cancelled) | 20,000 / 18,033 / 1,967 |
+| Cancellation rate | 9.84% |
+| Net revenue | ₹22,958,987,430 |
+| Average order value (net) | ₹1,273,165 |
+| Gross profit | ₹4.95B |
+| Gross margin (% of net revenue) | 21.6% |
+| Avg / median delivery lead time | 8.06 / 8.0 days |
 
-## 2. Revenue by Year
+## 3. Net revenue by year
+| Year | Net revenue | Orders | YoY |
+|---|---:|---:|---:|
+| 2019 | ₹3.87B | 3,031 | — |
+| 2020 | ₹3.92B | 3,038 | +1.2% |
+| 2021 | ₹3.85B | 3,038 | −1.7% |
+| 2022 | ₹3.82B | 2,948 | −0.9% |
+| 2023 | ₹3.82B | 3,022 | +0.2% |
+| 2024 | ₹3.68B | 2,956 | −3.8% |
 
-| Year | Revenue |
-| :--- | :--- |
-| 2019 | ₹5.40B |
-| 2020 | ₹5.50B |
-| 2021 | ₹5.42B |
-| 2022 | ₹5.41B |
-| 2023 | ₹5.39B |
-| 2024 | ₹5.30B |
+Revenue is flat to slightly declining (2024 is the lowest year, −5% vs 2019); order volume is steady, so the decline comes from value per order, not order count.
 
-Revenue is essentially flat year-over-year — no clear growth or decline trend across the 6-year window.
+## 4. Net revenue by customer type
+| Customer type | Net revenue | Share | Avg order value | Orders |
+|---|---:|---:|---:|---:|
+| Government | ₹5.05B | 22.0% | ₹1.24M | 4,075 |
+| Corporate | ₹4.72B | 20.5% | ₹1.28M | 3,672 |
+| Dealer | ₹4.68B | 20.4% | ₹1.29M | 3,633 |
+| Fleet Owner | ₹4.41B | 19.2% | ₹1.28M | 3,457 |
+| Retail | ₹4.10B | 17.8% | ₹1.28M | 3,196 |
 
-## 3. Revenue by Customer Type
+Government leads through order count; average order values are very similar (₹1.24–1.29M).
 
-| Customer Type | Revenue | Avg Order Value | Orders |
-| :--- | :--- | :--- | :--- |
-| Government | ₹7.21B | ₹1,585,122 | 4,551 |
-| Corporate | ₹6.63B | ₹1,631,995 | 4,064 |
-| Dealer | ₹6.61B | ₹1,645,193 | 4,016 |
-| Fleet Owner | ₹6.22B | ₹1,623,363 | 3,834 |
-| Retail | ₹5.75B | ₹1,625,846 | 3,535 |
+## 5. Net revenue by region
+| Region | Net revenue | Share | Orders |
+|---|---:|---:|---:|
+| South | ₹7.26B | 31.6% | 5,722 |
+| West | ₹6.73B | 29.3% | 5,335 |
+| East | ₹4.05B | 17.6% | 3,161 |
+| North | ₹3.94B | 17.2% | 3,029 |
+| Central | ₹0.50B | 2.2% | 406 |
+| North East | ₹0.47B | 2.1% | 380 |
 
-Fairly even spread — Government leads on volume of orders and total revenue, but average order value is consistent (~₹1.6M) across all five segments.
+South and West = 60.9% of net revenue.
 
-## 4. Revenue by Region
+## 6. Delivery lead time by region (days)
+Central 7.56 · North East 7.72 · East 7.94 · North 8.00 · South 8.13 · West 8.16 — consistent; no regional bottleneck.
 
-| Region | Revenue | Orders |
-| :--- | :--- | :--- |
-| South | ₹10.33B | 6,384 |
-| West | ₹9.51B | 5,923 |
-| East | ₹5.69B | 3,491 |
-| North | ₹5.54B | 3,333 |
-| Central | ₹0.70B | 447 |
-| North East | ₹0.66B | 422 |
+## 7. Top products (net revenue, Delivered lines)
+| Product | Net revenue | Share | Gross profit | Margin |
+|---|---:|---:|---:|---:|
+| Engine Block EB-600 | ₹4.86B | 21.2% | ₹0.96B | 19.7% |
+| Transmission Assembly TA-800 | ₹3.39B | 14.8% | ₹0.61B | 18.0% |
+| Boom Cylinder BC-400 | ₹1.93B | 8.4% | ₹0.44B | 22.9% |
+| Swing Motor SWM-350 | ₹1.65B | 7.2% | ₹0.36B | 21.6% |
+| Track Chain TC-45 | ₹1.63B | 7.1% | ₹0.30B | 18.3% |
 
-South and West together account for ~68% of total revenue. Central and North East are comparatively small markets — worth flagging for the Data Scientist's forecasting review.
+The top two products = 36.0% of net revenue, at below-average margins (19.7% and 18.0% vs 21.6% overall).
 
-## 5. Delivery Lead Time by Region
+## 8. Order status and payment status
+**Every Delivered order has exactly one invoice; every Cancelled order has none.** The earlier "Not Invoiced" group (2,360) was wrong: it combined 1,967 Cancelled orders with 393 orders whose invoices had been set aside. Those 393 invoices are now included.
 
-| Region | Avg Lead Time (days) |
-| :--- | :--- |
-| Central | 7.56 |
-| North East | 7.80 |
-| East | 7.90 |
-| North | 8.03 |
-| South | 8.13 |
-| West | 8.15 |
+| Order status | Orders | % of orders |
+|---|---:|---:|
+| Invoiced (Delivered) | 18,033 | 90.2% |
+| Cancelled (no invoice) | 1,967 | 9.8% |
 
-Consistent across regions (7.6–8.2 days) — no single region is a bottleneck.
+| Payment status (invoices) | Invoices | % of invoices | Invoice value incl. GST | % of value |
+|---|---:|---:|---:|---:|
+| Paid | 12,536 | 69.5% | ₹20.30B | 69.4% |
+| Partially Paid | 3,660 | 20.3% | ₹5.97B | 20.4% |
+| Unpaid | 1,837 | 10.2% | ₹2.98B | 10.2% |
 
-## 6. Top 5 Products by Revenue
+## 9. Outstanding, overdue and credit risk
+Payment totals are only reliable for **17,640 invoices** (unique `invoice_id`). The other **393 repeated-ID invoices (₹654M incl. GST)** cannot be matched to their payments and are excluded from the figures below.
 
-| Product | Revenue | Units Sold |
-| :--- | :--- | :--- |
-| Engine Block EB-600 | ₹6.89B | 45,222 |
-| Transmission Assembly TA-800 | ₹4.81B | 45,035 |
-| Boom Cylinder BC-400 | ₹2.74B | 46,364 |
-| Swing Motor SWM-350 | ₹2.34B | 45,971 |
-| Track Chain TC-45 | ₹2.32B | 45,575 |
+| Metric | Value |
+|---|---:|
+| As-of date (latest invoice due date in data) | 2025-03-14 |
+| Total outstanding (reliable invoices) | ₹5.80B |
+| Overdue invoices | 5,375 |
+| Outstanding more than 365 days overdue | ₹4.99B (86% of outstanding; 4,595 invoices) |
 
-Engine Block EB-600 and Transmission Assembly TA-800 together make up ~36% of total line revenue.
-
-## 7. Payment Status Breakdown
-
-| Status | Orders | % of Orders |
-| :--- | :--- | :--- |
-| Paid | 12,264 | 61.3% |
-| Partially Paid | 3,578 | 17.9% |
-| Not Invoiced | 2,360 | 11.8% |
-| Unpaid | 1,798 | 9.0% |
-
-The 9.0% fully Unpaid segment is worth a closer look — recommend flagging this for financial reconciliation review.
-
-## 8. Supplier Mix — Previously Blocked, Now Resolved
-
-Earlier versions of the merged dataset did not contain a `supplier_id` or `supplier_name`
-column. Root cause: the only valid path from a product to its supplier runs through
-`purchase_orders_lines` → `purchase_orders_header` → `suppliers` (the purchase order header
-table has no `product_id`); this join was present in an earlier revision of the Week 2 notebook
-but was never carried into the final table.
-
-The dataset has been rebuilt from the raw source tables with this join included. Supplier fields
-are now populated on 100% of rows. See `kpi_supplier_mix.csv` and Part C of
-`03_kpi_calculations.ipynb` for the supplier mix KPI.
+**Credit-risk concentration (answers the locked Q4):** outstanding is 19.6–21.4% of invoice value in every customer type and 18.6–20.9% in every region; Unpaid invoices are 9.1–11.0% of invoices in every customer type. **There is no concentration by customer type or region.** Corporate is slightly highest (21.4%). The issue is ageing — most outstanding money is over a year old — not a segment.
 
 ---
-
-**Files delivered:**
-- `03_kpi_calculations.ipynb` — full reproducible notebook (sales/customer, product/inventory/warehouse, and supplier KPIs)
-- `kpi_tables.csv` — top-line KPI summary
-- `kpi_revenue_by_year.csv`, `kpi_revenue_by_month.csv`, `kpi_revenue_by_customer_type.csv`, `kpi_revenue_by_region.csv`, `kpi_lead_time_by_region.csv`, `kpi_top_products.csv`, `kpi_payment_status_breakdown.csv`, `kpi_supplier_mix.csv`
-- `exploratory_charts/` — charts (monthly revenue trend, revenue by customer type, revenue by region, lead time distribution, top products, supplier revenue mix)
+**Files:** `kpi_outputs/kpi_tables.csv`, `kpi_revenue_by_year.csv`, `kpi_revenue_by_month.csv`, `kpi_revenue_by_customer_type.csv`, `kpi_revenue_by_region.csv`, `kpi_lead_time_by_region.csv`, `kpi_top_products.csv`, `kpi_order_status.csv`, `kpi_payment_status_breakdown.csv`, `kpi_outstanding_summary.csv`, `kpi_payment_aging.csv`, `kpi_credit_risk_by_customer_type.csv`, `kpi_credit_risk_by_region.csv`; charts in `exploratory_charts/`.

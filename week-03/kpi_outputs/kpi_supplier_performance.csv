@@ -1,0 +1,9 @@
+supplier_id,supplier_name,supplier_type,received_lines,units_received,spend_ex_gst,on_time_rate_pct,avg_delay_days,avg_actual_lead_days,contract_lead_days,reliability_score,pos_total,pos_cancelled,cancel_rate_pct,spend_share_pct
+SUP0005,Tianjin OEM Supplies,OEM,17987,2875531,40256023887.03,85.33,0.48,28.48,28,3,3044,290,9.53,12.9
+SUP0001,Shenzhen OEM Supplies,OEM,17490,2802989,39439157083.27,85.27,0.48,19.48,19,5,2944,291,9.88,12.64
+SUP0008,Hangzhou OEM Supplies,OEM,17379,2777131,39246104325.24,84.15,0.54,26.54,26,4,3010,288,9.57,12.58
+SUP0003,Shanghai Distributor Supplies,Distributor,17450,2797645,39188775296.85,85.42,0.53,16.53,16,4,3033,310,10.22,12.56
+SUP0006,Qingdao Distributor Supplies,Distributor,17908,2841711,39111078783.99,85.6,0.48,10.48,10,3,3038,286,9.41,12.53
+SUP0007,Suzhou Local Vendor Supplies,Local Vendor,17579,2806735,39045581644.58,84.33,0.55,12.55,12,5,3028,301,9.94,12.51
+SUP0004,Ningbo Distributor Supplies,Distributor,17057,2726632,38025017578.72,84.43,0.51,18.51,18,3,2966,302,10.18,12.19
+SUP0002,Guangzhou Local Vendor Supplies,Local Vendor,17227,2758749,37715690508.02,85.03,0.51,10.51,10,5,2937,302,10.28,12.09

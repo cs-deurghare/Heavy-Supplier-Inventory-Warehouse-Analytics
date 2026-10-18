@@ -134,7 +134,7 @@ All findings and decisions are documented in the Week 1 notebook and sprint note
 ├── processed_data/          # Cleaned tables, ready for merging and analysis
 ├── raw_data/                # Original source tables
 ├── week-01/                 # Week 1 notebook, data dictionary, KPI proposal, sprint notes
-├── week-02/                 # Week 2 deliverables
+├── week-02/                 # Week 2 deliverables, data dictionary, dim product inventory, sprint notes
 ├── week-03/                 # Week 3 KPI notebook, updated data dictionary, locked analysis questions, sprint notes
 └── README.md
 ```

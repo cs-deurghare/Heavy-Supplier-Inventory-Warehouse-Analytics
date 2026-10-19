@@ -24,7 +24,7 @@ This project is delivered by a four-person analytics team working in an agile sp
 | :--- | :--- | :--- |
 | Chandrashekhar Deurghare | BI Analyst | Product, inventory, and warehouse data integration and reporting |
 | Salim Bello Muhammad | BI Analyst | Sales, customer, and supplier data integration and reporting |
-| Olufunmilola Florence Peters | Data Analyst | Data quality, field-level cleaning, and validation |
+| Ibrahim Khalil umar | Data Analyst | Data quality, field-level cleaning, and validation |
 | Abdibasid Mohamed Ali | Data Scientist | Dataset structure review and forecasting readiness |
 
 Leadership of each weekly sprint rotates across the team.

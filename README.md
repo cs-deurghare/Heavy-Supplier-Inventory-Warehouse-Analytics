@@ -24,7 +24,7 @@ This project is delivered by a four-person analytics team working in an agile sp
 | :--- | :--- | :--- |
 | Chandrashekhar Deurghare | BI Analyst | Product, inventory, and warehouse data integration and reporting |
 | Salim Bello Muhammad | BI Analyst | Sales, customer, and supplier data integration and reporting |
-| Ibrahim Khalil umar | Data Analyst | Data quality, field-level cleaning, and validation |
+| Ibrahim Khalil Umar | Data Analyst | Data quality, field-level cleaning, and validation |
 | Abdibasid Mohamed Ali | Data Scientist | Dataset structure review and forecasting readiness |
 
 Leadership of each weekly sprint rotates across the team.
@@ -46,7 +46,7 @@ Leadership of each weekly sprint rotates across the team.
 ## 4. What We Did (Week 1)
 
 - **Profiled** every table: row/column counts, data types, missing values, and duplicate checks.
-- **Cleaned** key fields: converted date columns to proper datetime format, trimmed whitespace from text fields, and parsed numeric values out of mixed text fields (e.g. extracting `45230` from `"45230 sqft"` in `warehouse_capacity_sqft`).
+- **Cleaned** key fields: converted date columns to proper datetime format, trimmed whitespace from text fields, and parsed numeric values out of mixed text fields (e.g., extracting `45230` from `"45230 sqft"` in `warehouse_capacity_sqft`).
 - **Validated** the cleaned data with 20 explicit checks (pass/fail), rather than assuming the data was clean after one pass.
 
 ---
@@ -57,7 +57,7 @@ Leadership of each weekly sprint rotates across the team.
 | :--- | :--- | :--- |
 | **Duplicate invoice records** | 197 `invoice_id` values appeared more than once in the invoices table | Flagged and set aside rather than merged blindly, to avoid silently duplicating rows in any table that joins on `invoice_id`. Documented for the team before any merge work began. |
 | **Stock discrepancies** | 14 mismatches between `stock_ledger` cumulative quantities and `inventory_master` recorded balances | Investigated by recalculating cumulative inflows/outflows from the stock ledger (sorted chronologically) and comparing against recorded balances, to confirm which figures were reliable before using either table downstream. |
-| **Mixed-format numeric fields** | Some numeric fields (e.g. warehouse capacity) were stored as text with units attached | Extracted the numeric value programmatically rather than dropping or guessing at the field. |
+| **Mixed-format numeric fields** | Some numeric fields (e.g., warehouse capacity) were stored as text with units attached | Extracted the numeric value programmatically rather than dropping or guessing at the field. |
 | **Inconsistent date formats** | Date fields varied in format across tables | Standardized all date fields using safe, error-tolerant conversion, with any unparseable dates flagged rather than silently discarded. |
 
 All findings and decisions are documented in the Week 1 notebook and sprint notes so the reasoning is traceable, not just the result.
@@ -111,10 +111,10 @@ All findings and decisions are documented in the Week 1 notebook and sprint note
 
 | Finding | What We Found | How We Treated It |
 | :--- | :--- | :--- |
-| **Supplier data missing** | No `supplier_id` or `supplier_name` column existed anywhere in the merged dataset, despite earlier documentation describing a supplier join | **Resolved.** Root cause: `purchase_orders_header` has no `product_id`, so the only valid path from a product to its supplier is `purchase_orders_lines` → `purchase_orders_header` → `suppliers`. This join existed in an earlier revision of the Week 2 notebook but was never carried into the final table. Rebuilt the full merge from all 10 raw tables with the join included; supplier fields now populated on 100% of rows, each product's supplier assigned from its most recent purchase order |
+| **Supplier data missing** | No `supplier_id` or `supplier_name` column existed anywhere in the merged dataset, despite earlier documentation describing a supplier join | **Resolved.** Root cause: `purchase_orders_header` has no `product_id`, so the only valid path from a product to its supplier is `purchase_orders_lines` → `purchase_orders_header` → `suppliers`. This join existed in an earlier revision of the Week 2 notebook but didn't carry into the final table. Rebuilt the full merge from all 10 raw tables with the join included; supplier fields now populated on 100% of rows, each product's supplier assigned from its most recent purchase order |
 | **`current_stock` vs. `max_stock` scale mismatch** | `current_stock` sits in the ~88,000–121,000 range, while `max_stock` / `reorder_level` / `safety_stock` sit in the tens-to-low-hundreds range — a direct comparison marks every row as "Overstock" | Adopted a quantile-based stock health classification (25th/75th percentile of `current_stock`) as the finalized method for this submission; tracing the scale mismatch to its source is carried forward as a Phase 2 question |
 | **`payment_status` reverted to blank** | A later copy of the dataset had `payment_status` blank again for orders with no matching invoice, despite this being fixed and agreed in Week 2 | Reapplied the "Not Invoiced" label before running KPIs |
-| **Column name collisions from the full rebuild** | Rebuilding the merge from all 10 raw tables surfaced ambiguous columns (e.g. `city`, `region`, `lead_time_days`, `unit_price` exist in more than one source table) | Every colliding column explicitly renamed before merging (e.g. `customer_city`, `supplier_region`, `product_lead_time_days`) — zero ambiguous columns in the final file |
+| **Column name collisions from the full rebuild** | Rebuilding the merge from all 10 raw tables surfaced ambiguous columns (e.g., `city`, `region`, `lead_time_days`, `unit_price` exist in more than one source table) | Every colliding column explicitly renamed before merging (e.g., `customer_city`, `supplier_region`, `product_lead_time_days`) — zero ambiguous columns in the final file |
 | **9.0% of orders fully unpaid** | Found during the payment status breakdown, not previously quantified | Documented and flagged for financial reconciliation review in Phase 2 |
 
 ---

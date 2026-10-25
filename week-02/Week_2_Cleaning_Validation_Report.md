@@ -2,7 +2,7 @@
 ## Heavy Supplier, Inventory & Warehouse Analytics
 
 **Report date:** 2026-10-18  
-**Source notebook:** `week-02/02_data_cleaning_integration_validation_FIXED.ipynb` (revised)  
+**Source notebook:** `week-02/02_data_cleaning_integration_validations.ipynb` (revised)  
 **Report folder:** `reports/week_02/`  
 **Status:** Complete — 12 of 12 checks passed (revision 2: invoice–payment join, ledger ordering and merged-dataset fixes applied)
 

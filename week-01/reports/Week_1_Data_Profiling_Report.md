@@ -13,7 +13,7 @@
 
 This report documents the initial data profiling of the Heavy Supplier, Inventory & Warehouse Analytics project. The objective was to understand the structure, completeness, uniqueness, and relationships of the available datasets before proceeding with data cleaning, integration, and business analytics.
 
-The profiling covered **12 CSV datasets containing 704,733 records** in total.
+The profiling covered **12 CSV datasets containing 605,141 records** in total.
 
 The initial assessment identified missing values in purchase order headers, repeated identifiers in the invoices and payments datasets, repeated product identifiers in the inventory master, and relationships between operational tables that passed basic reference checks.
 
@@ -26,7 +26,7 @@ The results provide a foundation for improving data reliability before developin
 | Profiling area | Finding |
 |---|---|
 | Number of datasets | 12 CSV files |
-| Total records | 704,733 |
+| Total records | 605,141 |
 | Exact duplicate rows | None identified |
 | Missing cells | 2,370 |
 | Main missing-value issue | `received_date` in `purchase_orders_header` |
@@ -69,7 +69,7 @@ The project contains 12 datasets covering business entities, purchasing, invento
 
 The remaining datasets include branches, customers, products, suppliers, and inventory master records.
 
-**Note:** The seven datasets above are the largest or most operationally significant tables identified in the initial review. The total record count of 704,733 covers all 12 datasets.
+**Note:** The seven datasets above are the largest or most operationally significant tables identified in the initial review. The total record count of 605,141 covers all 12 datasets.
 
 ---
 
@@ -275,7 +275,7 @@ These limitations should be resolved progressively during data cleaning and inte
 
 The Week 1 data profiling exercise established an initial understanding of the structure and quality of the Heavy Supplier, Inventory & Warehouse Analytics datasets.
 
-The 12 datasets contain 704,733 records. No exact duplicate rows were identified, while missing received dates and repeated transaction identifiers were highlighted for investigation. The 17 candidate relationships passed basic child-reference checks, but additional uniqueness and business-rule validation is required.
+The 12 datasets contain 605,141 records. No exact duplicate rows were identified, while missing received dates and repeated transaction identifiers were highlighted for investigation. The 17 candidate relationships passed basic child-reference checks, but additional uniqueness and business-rule validation is required.
 
 The next phase should focus on resolving or documenting the identified data-quality issues, confirming the intended grain and keys of each dataset, and producing validated datasets suitable for integration and business analytics.
 

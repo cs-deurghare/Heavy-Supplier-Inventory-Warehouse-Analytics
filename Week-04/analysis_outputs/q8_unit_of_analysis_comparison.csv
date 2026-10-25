@@ -1,0 +1,3 @@
+dimension,n_lines,p_by_line_(not_valid),n_POs,p_by_PO_(valid)
+on-time rate,140077,9.751427655524747e-05,21630,0.9702279011709752
+delay (days),140077,3.6311420128055014e-06,21630,0.8767298568051308

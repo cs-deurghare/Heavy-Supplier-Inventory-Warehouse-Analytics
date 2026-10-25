@@ -1,0 +1,38 @@
+Check_Item,Expected,Actual,Status
+sales rows (line grain),130402,130402,PASS
+unique orders,20000,20000,PASS
+PO rows (line grain),155495,155495,PASS
+inventory pairs,180,180,PASS
+ledger rows,237230,237230,PASS
+net revenue matches Week 3 (₹22.96B),22.96,22.96,PASS
+yearly net revenue sums to total,0,0,PASS
+each product has exactly one unit_price,1,1,PASS
+order-line price == product master price,0,0,PASS
+factors multiply back to revenue,0,4.76837158203125e-07,PASS
+effects add to total change 2023-2024,0,0.0,PASS
+effects add to total change 2019-2024,0,0.0,PASS
+2023→2024 fall is ₹146.7M,146.7,146.7,PASS
+shares sum to 100%,100,100.0,PASS
+2023→2024 mix effect is not distinguishable from noise (p > 0.05),>0.05,0.349,PASS
+2023→2024 permutation statistic reproduces the decomposition mix effect (within ₹1M),0,-0.0,PASS
+six-year cancellation rates are consistent with one constant rate (p > 0.05),>0.05,0.265,PASS
+no cancellation-reason field in the merged data,0,0,PASS
+customers across regions = all customers,500,500,PASS
+South + West share is 60.9%,60.9,60.9,PASS
+orders per customer does not differ by region (p > 0.05),>0.05,0.427,PASS
+regional effect on revenue per customer is negligible (epsilon-squared < 0.01),<0.01,0.0027,PASS
+South + West share stays above 55% across the bootstrap interval,>55,56.5,PASS
+no single customer drives the concentration (largest < 1% of revenue),<1,0.37,PASS
+removing the top 5 customers moves the South + West share by less than their own revenue share,<1.68,1.04,PASS
+Central and North East have no branch,True,"['Central', 'North East']",PASS
+customer region and branch region are strongly linked (Cramér's V > 0.5),>0.5,0.74,PASS
+every product is bought from all 8 suppliers,8,8,PASS
+each received PO has a single supplier,1,1,PASS
+each received PO has a single delivery delay,1,1,PASS
+actual lead time = supplier lead days + delay,0,0.0,PASS
+suppliers not distinguishable on on-time rate at PO level (p > 0.05),>0.05,0.97,PASS
+suppliers not distinguishable on delay at PO level (p > 0.05),>0.05,0.877,PASS
+suppliers differ on lead time at PO level (p < 0.001),<0.001,<1e-300,PASS
+PO received ÷ units sold = 18.1×,18.1,18.1,PASS
+PO units received 22.39M,22.39,22.39,PASS
+gap is the same for every product (17–20×),17-20,17.4-19.2,PASS

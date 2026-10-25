@@ -1,0 +1,6 @@
+dimension,test,unit_of_analysis,n,p_value,effect_size,range_across_8_suppliers
+on-time rate,chi-square,purchase order,21630,0.97,0.009,84.2–85.3%
+PO cancellation rate,chi-square,purchase order,24000,0.91,0.011,9.4–10.3%
+delay (days),Kruskal-Wallis,purchase order,21630,0.88,0.000,0.49–0.55 d
+unit cost (index vs product mean),Kruskal-Wallis,PO line (cost is a line attribute),140077,0.84,0.000,0.999–1.001
+lead time (days),Kruskal-Wallis,purchase order,21630,<1e-300,0.929,10.5–28.5 d

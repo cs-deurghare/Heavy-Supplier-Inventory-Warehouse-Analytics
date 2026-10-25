@@ -1,145 +1,187 @@
 # Heavy Supplier, Inventory & Warehouse Analytics
 
 ![Project](https://img.shields.io/badge/Project-Heavy%20Supplier%20Analytics-blue?style=for-the-badge)
-![Sprint](https://img.shields.io/badge/Sprint-Week%2003%20Complete-brightgreen?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Validated-success?style=for-the-badge)
+![Sprint](https://img.shields.io/badge/Sprint-Week%2004%20Complete-brightgreen?style=for-the-badge)
+![Validation](https://img.shields.io/badge/Validation-All%20checks%20passing-success?style=for-the-badge)
 
-A CadetX Virtual Work Experience project analyzing a heavy machinery supplier's sales, inventory, purchasing, and warehouse operations across 12 relational data tables, to support data-driven decisions on stock management, supplier performance, and customer value.
+A CadetX Virtual Work Experience project analysing a heavy machinery supplier's sales, inventory, purchasing and warehouse operations across 12 relational data tables, to support evidence-based decisions on stock management, supplier performance and customer value.
 
 ---
 
 ## 1. Project Overview
 
-This repository holds the code, cleaned data, documentation, and findings produced by the team over the course of a 12-week programme. Week 1 focused on **profiling, cleaning, and validating** the raw dataset. Week 2 **merged and integrated** the data into a single analysis-ready dataset. Week 3 built the first round of **KPI calculations**, closed a data gap found in the Week 2 merge, and locked the analysis questions for Phase 2.
+This repository holds the code, cleaned data, documentation and findings produced over a 12-week programme.
 
-**Dataset:** 12 source tables covering sales orders, customers, products, suppliers, purchase orders, invoices, payments, stock ledger, branches, and inventory.
+| Phase | Weeks | Focus |
+| :--- | :--- | :--- |
+| Foundation | 1 | Profile, clean and validate the 12 raw tables |
+| Integration | 2 | Merge the tables into analysis-ready datasets and validate every join |
+| Measurement | 3 | Calculate the first KPIs and lock the analysis questions |
+| Deep dive | 4 | Answer four locked questions (Q1, Q2, Q8, Q10) with tested, reproducible analysis |
+
+**Dataset:** 12 source tables covering sales orders, customers, products, suppliers, purchase orders, invoices, payments, stock ledger, branches and inventory.
 
 ---
 
 ## 2. Team
 
-This project is delivered by a four-person analytics team working in an agile sprint structure with rotating weekly leadership:
+A four-person analytics team working in agile sprints with rotating weekly leadership.
 
-| Name | Role | Focus |
-| :--- | :--- | :--- |
-| Chandrashekhar Deurghare | BI Analyst | Product, inventory, and warehouse data integration and reporting |
-| Salim Bello Muhammad | BI Analyst | Sales, customer, and supplier data integration and reporting |
-| Ibrahim Khalil Umar | Data Analyst | Data quality, field-level cleaning, and validation |
-| Abdibasid Mohamed Ali | Data Scientist | Dataset structure review and forecasting readiness |
-
-Leadership of each weekly sprint rotates across the team.
+| Name | Role | Focus | Week 4 question |
+| :--- | :--- | :--- | :--- |
+| Chandrashekhar Deurghare | BI Analyst | Product, inventory and warehouse data integration and reporting | Q2 Regional concentration |
+| Salim Bello Muhammad | BI Analyst | Sales, customer and supplier data integration and reporting | Q1 Revenue drift |
+| Ibrahim Khalil | Data Analyst | Data quality, field-level cleaning and validation | Q10 Stock scale |
+| Abdibasid Mohamed Ali | Data Scientist | Dataset structure review and forecasting readiness | Q8 Supplier differentiation, plus review of all four findings |
 
 ---
 
-## 3. Week 1 Deliverables
+## 3. Current Status and Authoritative Data
+
+Weeks 1 to 4 are complete. Every notebook runs end to end with no errors and stops if any of its validation checks fails.
+
+**The authoritative dataset is the set of corrected Week 2 merged files** in `week-02/reports/week_02/merged/`:
+`sales_orders_full.csv`, `invoices_with_payments.csv`, `purchase_orders_full.csv`, `inventory_with_ledger.csv` and `stock_ledger_enriched.csv`.
+Weeks 3 and 4 both read these files. Net revenue is ex-GST and Delivered-only; the first Week 3 draft reported a higher figure that included GST and cancelled orders, and was corrected. The single 89-column merged file described in earlier drafts of this README is **superseded** and is not used by any current notebook.
+
+**Revenue definition used everywhere:** net revenue is `line_total` (ex-GST) of **Delivered** orders only, by order year. Total net revenue is ₹22.96B across 18,033 delivered orders (20,000 orders in total).
+
+---
+
+## 4. Week 1: Profiling and Initial Cleaning
+
+| Deliverable | Location |
+| :--- | :--- |
+| `Week_1_Complete_Data_Profiling.ipynb` | `week-01/week one/`: profiles all 12 tables, with initial cleaning (dates, text trimming, numeric parsing) |
+| `Week_1_Data_Profiling_Report.md` and profiling CSVs | `week-01/reports/`: column profiles, candidate keys, relationships, duplicate and data-quality issue log |
+| `data_dictionary_DRAFT.md`, `kpi_proposal.md`, `sprint_notes_week01.md` | `week-01/week one/` |
+| `processed_data/` | Processed tables ready for downstream work |
+
+**What we did:** profiled all 12 CSV tables (structure, completeness, uniqueness and relationships), applied initial cleaning, drafted the data dictionary and proposed the first KPIs.
+
+| Finding | What we found | How we treated it |
+| :--- | :--- | :--- |
+| Repeated invoice identifiers | 196 `invoice_id` values appear more than once (393 rows, 197 occurrences beyond the first) | Flagged, not deleted. Week 2 confirmed they are different transactions that share an ID, not true duplicates |
+| Repeated payment identifiers | `payment_id` values reused across payments | Flagged; Week 2 counted 201 and used a surrogate row key |
+| Missing values | Missing `received_date` in purchase order headers | Week 2 showed all 2,370 are Cancelled purchase orders |
+| Mixed-format numbers and dates | Values such as `"45230 sqft"` stored as text; date formats varied | Parsed programmatically; unparseable values flagged, not dropped |
+| Stock differences | `stock_ledger` balances differ from `inventory_master` for some product and branch pairs | Reconciled in Week 2 (14 pairs); carried forward as an open question |
+
+---
+
+## 5. Week 2: Cleaning, Integration and Validation
+
+| Deliverable | Location |
+| :--- | :--- |
+| `02_data_cleaning_integration_validations.ipynb` | `week-02/`: cleans, validates and merges the tables |
+| `Week_2_Cleaning_Validation_Report.md`, `sprint_notes_week02.md` | `week-02/`: report (12 of 12 checks pass) and sprint notes |
+| `reports/week_02/merged/` | The five corrected merged datasets and a manifest (see Section 3) |
+| `reports/week_02/clean/` | The 12 cleaned tables |
+| `reports/week_02/task*.csv` | Key and foreign-key validation (6 primary keys, 17 foreign keys, all valid), audit log, before and after comparison, unresolved issues and validation checklist |
+
+| Finding | What we found | How we treated it |
+| :--- | :--- | :--- |
+| Payments inflated by repeated invoice IDs | Joining payments on `invoice_id` overstated total paid by about ₹518M and caused 247 false "Paid" mismatches | Payments are joined only to unique invoice IDs; the 393 repeated-ID rows carry `payment_total_reliable = False` |
+| Incorrect `line_profit` | Profit was derived from `margin_percentage`, which is a markup on cost, not a margin on price | Recalculated as quantity x (unit price - unit cost): 21.6% margin |
+| Ledger ordering | `movement_id` is not chronological | Ordered by date, then file position; 14 product and branch pairs still differ from `inventory_master` and are documented |
+| Row-count inflation in an early draft | An early merge produced about 782,000 rows instead of about 130,000 | Rebuilt with `validate='many_to_one'` on every merge so non-unique keys fail loudly |
+| Column name collisions | `branch_id` and `payment_terms` carried different meanings in two tables | Renamed explicitly after merging |
+| Floating-point artefacts | Values like `28392.000000000004` | Rounded monetary columns to 2 decimal places |
+
+Five issues needing business input are recorded in `reports/week_02/task7_unresolved_issues.csv`.
+
+---
+
+## 6. Week 3: KPI Calculations
 
 | Deliverable | Description |
 | :--- | :--- |
-| `01_profiling_cleaning_validation.ipynb` | Jupyter notebook profiling all 12 tables, cleaning key fields, and running validation checks |
-| `data_dictionary_DRAFT.md` | Column-level data dictionary covering all 12 tables |
-| `kpi_proposal.md` | Proposed KPIs and analysis questions for the project |
-| `sprint_notes_week01.md` | Sprint progress notes and task log |
-| `processed_data/` | Cleaned versions of all 12 source tables, ready for downstream merging and analysis |
+| `03_kpi_calculations.ipynb` | Sales, payment, supplier and inventory KPIs on the five corrected merged datasets, executed end to end |
+| `Week3_KPI_Report.md` | Full KPI report with method, definitions and limitations (22 of 22 validation checks pass) |
+| `sales_kpi_summary.md`, `inventory_kpi_summary.md`, `supplier_kpi_summary.md` | Write-ups by KPI area |
+| `kpi_outputs/` | KPI result tables |
+| `analysis_questions_locked.md` | 13 analysis questions locked for Weeks 4 to 6 |
+| `validation_report_week03.csv`, `exploratory_charts/`, `data_dictionary_columns.csv` | Validation, charts and column dictionary |
+
+**Headlines**
+1. Net revenue is flat to slightly declining (₹3.87B in 2019 to ₹3.68B in 2024) while order volume is steady.
+2. South and West generate 60.9% of net revenue. Two products, EB-600 and TA-800, are 36.0% of revenue at below-average margins. Gross margin is 21.6%.
+3. Payment risk is an ageing problem, not a segment problem: outstanding is 19% to 21% of value in every customer type and region, but most of it is over a year old.
+4. The 8 suppliers are practically indistinguishable on delivery, cancellation and cost.
+5. Stock-based KPIs cannot be reported yet: purchase receipts are 18 times units sold, so stock sits on a different scale from its own thresholds.
 
 ---
 
-## 4. What We Did (Week 1)
+## 7. Week 4: Deep Dive (Q1, Q2, Q8, Q10)
 
-- **Profiled** every table: row/column counts, data types, missing values, and duplicate checks.
-- **Cleaned** key fields: converted date columns to proper datetime format, trimmed whitespace from text fields, and parsed numeric values out of mixed text fields (e.g., extracting `45230` from `"45230 sqft"` in `warehouse_capacity_sqft`).
-- **Validated** the cleaned data with 20 explicit checks (pass/fail), rather than assuming the data was clean after one pass.
+`week-04/04_deep_dive_analysis.ipynb` answers all four questions (37 of 37 validation checks pass). `week-04/standalone_question_reports/` holds one self-contained folder per question for Q1, Q2 and Q10 (26, 16 and 19 checks), each with its own notebook, outputs, charts and report. All were tested from a clean copy of the repository layout.
 
----
-
-## 5. Week 1 Key Findings & How We Treated Them
-
-| Finding | What We Found | How We Treated It |
-| :--- | :--- | :--- |
-| **Duplicate invoice records** | 197 `invoice_id` values appeared more than once in the invoices table | Flagged and set aside rather than merged blindly, to avoid silently duplicating rows in any table that joins on `invoice_id`. Documented for the team before any merge work began. |
-| **Stock discrepancies** | 14 mismatches between `stock_ledger` cumulative quantities and `inventory_master` recorded balances | Investigated by recalculating cumulative inflows/outflows from the stock ledger (sorted chronologically) and comparing against recorded balances, to confirm which figures were reliable before using either table downstream. |
-| **Mixed-format numeric fields** | Some numeric fields (e.g., warehouse capacity) were stored as text with units attached | Extracted the numeric value programmatically rather than dropping or guessing at the field. |
-| **Inconsistent date formats** | Date fields varied in format across tables | Standardized all date fields using safe, error-tolerant conversion, with any unparseable dates flagged rather than silently discarded. |
-
-All findings and decisions are documented in the Week 1 notebook and sprint notes so the reasoning is traceable, not just the result.
-
----
-
-## 6. Week 2 Deliverables
-
-| Deliverable | Description |
+| Question | Answer |
 | :--- | :--- |
-| `02_sales_customer_supplier_merge.ipynb` | Notebook merging sales orders, customers, suppliers, and invoices into one table |
-| `03_final_integration.ipynb` | Notebook combining the sales-side merge with product, inventory, and branch data |
-| `merged_dataset.csv` (split by year) | Combined dataset — sales, customer, product, inventory, and branch data in one table (130,402 rows, 72 columns) |
-| `sprint_notes_week02.md` | Sprint progress notes, issues found, and how each was resolved |
-| `join_log_week02.csv` / validation files | Documented join keys and pass/fail validation checks |
+| **Q1 Revenue drift** | Delivered revenue fell ₹192.0M (-4.96%) from 2019 to 2024. In the price/volume/mix bridge, volume explains 78% (-₹150.1M) and product mix 22% (-₹41.9M, not distinguishable from noise, p = 0.47). Price cannot be tested because the data holds one price list. There is no evidence of a fall in demand. 76% of the fall lands in 2024 (-₹146.7M, -3.8%), but that step is not distinguishable from no change (interval -7.8% to +0.4%). Cancellation rose from 9.1% to 10.9%, but the evidence is weak (all-years p = 0.27) and no segment explains it. |
+| **Q2 Regional concentration** | South (31.63%) and West (29.32%) hold 60.95% of revenue (interval 56.5% to 65.3%) and 61.8% of customers. A customer is worth about the same in every region (₹43M to ₹48M, p = 0.275). The gap is the size of the customer base. Central and North East have 11 customers each and no branch. The data cannot separate a small market from an unserved one. |
+| **Q8 Supplier differentiation** | Tested per purchase order, the 8 suppliers are not distinguishable on on-time rate (84.2% to 85.3%, p = 0.97), delay (p = 0.88), cancellation (p = 0.91) or unit cost (p = 0.84). They differ only on lead time (10.5 to 28.5 days). |
+| **Q10 Stock scale** | Unresolved. Received units are 18.1 times units sold and purchase spend is 17.3 times cost of goods sold, in every product. PO lines are about 15 times larger than sales lines. The ledger covers about 91% of both and every adjustment is positive. Stock KPIs stay not reportable until the data owner explains the PO quantities. |
 
-### Week 2 Findings & How We Treated Them
+Supporting files in `week-04/`: `week4_findings_summary.md` (includes a method note reconciling the two Q1 decompositions), `sprint_notes_week04.md`, `Corrections_Log.md`, `README_how_to_run.md`.
 
-| Finding | What We Found | How We Treated It |
-| :--- | :--- | :--- |
-| **Column name collisions** | `branch_id` and `payment_terms` appeared in two tables with different meanings | Renamed explicitly after merging to remove ambiguity |
-| **Row-count inflation** | An early merge produced ~782,000 rows instead of the expected ~130,000, from a join without a uniqueness check | Rebuilt using `validate='many_to_one'` on every merge to catch non-unique keys instead of silently duplicating rows |
-| **Floating-point precision artifacts** | Monetary columns contained values like `28392.000000000004` instead of `28392` | Rounded all monetary columns to 2 decimal places across the dataset |
-| **Stock discrepancies (carried from Week 1)** | 6 mismatches remained between `stock_ledger` and `inventory_master` | Flagged for re-validation after corrections |
+### Week 4 methods
+- Revenue change is split exactly into price, volume and mix; volume is further split into orders placed, cancellation rate and basket size (log-mean method).
+- Tests: Welch t, bootstrap intervals (5,000 resamples, seed 42), permutation tests (5,000 shuffles), chi-square, Cochran-Armitage trend, Kruskal-Wallis with effect sizes, Cramér's V and ANOVA.
+- Purchase-order lines share a supplier and dates, so on-time, delay and lead time are tested per purchase order, not per line.
+- Claims are worded to match their tests: a result is called "not established" or "weak evidence" when the test does not support more.
 
----
-
-## 7. Week 3 Deliverables
-
-| Deliverable | Description |
-| :--- | :--- |
-| `merged_dataset.csv` (full + split by year) | **Rebuilt** from all 10 raw source tables to close the supplier data gap found this week — now 130,402 rows, 89 columns, with supplier fields populated on 100% of rows |
-| `03_kpi_calculations.ipynb` | Reproducible notebook covering sales/customer, product/inventory/warehouse, and supplier KPIs, executed end-to-end with no errors |
-| `data_dictionary.md` | Updated to document all 89 columns, the new supplier fields, and every column renamed to resolve cross-table name collisions |
-| `analysis_questions_locked.md` | 13 analysis questions locked for Phase 2 (Weeks 4–6), across sales, customer, product/inventory, operations, and data quality |
-| `sprint_notes_week03.md` | Sprint progress notes, issues found, and how each was resolved |
-| `sales_kpi_summary.md` / `inventory_kpi_summary.md` | Write-ups of the sales/customer and product/inventory/warehouse KPI results |
-| `kpi_supplier_mix.csv` + other `kpi_*.csv` files | KPI result tables |
-| `validation_report_week03.csv` | Pass/fail validation checks for the Week 3 dataset and KPIs |
-| `exploratory_charts/` | Revenue, lead time, product, inventory turnover, and supplier mix charts |
-
-### What We Did (Week 3)
-
-- Calculated top-line and segmented **sales/customer KPIs**: total revenue, average order value, revenue by year/customer type/region, delivery lead time, top products, and payment status breakdown.
-- Calculated **product, inventory & warehouse KPIs**: inventory turnover ratio per product, a stock health classification, and warehouse capacity by branch.
-- **Found and fixed a data gap carried from Week 2:** the merged dataset had no supplier information at all. Traced the root cause, rebuilt the merge with supplier data correctly joined in, and calculated the supplier mix KPI that had been blocked.
-- Finalized a single data dictionary and a locked set of analysis questions for Phase 2.
-- Ran a validation report confirming row counts, data types, the resolved supplier join, and no ambiguous merge columns.
-
-### Week 3 Findings & How We Treated Them
-
-| Finding | What We Found | How We Treated It |
-| :--- | :--- | :--- |
-| **Supplier data missing** | No `supplier_id` or `supplier_name` column existed anywhere in the merged dataset, despite earlier documentation describing a supplier join | **Resolved.** Root cause: `purchase_orders_header` has no `product_id`, so the only valid path from a product to its supplier is `purchase_orders_lines` → `purchase_orders_header` → `suppliers`. This join existed in an earlier revision of the Week 2 notebook but didn't carry into the final table. Rebuilt the full merge from all 10 raw tables with the join included; supplier fields now populated on 100% of rows, each product's supplier assigned from its most recent purchase order |
-| **`current_stock` vs. `max_stock` scale mismatch** | `current_stock` sits in the ~88,000–121,000 range, while `max_stock` / `reorder_level` / `safety_stock` sit in the tens-to-low-hundreds range — a direct comparison marks every row as "Overstock" | Adopted a quantile-based stock health classification (25th/75th percentile of `current_stock`) as the finalized method for this submission; tracing the scale mismatch to its source is carried forward as a Phase 2 question |
-| **`payment_status` reverted to blank** | A later copy of the dataset had `payment_status` blank again for orders with no matching invoice, despite this being fixed and agreed in Week 2 | Reapplied the "Not Invoiced" label before running KPIs |
-| **Column name collisions from the full rebuild** | Rebuilding the merge from all 10 raw tables surfaced ambiguous columns (e.g., `city`, `region`, `lead_time_days`, `unit_price` exist in more than one source table) | Every colliding column explicitly renamed before merging (e.g., `customer_city`, `supplier_region`, `product_lead_time_days`) — zero ambiguous columns in the final file |
-| **9.0% of orders fully unpaid** | Found during the payment status breakdown, not previously quantified | Documented and flagged for financial reconciliation review in Phase 2 |
+### Week 4 data caveats (questions for the data owner)
+1. Pricing: the data holds one price list, so a price effect cannot be measured. Is there price history?
+2. Cancellations: there is no reason field, and cancelled orders carry a delivery date. What does the Cancelled status mean?
+3. Stock scale: how were purchase-order quantities (20 to 300 per line) set, against sales lines of 1 to 20?
+4. Ledger: why is every inventory adjustment positive (5 to 50 units)?
 
 ---
 
-## 8. Tools Used
+## 8. How to Run
 
-- **Python 3** with **pandas** for profiling, cleaning, merging, and validation
+Open any notebook anywhere inside the repository checkout and run all cells. Each notebook searches its own folder and every parent folder for the corrected merged files (`week-02/reports/week_02/merged`) and, for Q1, the Week 3 baseline (`week-03/kpi_outputs`). Otherwise set the environment variables `CADETX_MERGED` and `CADETX_KPI` to those folders. If the data cannot be found, the notebook stops with a message saying so. Each notebook writes its outputs, charts and a validation report next to itself and asserts that every check passes. Please keep all weekly folders lowercase (`week-01` to `week-04`).
+
+---
+
+## 9. Tools Used
+
+- **Python 3** with **pandas**, **NumPy** and **SciPy** for profiling, cleaning, merging, statistical testing and validation
 - **Jupyter Notebook** for a documented, reproducible workflow
-- **matplotlib** / **seaborn** for exploratory charts
+- **matplotlib** for charts
 - **GitHub** for version control and team collaboration
 
 ---
 
-## 9. Repository Structure
+## 10. Repository Structure
 
 ```
-├── processed_data/          # Cleaned tables, ready for merging and analysis
-├── raw_data/                # Original source tables
-├── week-01/                 # Week 1 notebook, data dictionary, KPI proposal, sprint notes
-├── week-02/                 # Week 2 deliverables, data dictionary, dim product inventory, sprint notes
-├── week-03/                 # Week 3 KPI notebook, updated data dictionary, locked analysis questions, sprint notes
+├── raw_data/                       # Original source tables
+├── processed_data/                 # Cleaned tables
+├── week-01/                        # Profiling notebook and report, data dictionary draft, KPI proposal
+├── week-02/                        # Cleaning and integration notebook, validation reports, corrected merged datasets
+│   └── reports/week_02/merged/     # Authoritative merged datasets
+├── week-03/                        # KPI notebook, KPI report, locked analysis questions
+│   └── kpi_outputs/                # KPI result tables
+├── week-04/                        # Deep dive
+│   ├── 04_deep_dive_analysis.ipynb # All four questions, 37 checks
+│   ├── analysis_outputs/  analysis_charts/  validation_report_week04.csv
+│   ├── standalone_question_reports/  # q1_revenue_drift, q2_regional_concentration, q10_stock_scale
+│   ├── week4_findings_summary.md
+│   ├── sprint_notes_week04.md
+│   ├── Corrections_Log.md
+│   └── README_how_to_run.md
 └── README.md
 ```
 
 ---
+
+## 11. Next Steps (Weeks 5 to 6)
+
+- Q3 Cancellations: test whether cancellation is concentrated by region, customer type, channel or product, building on the Q1 finding.
+- Resolve the open data-owner questions in Section 7, then revisit Q10 and the stock KPIs that depend on it.
+- Continue through the remaining locked questions in `week-03/analysis_questions_locked.md`.
 
 ## 10. Status
 

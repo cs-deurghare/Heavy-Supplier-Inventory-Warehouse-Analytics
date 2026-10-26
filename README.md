@@ -31,14 +31,14 @@ A four-person analytics team working in agile sprints with rotating weekly leade
 | :--- | :--- | :--- | :--- |
 | Chandrashekhar Deurghare | BI Analyst | Product, inventory and warehouse data integration and reporting | Q2 Regional concentration |
 | Salim Bello Muhammad | BI Analyst | Sales, customer and supplier data integration and reporting | Q1 Revenue drift |
-| Ibrahim Khalil | Data Analyst | Data quality, field-level cleaning and validation | Q10 Stock scale |
+| Ibrahim Khalil Umar | Data Analyst | Data quality, field-level cleaning and validation | Q10 Stock scale |
 | Abdibasid Mohamed Ali | Data Scientist | Dataset structure review and forecasting readiness | Q8 Supplier differentiation, plus review of all four findings |
 
 ---
 
 ## 3. Current Status and Authoritative Data
 
-Weeks 1 to 4 are complete. Every notebook runs end to end with no errors and stops if any of its validation checks fails.
+Weeks 1 to 4 are complete. Every notebook runs end to end with no errors and stops if any of its validation checks fail.
 
 **The authoritative dataset is the set of corrected Week 2 merged files** in `week-02/reports/week_02/merged/`:
 `sales_orders_full.csv`, `invoices_with_payments.csv`, `purchase_orders_full.csv`, `inventory_with_ledger.csv` and `stock_ledger_enriched.csv`.
@@ -157,21 +157,21 @@ Open any notebook anywhere inside the repository checkout and run all cells. Eac
 ## 10. Repository Structure
 
 ```
-├── raw_data/                       # Original source tables
 ├── processed_data/                 # Cleaned tables
+├── raw_data/                       # Original source tables
 ├── week-01/                        # Profiling notebook and report, data dictionary draft, KPI proposal
 ├── week-02/                        # Cleaning and integration notebook, validation reports, corrected merged datasets
 │   └── reports/week_02/merged/     # Authoritative merged datasets
 ├── week-03/                        # KPI notebook, KPI report, locked analysis questions
 │   └── kpi_outputs/                # KPI result tables
+|   └── README_how_to_run.md
 ├── week-04/                        # Deep dive
 │   ├── 04_deep_dive_analysis.ipynb # All four questions, 37 checks
-│   ├── analysis_outputs/  analysis_charts/  validation_report_week04.csv
+│   ├── analysis_charts/  analysis_outputs/  validation_report_week04.csv
 │   ├── standalone_question_reports/  # q1_revenue_drift, q2_regional_concentration, q10_stock_scale
-│   ├── week4_findings_summary.md
-│   ├── sprint_notes_week04.md
 │   ├── Corrections_Log.md
-│   └── README_how_to_run.md
+│   ├── sprint_notes_week04.md
+│   └── week4_findings_summary.md
 └── README.md
 ```
 

@@ -1,4 +1,4 @@
-Check_Item,Expected,Actual,Status
+Check_Items,Expected,Actual,Status
 sales rows (line grain),130402,130402,PASS
 unique orders,20000,20000,PASS
 PO rows (line grain),155495,155495,PASS

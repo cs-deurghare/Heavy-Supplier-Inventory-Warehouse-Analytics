@@ -1,0 +1,6 @@
+attribute,lowest_rate_%,highest_rate_%,chi2_p_value
+customer_region,9.12,10.37,0.436412
+branch_region,9.18,10.04,0.625877
+sales_channel,9.69,10.11,0.892748
+customer_type,9.54,10.46,0.590736
+payment_terms,9.54,10.23,0.776492

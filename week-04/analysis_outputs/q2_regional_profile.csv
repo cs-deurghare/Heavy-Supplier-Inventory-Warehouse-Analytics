@@ -1,0 +1,7 @@
+customer_region,net_revenue_inr,orders,customers,revenue_share_pct,customer_share_pct,orders_per_customer,rev_per_customer_inr_M,aov_inr_M
+South,7261744460,5722,158,31.63,31.60,36.22,45.96,1.27
+West,6730779040,5335,151,29.32,30.20,35.33,44.57,1.26
+East,4051950040,3161,87,17.65,17.40,36.33,46.57,1.28
+North,3938165590,3029,82,17.15,16.40,36.94,48.03,1.30
+Central,501842570,406,11,2.19,2.20,36.91,45.62,1.24
+North East,474505730,380,11,2.07,2.20,34.55,43.14,1.25

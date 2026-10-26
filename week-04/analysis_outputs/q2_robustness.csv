@@ -1,0 +1,14 @@
+measure,value
+"epsilon-squared, revenue per customer",0.0
+"epsilon-squared, orders per customer",0.0
+South+West revenue share (%),60.95
+South+West share bootstrap low (%),56.46
+South+West share bootstrap high (%),65.33
+largest customer share of revenue (%),0.37
+top 5 customers share of revenue (%),1.68
+South+West share without top 5 (%),61.99
+Central+NE vs others revenue/customer ratio,0.96
+ratio bootstrap low,0.88
+ratio bootstrap high,1.06
+orders per customer Kruskal-Wallis p,0.43
+customer vs branch region Cramér's V,0.74

@@ -1,4 +1,4 @@
-# Week 4 full notebook: corrections log (25 October 2026, final v2)
+# Week 4 full notebook: corrections log
 Corrected copy of `04_deep_dive_analysis.ipynb`. Runs end to end with 0 errors; 37 of 37 validation checks pass (it was 22).
 
 | # | Issue | Fix | Effect on the answer |

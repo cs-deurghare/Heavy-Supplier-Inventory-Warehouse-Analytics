@@ -1,0 +1,6 @@
+test,value,p_value
+"Revenue per customer, 6 regions (Kruskal-Wallis)",6.3388,0.2746
+"Orders per customer, 6 regions (Kruskal-Wallis)",4.9102,0.4269
+"Revenue per customer, Central+NE vs others: ratio (bootstrap 95% low)",0.8792,
+"Revenue per customer, Central+NE vs others: ratio",0.965,
+"Revenue per customer, Central+NE vs others: ratio (bootstrap 95% high)",1.0572,

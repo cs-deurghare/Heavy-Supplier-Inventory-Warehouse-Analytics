@@ -1,0 +1,12 @@
+test,result,statistic,p_value,verdict
+"Average order value, 2019 vs 2024 (Welch t)","1,276,812 vs 1,244,247",1.1745,0.2402,Not distinguishable from noise
+"Order-value trend, all delivered orders (OLS slope per year)","-5,916 per year",-1.2618,0.2071,Not distinguishable from noise
+"Net revenue change 2019->2024, bootstrap 95% interval (%)","-4.96% observed; [-8.99, -0.84]",,,Interval excludes zero (narrowly)
+"Placed value (demand before cancellations) change 2019->2024, bootstrap 95% interval (%)","-1.96% observed; [-5.82, 2.23]",,,Interval includes zero (demand is flat)
+"Net revenue change 2023->2024 step alone, bootstrap 95% interval (%)","-3.84% observed; [-7.86, 0.51]",,,Interval includes zero (step not distinguishable from year-to-year variation)
+"Product-mix effect 2019->2024, permutation (5,000 shuffles)","-41.9M; shuffled 95% range [-116.4M, 117.0M]",,0.471,Not distinguishable from noise
+"Product-mix effect 2023->2024 step only, permutation (5,000 shuffles)","-57.3M; shuffled 95% range [-118.9M, 118.1M]",,0.3444,Not distinguishable from noise
+"Cancellation rate, six-year homogeneity (chi-square, df 5)",could all six years share one rate?,6.4464,0.2652,Not distinguishable from noise
+"Cancellation rate, linear trend over six years (Cochran-Armitage)",z = 2.18,2.1751,0.0296,"Weak trend: detectable, but no single year differs"
+"Cancellation rate, 2019 vs 2024 endpoints (chi-square)",9.14% vs 10.86%,5.2395,0.0221,Tentative: endpoints chosen after looking
+"Value of a cancelled order, 2019 vs 2024 (Welch t)","1,213,570 vs 1,331,084",-1.3422,0.18,Not distinguishable from noise

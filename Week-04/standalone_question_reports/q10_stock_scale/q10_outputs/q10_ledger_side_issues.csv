@@ -1,0 +1,5 @@
+measure,value
+Ledger IN units / received PO units,0.9111396314747545
+Ledger OUT units / delivered units,0.9108401305651534
+Ledger IN / OUT,18.134081356149185
+"Adjustments: min, max","5, 50"

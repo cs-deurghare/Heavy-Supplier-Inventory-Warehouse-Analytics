@@ -1,0 +1,17 @@
+Check_Item,Expected,Actual,Status
+sales lines,130402,130402,PASS
+unique orders,20000,20000,PASS
+unique customers,500,500,PASS
+every customer is in exactly one region,1,1,PASS
+"net revenue (Delivered, ex-GST) matches Week 3, Rs 22.96B",22.96,22.96,PASS
+regional revenue sums to total,0,0,PASS
+regional customers sum to 500,500,500,PASS
+South + West share is 60.9% (Week 3),60.9,60.9,PASS
+revenue per customer does not differ by region (p > 0.05),>0.05,0.275,PASS
+orders per customer does not differ by region (p > 0.05),>0.05,0.427,PASS
+regional effect on revenue per customer is negligible (epsilon-squared < 0.01),<0.01,0.0027,PASS
+South + West share stays above 55% across the bootstrap interval,>55,56.5,PASS
+no single customer drives the concentration (largest < 1% of revenue),<1,0.37,PASS
+removing the top 5 customers moves the South + West share by less than those customers' own revenue share (%),<1.68,1.04,PASS
+Central and North East have no branch,True,"['Central', 'North East']",PASS
+customer region and branch region are strongly linked (Cramer's V > 0.5),>0.5,0.74,PASS

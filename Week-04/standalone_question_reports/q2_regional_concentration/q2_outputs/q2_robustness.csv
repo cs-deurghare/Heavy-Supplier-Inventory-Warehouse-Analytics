@@ -1,0 +1,9 @@
+measure,value
+"epsilon-squared, revenue per customer",0.0027
+"epsilon-squared, orders per customer",0.0
+South+West revenue share (%),60.9457
+South+West share bootstrap low (%),56.4648
+South+West share bootstrap high (%),65.3343
+largest customer share of revenue (%),0.3701
+top 5 customers share of revenue (%),1.6779
+South+West share without top 5 (%),61.9858

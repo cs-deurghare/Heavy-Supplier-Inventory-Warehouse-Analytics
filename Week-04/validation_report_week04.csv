@@ -14,7 +14,7 @@ effects add to total change 2019-2024,0,0.0,PASS
 2023→2024 fall is ₹146.7M,146.7,146.7,PASS
 shares sum to 100%,100,100.0,PASS
 2023→2024 mix effect is not distinguishable from noise (p > 0.05),>0.05,0.349,PASS
-2023→2024 permutation statistic reproduces the decomposition mix effect (within ₹1M),0,-0.0,PASS
+"2023→2024 permutation statistic equals the quantity-mix effect used in the standalone bridge, -₹57.3M (within ₹1M)",0,-0.0,PASS
 six-year cancellation rates are consistent with one constant rate (p > 0.05),>0.05,0.265,PASS
 no cancellation-reason field in the merged data,0,0,PASS
 customers across regions = all customers,500,500,PASS

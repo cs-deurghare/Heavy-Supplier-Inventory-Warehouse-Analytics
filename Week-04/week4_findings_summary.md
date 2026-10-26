@@ -2,7 +2,7 @@
 **CadetX Heavy Supplier, Inventory & Warehouse Analytics — Phase 2 (Deep-Dive Analysis)**
 
 **Questions answered:** Q1 (revenue drift), Q2 (regional concentration), Q8 (supplier differentiation), Q10 (stock-scale gap)
-**Source:** `04_deep_dive_analysis.ipynb` (Week-04_final_v2) on the corrected Week-2 merged datasets. 37 of 37 validation checks pass.
+**Source:** `04_deep_dive_analysis.ipynb` (final v2) on the corrected Week-2 merged datasets. 37 of 37 validation checks pass.
 **Basis:** net revenue = `line_total` (ex-GST) of Delivered orders = ₹22.96B (20,000 orders, 130,402 lines, 500 customers).
 
 ---
@@ -11,7 +11,7 @@
 
 | Q | Finding in one line | Confidence |
 |---|---|---|
-| **Q1** | Revenue fell ₹146.7M (−3.8%) in 2024. About 57% is fewer delivered orders and 43% is lower value per order, but the fall itself is **not statistically distinguishable from no change**. Price cannot be tested. | Descriptive; weak statistical support |
+| **Q1** | Revenue fell ₹192.0M (−5.0%) from 2019 to 2024, mostly volume (78%); price cannot be tested. The 2023 to 2024 step is ₹146.7M (−3.8%). About 57% is fewer delivered orders and 43% is lower value per order, but the fall itself is **not statistically distinguishable from no change**. Price cannot be tested. | Descriptive; weak statistical support |
 | **Q2** | South + West hold about 61% of revenue because they hold about 62% of customers. A customer is worth the same in every region. | Strong |
 | **Q8** | Suppliers are **not distinguishable** on on-time rate, delay, cancellations, cost or reliability score. The only real difference is lead time (10.5 to 28.5 days). | Strong |
 | **Q10** | Purchases are **18.1× sales**, for every product, unit of measure and year. The purchase side is the outlier. **Stock KPIs cannot be reported yet.** | Strong on the gap; cause unknown |
@@ -117,4 +117,21 @@ Q3, Q5, Q6, Q7 and Q11 in Week 5; the Q4 follow-up, Q12 and Q13 in Week 6. Q11 d
 
 ---
 
-*Method notes.* Tests are Kruskal-Wallis, chi-square, permutation and bootstrap (5,000 resamples, seed 42). The Q1 split uses the log-mean (LMDI) method. Q2 robustness tests follow Ibrahim Khalil's Q2 package; the Q8 per-PO correction follows Salim's version. Re-run: `04_deep_dive_analysis.ipynb` with the five corrected merged files in a `merged/` folder.
+*Method notes.* Tests are Kruskal-Wallis, chi-square, permutation and bootstrap (5,000 resamples, seed 42). The Q1 split uses the log-mean (LMDI) method. Q2 robustness tests (effect sizes, interval, top-customer check) and the Q8 per-PO correction were added in the final revision. Re-run: `04_deep_dive_analysis.ipynb` with the five corrected merged files in a `merged/` folder.
+
+
+---
+
+## Method note: how the Q1 numbers in this folder reconcile
+
+Two decompositions of the same revenue change appear in this folder. Both add up exactly to the change and tell the same story.
+
+| 2023 to 2024 (₹M) | Notebook (four-factor log-mean) | Standalone Q1 report (price / volume / mix bridge) |
+|---|---|---|
+| Orders placed | -33.8 | -34.0 |
+| Cancellation rate | -49.0 | -49.4 |
+| Basket size | -5.8 | -5.9 |
+| Product mix | -58.0 (39.6%) | -57.3 (39%) |
+| Total | -146.7 | -146.7 |
+
+They differ by less than ₹0.8M because they weight the same change between factors by different conventions. For 2019 to 2024 the mix effect is -42.7 (notebook) vs -41.9 (bridge). The permutation test uses the quantity-mix definition (-57.3). The bootstrap interval for the 2023 to 2024 revenue change is -7.8% to +0.4% in the notebook and -7.9% to +0.5% in the standalone report: each uses its own random stream (seed 42), so endpoints differ by up to 0.15 points. Conclusions are identical: price is not testable, the mix and 2024 step are not distinguishable from noise, and the cancellation rise is weak evidence.

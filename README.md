@@ -163,7 +163,7 @@ Open any notebook anywhere inside the repository checkout and run all cells. Eac
 ├── week-02/                        # Cleaning and integration notebook, validation reports, corrected merged datasets
 │   └── reports/week_02/merged/     # Authoritative merged datasets
 ├── week-03/                        # KPI notebook, KPI report, locked analysis questions
-│   └── kpi_outputs/                # KPI result tables
+│   ├── kpi_outputs/                # KPI result tables
 |   └── README_how_to_run.md
 ├── week-04/                        # Deep dive
 │   ├── 04_deep_dive_analysis.ipynb # All four questions, 37 checks

@@ -31,7 +31,7 @@ A four-person analytics team working in agile sprints with rotating weekly leade
 | :--- | :--- | :--- | :--- |
 | Chandrashekhar Deurghare | BI Analyst | Product, inventory and warehouse data integration and reporting | Q2 Regional concentration |
 | Salim Bello Muhammad | BI Analyst | Sales, customer and supplier data integration and reporting | Q1 Revenue drift |
-| Ibrahim Khalil Umar | Data Analyst | Data quality, field-level cleaning and validation | Q10 Stock scale |
+| Ibrahim Khalil | Data Analyst | Data quality, field-level cleaning and validation | Q10 Stock scale |
 | Abdibasid Mohamed Ali | Data Scientist | Dataset structure review and forecasting readiness | Q8 Supplier differentiation, plus review of all four findings |
 
 ---

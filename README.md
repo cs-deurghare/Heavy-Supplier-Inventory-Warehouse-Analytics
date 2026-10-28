@@ -183,7 +183,7 @@ Open any notebook anywhere inside the repository checkout and run all cells. Eac
 - Resolve the open data-owner questions in Section 7, then revisit Q10 and the stock KPIs that depend on it.
 - Continue through the remaining locked questions in `week-03/analysis_questions_locked.md`.
 
-## 10. Status
+## 12. Status
 
 Weeks 1 through 3 are complete, validated, and submitted. The Week 3 `merged_dataset.csv` (with supplier data included) is the current authoritative dataset and the base for all Phase 2 work. Two items are carried forward as Phase 2 analysis questions rather than open issues: tracing the `current_stock` scale mismatch to its source, and the 6 `stock_ledger` vs. `inventory_master` mismatches carried from earlier weeks.
 Week 1 and Week 2 deliverables are complete, validated, and submitted. Subsequent weeks build directly on the cleaned, merged, and validated data established here.

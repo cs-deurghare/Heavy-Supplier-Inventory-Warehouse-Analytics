@@ -164,13 +164,14 @@ Open any notebook anywhere inside the repository checkout and run all cells. Eac
 │   └── reports/week_02/merged/     # Authoritative merged datasets
 ├── week-03/                        # KPI notebook, KPI report, locked analysis questions
 │   ├── kpi_outputs/                # KPI result tables
-|   └── README_how_to_run.md
+│   └── README_how_to_run.md
 ├── week-04/                        # Deep dive
 │   ├── 04_deep_dive_analysis.ipynb # All four questions, 37 checks
 │   ├── analysis_charts/  analysis_outputs/  validation_report_week04.csv
 │   ├── standalone_question_reports/  # q1_revenue_drift, q2_regional_concentration, q10_stock_scale
 │   ├── Corrections_Log.md
 │   ├── sprint_notes_week04.md
+│   ├── README_how_to_run.md
 │   └── week4_findings_summary.md
 └── README.md
 ```
@@ -183,7 +184,15 @@ Open any notebook anywhere inside the repository checkout and run all cells. Eac
 - Resolve the open data-owner questions in Section 7, then revisit Q10 and the stock KPIs that depend on it.
 - Continue through the remaining locked questions in `week-03/analysis_questions_locked.md`.
 
+---
+
 ## 12. Status
 
-Weeks 1 through 3 are complete, validated, and submitted. The Week 3 `merged_dataset.csv` (with supplier data included) is the current authoritative dataset and the base for all Phase 2 work. Two items are carried forward as Phase 2 analysis questions rather than open issues: tracing the `current_stock` scale mismatch to its source, and the 6 `stock_ledger` vs. `inventory_master` mismatches carried from earlier weeks.
-Week 1 and Week 2 deliverables are complete, validated, and submitted. Subsequent weeks build directly on the cleaned, merged, and validated data established here.
+Weeks 1 to 4 are complete, validated and submitted. The five corrected Week 2 merged datasets in `week-02/reports/week_02/merged/` are the authoritative data and the base for all later work; the earlier single `merged_dataset.csv` is no longer used.
+
+Carried forward as analysis questions rather than closed issues:
+
+- Tracing the purchase-order versus sales stock-scale gap (Q10, about 18.1 times) to its source. This needs the data owner's answer (Section 7).
+- The 14 `stock_ledger` versus `inventory_master` product-branch mismatches (this replaces the earlier count of 6).
+
+Weeks 5 and 6 build directly on this cleaned, merged and validated data.

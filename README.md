@@ -149,14 +149,6 @@ Supporting files in `week-05/`: `05_deep_dive_analysis.ipynb` (master notebook: 
 - Purchase-order lines share a supplier and dates, so on-time, delay and lead time are tested per purchase order, not per line.
 - Claims are worded to match their tests: a result is called "not established" or "weak evidence" when the test does not support more.
 
-### Week 4 data caveats (questions for the data owner)
-1. Pricing: the data holds one price list, so a price effect cannot be measured. Is there price history?
-2. Cancellations: there is no reason field, and cancelled orders carry a delivery date. What does the Cancelled status mean?
-3. Stock scale: how were purchase-order quantities (20 to 300 per line) set, against sales lines of 1 to 20?
-4. Ledger: is there a reason code for adjustments? Quantities are stored unsigned (5 to 50) and half reduce the balance; the sign is only visible in `running_balance`.
-
----
-
 ## 9. How to Run
 
 Open any notebook anywhere inside the repository checkout and run all cells. Each notebook searches its own folder and every parent folder for the corrected merged files (`week-02/reports/week_02/merged`) for Q5 the raw `customers.csv` (`raw_data`), and, for Q1, the Week 3 baseline (`week-03/kpi_outputs`). Otherwise set the environment variables `CADETX_MERGED`, `CADETX_RAW` and `CADETX_KPI` to those folders. If the data cannot be found, the notebook stops with a message saying so. Each notebook writes its outputs, charts and a validation report next to itself and asserts that every check passes. 

@@ -1,7 +1,7 @@
 # Heavy Supplier, Inventory & Warehouse Analytics
 
 ![Project](https://img.shields.io/badge/Project-Heavy%20Supplier%20Analytics-blue?style=for-the-badge)
-![Sprint](https://img.shields.io/badge/Sprint-Week%2004%20Complete-brightgreen?style=for-the-badge)
+![Sprint](https://img.shields.io/badge/Sprint-Week%2005%20Complete-brightgreen?style=for-the-badge)
 ![Validation](https://img.shields.io/badge/Validation-All%20checks%20passing-success?style=for-the-badge)
 
 A CadetX Virtual Work Experience project analysing a heavy machinery supplier's sales, inventory, purchasing and warehouse operations across 12 relational data tables, to support evidence-based decisions on stock management, supplier performance and customer value.
@@ -18,6 +18,7 @@ This repository holds the code, cleaned data, documentation and findings produce
 | Integration | 2 | Merge the tables into analysis-ready datasets and validate every join |
 | Measurement | 3 | Calculate the first KPIs and lock the analysis questions |
 | Deep dive | 4 | Answer four locked questions (Q1, Q2, Q8, Q10) with tested, reproducible analysis |
+| Deep dive | 5 | Answer Q3, Q5, Q6, Q7 and Q12, and run the Q11 gate with a labelled scenario |
 
 **Dataset:** 12 source tables covering sales orders, customers, products, suppliers, purchase orders, invoices, payments, stock ledger, branches and inventory.
 
@@ -27,22 +28,22 @@ This repository holds the code, cleaned data, documentation and findings produce
 
 A four-person analytics team working in agile sprints with rotating weekly leadership.
 
-| Name | Role | Focus | Week 4 question |
-| :--- | :--- | :--- | :--- |
-| Chandrashekhar Deurghare | BI Analyst | Product, inventory and warehouse data integration and reporting | Q2 Regional concentration |
-| Salim Bello Muhammad | BI Analyst | Sales, customer and supplier data integration and reporting | Q1 Revenue drift |
-| Ibrahim Khalil Umar | Data Analyst | Data quality, field-level cleaning and validation | Q10 Stock scale |
-| Abdibasid Mohamed Ali | Data Scientist | Dataset structure review and forecasting readiness | Q8 Supplier differentiation, plus review of all four findings |
+| Name | Role | Focus | Week 4 question | Week 5 questions |
+| :--- | :--- | :--- | :--- | :--- |
+| Chandrashekhar Deurghare | BI Analyst | Product, inventory and warehouse data integration and reporting | Q2 Regional concentration | Q6 Margin concentration |
+| Salim Bello Muhammad | BI Analyst | Sales, customer and supplier data integration and reporting | Q1 Revenue drift | Q3 Cancellation, Q5 Customer lifetime value |
+| Ibrahim Khalil Umar | Data Analyst | Data quality, field-level cleaning and validation | Q10 Stock scale | Q11 gate and scenario, Q12 Ledger mismatches |
+| Abdibasid Mohamed Ali | Data Scientist | Dataset structure review and forecasting readiness | Q8 Supplier differentiation, plus review of all four findings | Q7 Lead-time seasonality, review of all Week 5 findings |
 
 ---
 
 ## 3. Current Status and Authoritative Data
 
-Weeks 1 to 4 are complete. Every notebook runs end to end with no errors and stops if any of its validation checks fail.
+Weeks 1 to 5 are complete. Every notebook runs end to end with no errors and stops if any of its validation checks fail.
 
 **The authoritative dataset is the set of corrected Week 2 merged files** in `week-02/reports/week_02/merged/`:
 `sales_orders_full.csv`, `invoices_with_payments.csv`, `purchase_orders_full.csv`, `inventory_with_ledger.csv` and `stock_ledger_enriched.csv`.
-Weeks 3 and 4 both read these files. Net revenue is ex-GST and Delivered-only; the first Week 3 draft reported a higher figure that included GST and cancelled orders, and was corrected. The single 89-column merged file described in earlier drafts of this README is **superseded** and is not used by any current notebook.
+Weeks 3, 4 and 5 all read these files. Net revenue is ex-GST and Delivered-only; the first Week 3 draft reported a higher figure that included GST and cancelled orders, and was corrected. The single 89-column merged file described in earlier drafts of this README is **superseded** and is not used by any current notebook.
 
 **Revenue definition used everywhere:** net revenue is `line_total` (ex-GST) of **Delivered** orders only, by order year. Total net revenue is ₹22.96B across 18,033 delivered orders (20,000 orders in total).
 
@@ -114,16 +115,33 @@ Five issues needing business input are recorded in `reports/week_02/task7_unreso
 
 ## 7. Week 4: Deep Dive (Q1, Q2, Q8, Q10)
 
-`week-04/04_deep_dive_analysis.ipynb` answers all four questions (37 of 37 validation checks pass). `week-04/standalone_question_reports/` holds one self-contained folder per question for Q1, Q2 and Q10 (26, 16 and 19 checks), each with its own notebook, outputs, charts and report. All were tested from a clean copy of the repository layout.
+`week-04/04_deep_dive_analysis.ipynb` answers all four questions (37 of 37 validation checks pass). `week-04/standalone_question_reports/` holds one self-contained folder per question for Q1, Q2 and Q10 (26, 16 and 24 checks), each with its own notebook, outputs, charts and report. All were tested from a clean copy of the repository layout.
 
 | Question | Answer |
 | :--- | :--- |
 | **Q1 Revenue drift** | Delivered revenue fell ₹192.0M (-4.96%) from 2019 to 2024. In the price/volume/mix bridge, volume explains 78% (-₹150.1M) and product mix 22% (-₹41.9M, not distinguishable from noise, p = 0.47). Price cannot be tested because the data holds one price list. There is no evidence of a fall in demand. 76% of the fall lands in 2024 (-₹146.7M, -3.8%), but that step is not distinguishable from no change (interval -7.8% to +0.4%). Cancellation rose from 9.1% to 10.9%, but the evidence is weak (all-years p = 0.27) and no segment explains it. |
 | **Q2 Regional concentration** | South (31.63%) and West (29.32%) hold 60.95% of revenue (interval 56.5% to 65.3%) and 61.8% of customers. A customer is worth about the same in every region (₹43M to ₹48M, p = 0.275). The gap is the size of the customer base. Central and North East have 11 customers each and no branch. The data cannot separate a small market from an unserved one. |
 | **Q8 Supplier differentiation** | Tested per purchase order, the 8 suppliers are not distinguishable on on-time rate (84.2% to 85.3%, p = 0.97), delay (p = 0.88), cancellation (p = 0.91) or unit cost (p = 0.84). They differ only on lead time (10.5 to 28.5 days). |
-| **Q10 Stock scale** | Unresolved. Received units are 18.1 times units sold and purchase spend is 17.3 times cost of goods sold, in every product. PO lines are about 15 times larger than sales lines. The ledger covers about 91% of both and every adjustment is positive. Stock KPIs stay not reportable until the data owner explains the PO quantities. |
+| **Q10 Stock scale** | Unresolved. Received units are 18.1 times units sold and purchase spend is 17.3 times cost of goods sold, in every product. PO lines are about 15 times larger than sales lines. The ledger covers about 91% of both. Adjustment quantities are stored unsigned and half reduce the balance (see Q12). Stock KPIs stay not reportable until the data owner explains the PO quantities. |
 
 Supporting files in `week-04/`: `week4_findings_summary.md` (includes a method note reconciling the two Q1 decompositions), `sprint_notes_week04.md`, `Corrections_Log.md`, `README_how_to_run.md`.
+
+## 8. Week 5: Deep Dive (Q3, Q5, Q6, Q7, Q11, Q12)
+
+`week-05/standalone_question_reports/` holds one self-contained folder per question, each with its own notebook, outputs, charts, report and validation file. **167 of 167 checks pass** (`week-05/validation_report_week05.csv`) and every notebook was re-run from a clean copy of the repository layout with identical outputs.
+
+| Question | Answer |
+| :--- | :--- |
+| **Q3 Cancellation** (27 checks) | Not concentrated anywhere. 1,967 of 20,000 orders cancelled (9.84%, ₹2.49B). Across 12 cuts and 30 products nothing is significant after adjustment (smallest adjusted p = 0.35 for products, 0.45 for cuts; whole-scan permutation p = 0.37). The rise from 9.1% (2019) to 10.9% (2024) is weak, post-hoc evidence. |
+| **Q5 Customer lifetime value** (34 checks) | A customer is worth about the same whatever the type (mean ₹9.9M observed gross profit, type p = 0.41). No customer dominates (largest 0.37%, top 10% hold 14.2%). Government leads on orders because it has the most customers. Industry segment is an exploratory lead to re-test (adjusted p = 0.059). |
+| **Q6 Margin concentration** (38 checks) | EB-600 and TA-800 are 35.9% of revenue but 31.7% of gross profit and pull the 21.56% portfolio margin down by 0.91 points (about ₹210M). The portfolio margin is stable over time. A price what-if is arithmetic only (no price history); the 2024 EB-600 fall is within chance. |
+| **Q7 Lead-time seasonality** (34 checks) | Not seasonal. Lead time is an even spread of 1 to 15 days (mean 8.06); month p = 0.85, no yearly wave, and a month index does not improve a forecast. The delivery date looks generated or planned. |
+| **Q11 Replenishment policy** (16 checks) | Blocked by Q10: gate and labelled scenario only. Ledger receipts are 18.13 times units sold. On the sales side the existing thresholds fill 94.3% of demand; a demand-based trigger at 95% service gives 99.4% for about 19% more stock value. Not a stock finding. |
+| **Q12 Ledger mismatches** (18 checks) | The 14 pairs differ because `inventory_master.current_stock` is behind the ledger by its last one or two movements (gaps 16 to 515 units, at most 0.45%). Adjustment quantities are stored unsigned, with 1,227 applied as additions and 1,227 as reductions; this is not the cause. |
+
+**Correction to a Week 4 caveat.** "Every ledger adjustment is positive" is true of the `quantity` column only: half of the adjustments reduce the balance (visible in `running_balance`). The Week 4 headline Q10 result (18.1 times) is unaffected, but the corrected-scale replay changes when adjustments are signed: at k = 18.1 the average balance is 142 (not 330) and the balance is below zero on 37% of days (not 28%). The Q10 notebook, report, findings summary, sprint notes and `Corrections_Log.md` in `week-04/` were updated accordingly (Q10 now has 24 checks), and `week-03/analysis_questions_locked.md` records the answered questions. The reasoning is in `week-05/week4_corrections_proposal/`.
+
+Supporting files in `week-05/`: `05_deep_dive_analysis.ipynb` (master notebook: re-runs all six question notebooks and rebuilds the combined validation), `week5_findings_summary.md`, `sprint_notes_week05.md`, `Corrections_Log_week05.md`, `validation_report_week05.csv`, `README_how_to_run.md`, `week4_corrections_proposal/`.
 
 ### Week 4 methods
 - Revenue change is split exactly into price, volume and mix; volume is further split into orders placed, cancellation rate and basket size (log-mean method).
@@ -135,17 +153,17 @@ Supporting files in `week-04/`: `week4_findings_summary.md` (includes a method n
 1. Pricing: the data holds one price list, so a price effect cannot be measured. Is there price history?
 2. Cancellations: there is no reason field, and cancelled orders carry a delivery date. What does the Cancelled status mean?
 3. Stock scale: how were purchase-order quantities (20 to 300 per line) set, against sales lines of 1 to 20?
-4. Ledger: why is every inventory adjustment positive (5 to 50 units)?
+4. Ledger: is there a reason code for adjustments? Quantities are stored unsigned (5 to 50) and half reduce the balance; the sign is only visible in `running_balance`.
 
 ---
 
-## 8. How to Run
+## 9. How to Run
 
-Open any notebook anywhere inside the repository checkout and run all cells. Each notebook searches its own folder and every parent folder for the corrected merged files (`week-02/reports/week_02/merged`) and, for Q1, the Week 3 baseline (`week-03/kpi_outputs`). Otherwise set the environment variables `CADETX_MERGED` and `CADETX_KPI` to those folders. If the data cannot be found, the notebook stops with a message saying so. Each notebook writes its outputs, charts and a validation report next to itself and asserts that every check passes. Please keep all weekly folders lowercase (`week-01` to `week-04`).
+Open any notebook anywhere inside the repository checkout and run all cells. Each notebook searches its own folder and every parent folder for the corrected merged files (`week-02/reports/week_02/merged`) for Q5 the raw `customers.csv` (`raw_data`), and, for Q1, the Week 3 baseline (`week-03/kpi_outputs`). Otherwise set the environment variables `CADETX_MERGED`, `CADETX_RAW` and `CADETX_KPI` to those folders. If the data cannot be found, the notebook stops with a message saying so. Each notebook writes its outputs, charts and a validation report next to itself and asserts that every check passes. 
 
 ---
 
-## 9. Tools Used
+## 10. Tools Used
 
 - **Python 3** with **pandas**, **NumPy** and **SciPy** for profiling, cleaning, merging, statistical testing and validation
 - **Jupyter Notebook** for a documented, reproducible workflow
@@ -154,7 +172,7 @@ Open any notebook anywhere inside the repository checkout and run all cells. Eac
 
 ---
 
-## 10. Repository Structure
+## 11. Repository Structure
 
 ```
 ├── processed_data/                 # Cleaned tables
@@ -173,27 +191,38 @@ Open any notebook anywhere inside the repository checkout and run all cells. Eac
 │   ├── sprint_notes_week04.md
 │   ├── README_how_to_run.md
 │   └── week4_findings_summary.md
+├── week-05/                        # Deep dive (Q3, Q5, Q6, Q7, Q11, Q12)
+│   ├── 05_deep_dive_analysis.ipynb   # Master notebook: re-runs all six, 25 checks, combined validation
+│   ├── standalone_question_reports/  # q3_cancellation_concentration, q5_customer_lifetime_value, q6_margin_concentration,
+│   │                                 # q7_lead_time_seasonality, q11_stock_scale_gate, q12_ledger_mismatches
+│ 
+│   ├── validation_report_week05.csv  # 167 checks
+│   ├── validation_report_week05_master.csv  # 25 checks of the master notebook
+│   ├── Corrections_Log_week05.md
+│   ├── sprint_notes_week05.md
+│   ├── README_how_to_run.md
+│   └── week5_findings_summary.md
 └── README.md
 ```
 
 ---
 
-## 11. Next Steps (Weeks 5 to 6)
+## 12. Next Steps (Week 6)
 
-- Q3 Cancellations: test whether cancellation is concentrated by region, customer type, channel or product, building on the Q1 finding.
-- Resolve the open data-owner questions in Section 7, then revisit Q10 and the stock KPIs that depend on it.
-- Continue through the remaining locked questions in `week-03/analysis_questions_locked.md`.
+- Agree and apply the Week 4 adjustment-sign corrections in one commit, and re-run Q10 Part D with signed adjustments.
+- Q4 follow-up (payment and outstanding balances) and Q13 (customer master dates), as set in `week-03/analysis_questions_locked.md`.
+- Re-test the Q5 industry-segment lead and the Q3 2024 cancellation uptick when more data is available.
 
 ---
 
-## 12. Status
+## 13. Status
 
-Weeks 1 to 4 are complete, validated and submitted. The five corrected Week 2 merged datasets in `week-02/reports/week_02/merged/` are the authoritative data and the base for all later work; the earlier single `merged_dataset.csv` is no longer used.
+Weeks 1 to 5 are complete, validated and submitted. The five corrected Week 2 merged datasets in `week-02/reports/week_02/merged/` are the authoritative data and the base for all later work; the earlier single `merged_dataset.csv` is no longer used.
 
-Carried forward as analysis questions rather than closed issues:
+Carried forward as open items rather than closed issues:
 
 - Tracing the purchase-order versus sales stock-scale gap (Q10, about 18.1 times) to its source. This needs the data owner's answer (Section 7).
-- The 14 `stock_ledger` versus `inventory_master` product-branch mismatches (this replaces the earlier count of 6).
+- The 14 `stock_ledger` versus `inventory_master` product-branch mismatches are explained in Week 5 (Q12) as the master being behind the ledger by its last one or two movements; why only these 14 pairs is a question for the data owner.
+- Team agreement on the Week 4 adjustment-sign corrections made in Week 5 (Q10 notebook and report, findings summary, sprint notes, `Corrections_Log.md`).
 
-Weeks 5 and 6 build directly on this# Heavy Supplier, Inventory & Warehouse Analytics
-
+Week 6 builds directly on this cleaned, merged and validated data.

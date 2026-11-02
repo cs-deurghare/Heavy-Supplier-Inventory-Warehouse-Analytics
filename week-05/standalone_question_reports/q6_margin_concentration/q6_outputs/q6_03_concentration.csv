@@ -1,0 +1,15 @@
+measure,value
+"Top 2 products, share of revenue (%)",35.91148793098146
+"Top 2 products, share of gross profit (%)",31.671926571962608
+"Top 5 products, share of revenue (%)",58.62586074859836
+"Top 5 products, share of gross profit (%)",53.88467410450435
+Gini of revenue across 30 products,0.6336180921169368
+Gini of gross profit across 30 products,0.5840427180239893
+Herfindahl index of revenue (equal shares = 0.033),0.09819363321420436
+Herfindahl index of gross profit,0.08500352463736244
+"Spearman, product revenue vs margin",-0.9399332591768631
+  p-value,1.3470660963756291e-14
+"Spearman, unit price vs margin",-0.9339119056311823
+  p-value,4.9421882667494233e-14
+Lowest product margin (%),17.191977077363894
+Highest product margin (%),45.83333333333333

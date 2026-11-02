@@ -1,0 +1,7 @@
+industry_segment,customers,mean_gross_profit,median_gross_profit
+Manufacturing,70,10461916.0,10443355.0
+Rental,67,10257185.0,10165660.0
+Infrastructure,79,10074384.0,9853170.0
+Logistics,96,9882546.0,9448500.0
+Construction,90,9666378.0,9266995.0
+Mining,98,9345576.0,9485870.0

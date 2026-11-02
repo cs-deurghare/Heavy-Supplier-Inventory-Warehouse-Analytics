@@ -1,0 +1,5 @@
+measure,value
+"smallest p-value, real scan",0.0375
+family-wise permutation p,0.3665
+"median smallest p, shuffled scans",0.0576
+"5th percentile smallest p, shuffled scans",0.0039

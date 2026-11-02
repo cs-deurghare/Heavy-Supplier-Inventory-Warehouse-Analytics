@@ -1,0 +1,17 @@
+check,passed,detail
+ledger IN is about 18.1× OUT (Q10 reproduces),True,18.13
+180 product–branch pairs,True,
+monthly sales per pair is on the same order as the thresholds (median 80 to 110 units),True,84.3
+current_stock is more than 200× max_stock (median of per-pair ratios about 349×; ratio of medians about 347×),True,349.4 / 347.2
+ledger OUT holds about 91% of delivered units and lines,True,"units 0.9108, lines 0.9108"
+coverage explains the ledger median: 84.3 / 0.911 is within 1 unit of the delivered-lines median,True,92.6 vs 92.7
+Week 4's about 95 is the mean across pairs on delivered lines (94.5 to 96),True,94.8
+demand matrix total equals ledger OUT total,True,1124832
+demand matrix has 180 pairs and a full daily calendar,True,"(180, 2203)"
+every pair has a lead time from received purchase-order lines,True,180
+lead times are in a plausible range (5 to 35 days),True,17–19
+simulation: sold + unmet equals demand for every policy and pair,True,
+4 policies x 180 pairs simulated,True,720
+fill rate lies between 0 and 1 everywhere,True,
+higher service factor never lowers total fill rate (B90 <= B95 <= B99),True,
+chart written,True,

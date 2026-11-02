@@ -1,0 +1,4 @@
+measure,cancelled_mean,delivered_mean,cancelled_median,delivered_median,p_value
+Order value (Rs),1265076.3244,1273165.1655,1009600.0,1014840.0,0.5285
+Lines per order,6.4799,6.5245,7.0,7.0,0.5847
+Days from order to recorded delivery date,8.0524,8.0627,8.0,8.0,0.936

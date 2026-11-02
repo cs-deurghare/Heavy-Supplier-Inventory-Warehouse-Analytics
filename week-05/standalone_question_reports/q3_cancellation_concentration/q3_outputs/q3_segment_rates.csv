@@ -1,0 +1,66 @@
+dimension,segment,orders,cancelled,rate_pct,ci_low_pct,ci_high_pct
+Customer region,Central,447,41,9.172,6.833,12.207
+Customer region,East,3491,330,9.453,8.526,10.468
+Customer region,North,3333,304,9.121,8.19,10.146
+Customer region,North East,422,42,9.953,7.448,13.18
+Customer region,South,6384,662,10.37,9.646,11.142
+Customer region,West,5923,588,9.927,9.192,10.715
+Branch region,East,3794,381,10.042,9.126,11.039
+Branch region,North,2953,271,9.177,8.188,10.272
+Branch region,South,6835,680,9.949,9.262,10.681
+Branch region,West,6418,635,9.894,9.187,10.649
+Customer type,Corporate,4064,392,9.646,8.776,10.592
+Customer type,Dealer,4016,383,9.537,8.667,10.484
+Customer type,Fleet Owner,3834,377,9.833,8.93,10.816
+Customer type,Government,4551,476,10.459,9.603,11.382
+Customer type,Retail,3535,339,9.59,8.663,10.605
+Sales channel,Counter Sale,5014,507,10.112,9.307,10.977
+Sales channel,Dealer Network,5028,493,9.805,9.014,10.658
+Sales channel,Field Sales,5036,488,9.69,8.904,10.538
+Sales channel,Online,4922,479,9.732,8.935,10.592
+Payment terms,Advance,4183,428,10.232,9.35,11.187
+Payment terms,Net 15,3493,335,9.591,8.658,10.612
+Payment terms,Net 30,3604,344,9.545,8.628,10.548
+Payment terms,Net 45,4485,433,9.654,8.824,10.554
+Payment terms,Net 60,4235,427,10.083,9.212,11.026
+Industry segment,Construction,3571,357,9.997,9.056,11.024
+Industry segment,Infrastructure,3160,296,9.367,8.4,10.433
+Industry segment,Logistics,3813,352,9.232,8.353,10.192
+Industry segment,Manufacturing,2941,292,9.929,8.9,11.062
+Industry segment,Mining,3785,391,10.33,9.401,11.34
+Industry segment,Rental,2730,279,10.22,9.139,11.413
+Customer rating,1,4263,397,9.313,8.477,10.222
+Customer rating,2,3519,337,9.577,8.648,10.593
+Customer rating,3,4335,450,10.381,9.507,11.324
+Customer rating,4,4082,405,9.922,9.042,10.877
+Customer rating,5,3801,378,9.945,9.033,10.937
+Warehouse type,Branch,6562,671,10.226,9.516,10.982
+Warehouse type,Central,2953,271,9.177,8.188,10.272
+Warehouse type,Regional,7039,694,9.859,9.185,10.578
+Warehouse type,Service Hub,3446,331,9.605,8.666,10.635
+Order value quartile,1 low,5000,496,9.92,9.122,10.78
+Order value quartile,2,5000,491,9.82,9.026,10.676
+Order value quartile,3,5000,504,10.08,9.276,10.945
+Order value quartile,4 high,5000,476,9.52,8.737,10.365
+Lines per order,1-4 lines,6594,646,9.797,9.103,10.538
+Lines per order,5-6,3378,327,9.68,8.728,10.724
+Lines per order,7-8,3301,358,10.845,9.83,11.952
+Lines per order,9+,6727,636,9.454,8.778,10.177
+Order year,2019,3336,305,9.143,8.211,10.168
+Order year,2020,3358,320,9.529,8.582,10.569
+Order year,2021,3365,327,9.718,8.762,10.765
+Order year,2022,3279,331,10.095,9.11,11.173
+Order year,2023,3346,324,9.683,8.727,10.732
+Order year,2024,3316,360,10.856,9.843,11.961
+Order month,1,1696,165,9.729,8.408,11.232
+Order month,2,1513,155,10.245,8.816,11.875
+Order month,3,1681,172,10.232,8.873,11.773
+Order month,4,1611,170,10.552,9.145,12.148
+Order month,5,1718,167,9.721,8.408,11.213
+Order month,6,1618,181,11.187,9.742,12.815
+Order month,7,1723,128,7.429,6.283,8.764
+Order month,8,1723,169,9.808,8.492,11.304
+Order month,9,1686,182,10.795,9.402,12.366
+Order month,10,1664,158,9.495,8.179,10.998
+Order month,11,1699,149,8.77,7.516,10.21
+Order month,12,1668,171,10.252,8.886,11.8

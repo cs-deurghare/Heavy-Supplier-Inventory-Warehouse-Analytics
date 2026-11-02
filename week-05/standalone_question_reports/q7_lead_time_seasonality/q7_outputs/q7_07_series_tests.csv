@@ -1,0 +1,6 @@
+test,statistic,p,detail
+Yearly wave (harmonic F),0.18635919533957085,0.8303917754979648,amplitude 0.026 days (0.33% of the mean)
+"72 means vs sampling noise (chi-square, 71 df)",61.02967186151843,0.7946747407564442,sd of monthly means 0.256 vs 0.272 expected from noise
+Trend over 72 months (Spearman),-0.11196861534503828,0.3490640436650166,
+Autocorrelation lag 1 / lag 12,0.07385543872854199,,lag 12 = -0.020
+Years (Kruskal-Wallis),0.9778703463812229,0.964330860540211,

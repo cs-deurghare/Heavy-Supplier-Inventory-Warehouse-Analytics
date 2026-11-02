@@ -1,0 +1,7 @@
+test,statistic,p,effect_size,effect_name
+Kruskal-Wallis,6.315087025880504,0.8515353749308152,0.0,epsilon_squared
+One-way ANOVA,0.5742041744916134,0.8514184539892408,0.0003503708390780259,eta_squared
+Levene (spread),0.26939247847090025,0.9911955072459464,,
+Smallest pairwise p after Holm (66 pairs),,1.0,,
+"Detectable gap, typical month (80% power, days)",,,0.32426529628083856,days
+"Detectable gap, smallest month (days)",,,0.34011331177031057,days

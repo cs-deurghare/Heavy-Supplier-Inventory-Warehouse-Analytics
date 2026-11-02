@@ -1,0 +1,6 @@
+dimension,segments,smallest_segment_customers,p_value,epsilon_squared,p_holm_adjusted
+Customer type,5,88,0.412,0.0,1.0
+Customer region,6,11,0.2685,0.0029,1.0
+Industry segment,6,67,0.0118,0.0196,0.0588
+Customer rating,5,88,0.629,0.0,1.0
+Customer payment terms,5,87,0.9847,0.0,1.0

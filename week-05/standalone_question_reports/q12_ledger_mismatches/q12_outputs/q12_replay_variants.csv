@@ -1,0 +1,5 @@
+replay,pairs_equal_ledger_last_balance,pairs_equal_inventory_master
+replay_all_positive,0,0
+replay_all_negative,0,0
+replay_no_adjustment,1,1
+replay_sign_from_balance,180,166

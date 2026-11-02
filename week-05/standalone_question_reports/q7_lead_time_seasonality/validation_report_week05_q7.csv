@@ -1,0 +1,35 @@
+Check_Item,Expected,Actual,Status
+sales lines,130402,130402,PASS
+unique orders,20000,20000,PASS
+delivered orders (Week 3),18033,18033,PASS
+cancelled orders (Week 3),1967,1967,PASS
+lead time is one value per order (same on every line),0,0,PASS
+days_to_deliver equals delivery date minus order date on every delivered order,0,0,PASS
+net revenue of delivered orders is Rs 22.96B (Weeks 3 and 4),22.96,22.96,PASS
+mean lead time is 8.06 days (Week 3),8.06,8.06,PASS
+median lead time is 8 days,8.0,8.0,PASS
+lead time runs from 0 to 15 days,"(0, 15)","(0, 15)",PASS
+cancelled orders carry the same lead time (8.05 days) and are excluded,8.05,8.05,PASS
+lead times of 1 to 15 days are consistent with a uniform spread (chi-square p > 0.05),>0.05,0.125,PASS
+month of year does not change lead time (Kruskal-Wallis p > 0.05),>0.05,0.852,PASS
+month effect size is negligible (epsilon-squared < 0.01),<0.01,0.0,PASS
+highest and lowest monthly mean are under half a day apart,<0.5,0.283,PASS
+spread of lead time does not change by month (Levene p > 0.05),>0.05,0.991,PASS
+no pair of months differs after Holm adjustment over 66 pairs (smallest adjusted p > 0.05),>0.05,1.0,PASS
+a typical month would show a gap of under half a day at 80% power,<0.5,0.32,PASS
+series has 72 months,72,72,PASS
+no yearly wave in the 72 monthly means (harmonic F test p > 0.05),>0.05,0.83,PASS
+the 72 monthly means vary no more than sampling noise (chi-square p > 0.05),>0.05,0.795,PASS
+year does not change lead time (Kruskal-Wallis p > 0.05),>0.05,0.964,PASS
+ten cuts scanned and every effect size is negligible (largest epsilon-squared < 0.01),<0.01,0.00059,PASS
+nothing is significant after Holm over the ten cuts (smallest adjusted p > 0.05),>0.05,0.081,PASS
+whole-scan permutation: the smallest p-value is no stronger than chance (family-wise p > 0.05),>0.05,0.07,PASS
+weekday of the order does not change lead time (p > 0.05),>0.05,0.901,PASS
+order value is unrelated to lead time (|Spearman rho| < 0.05),<0.05,0.0011,PASS
+revenue series reconciles to Rs 22.96B,22.96,22.96,PASS
+order counts follow month length: no month pattern beyond the number of days (chi-square p > 0.05),>0.05,0.369,PASS
+no yearly wave in monthly orders (harmonic p > 0.05),>0.05,0.068,PASS
+no yearly wave in monthly revenue (harmonic p > 0.05),>0.05,0.118,PASS
+Lead time (days): the month index does not forecast 2024 better than the plain mean,>=2.16,2.38,PASS
+Delivered orders: the month index does not forecast 2024 better than the plain mean,>=6.83,6.88,PASS
+Net revenue: the month index does not forecast 2024 better than the plain mean,>=7.49,8.24,PASS

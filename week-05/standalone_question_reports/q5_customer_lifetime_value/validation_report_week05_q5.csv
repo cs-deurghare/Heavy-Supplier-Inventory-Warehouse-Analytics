@@ -1,0 +1,35 @@
+Check_Item,Expected,Actual,Status
+sales lines,130402,130402,PASS
+"net revenue (Delivered, ex-GST) matches Week 3, Rs 22.96B",22.96,22.96,PASS
+gross margin is 21.6% (Week 3),21.6,21.6,PASS
+line_profit equals quantity x (price - cost),0,0.0,PASS
+500 customers have Delivered orders,500,500,PASS
+each customer has one type,1,1,PASS
+customer revenue sums to total,0,0.0,PASS
+customer gross profit sums to total,0,0.0,PASS
+"Government has the most delivered orders (4,075)",4075,4075,PASS
+Government has the most customers,True,Government,PASS
+Government's order share is within one point of its customer share,<1,0.2,PASS
+Government has the lowest average order value,True,Government,PASS
+lifetime value does not differ by customer type (p > 0.05),>0.05,0.412,PASS
+customer-type effect on lifetime value is negligible (epsilon-squared < 0.01),<0.01,0.0,PASS
+no pair of types differs after Holm adjustment,>0.05,0.571,PASS
+the spread of the five type means is within chance (permutation p > 0.05),>0.05,0.231,PASS
+no customer segment (5 cuts) differs in lifetime value after adjustment (industry is closest),>0.05,0.059,PASS
+"industry is an exploratory lead, not a confirmed finding (raw permutation p < 0.05 but not significant once 5 cuts are adjusted)",True,"(np.float64(0.014), 0.059)",PASS
+the industry ranking repeats across the two halves of the period (rank correlation > 0.6),>0.6,0.94,PASS
+"the industry difference is driven by order frequency, not margin (orders p < 0.05, margin p > 0.05)",True,"(np.float64(0.034), np.float64(0.83))",PASS
+no customer dominates (largest < 1% of gross profit),<1,0.37,PASS
+value is spread evenly: top 10% of customers hold under 20% (the 80/20 rule does not apply),<20,14.2,PASS
+Gini is low (< 0.25),<0.25,0.121,PASS
+all 500 customers placed their first Delivered order in 2019,500,500,PASS
+all 500 customers placed a Delivered order in 2024,500,500,PASS
+at least 99% of customers (495 of 500) are active in every year,>=495,498,PASS
+value persistence is weak (|rho| < 0.2),<0.2,0.025,PASS
+one invoice per Delivered order,18033,18033,PASS
+every Delivered order is matched to exactly one invoice,18033,18033,PASS
+outstanding share of invoiced value is about 19.8% (Week 3),19.8,19.8,PASS
+86% of outstanding is over a year overdue (Week 3),86,86,PASS
+outstanding share does not differ by customer type (p > 0.05),>0.05,0.273,PASS
+the ranking message holds after the adjustment: no type differs (p > 0.05),>0.05,0.225,PASS
+customer master dates conflict with order history for a large share of customers (> 25%),>25,58.4,PASS

@@ -1,0 +1,11 @@
+measure,value
+EB-600 change 2023 to 2024 (Rs),-71281000.0
+EB-600 95% bootstrap interval low,-174102950.0
+EB-600 95% bootstrap interval high,29871974.999999955
+Total revenue change (Rs),-146679750.0
+Total change 95% interval low,-308082155.5
+Total change 95% interval high,10012625.749999873
+EB-600 share of the total fall (%),48.59634680315449
+Largest absolute product change observed (Rs),71281000.0
+Median of the largest change under shuffled labels (Rs),50124100.0
+Scan permutation p-value (30 products),0.2524

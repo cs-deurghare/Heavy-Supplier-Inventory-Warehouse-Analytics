@@ -1,0 +1,28 @@
+Check_Item,Expected,Actual,Status
+sales lines,130402,130402,PASS
+unique orders,20000,20000,PASS
+order status has only Delivered and Cancelled,"['Cancelled', 'Delivered']","['Cancelled', 'Delivered']",PASS
+status is the same on every line of an order,0,0,PASS
+"cancelled orders match Week 3 (1,967)",1967,1967,PASS
+cancellation rate is 9.8% (Week 3),9.8,9.8,PASS
+order value equals the sum of its lines,0,0.0,PASS
+"yearly rates are 9.1% (2019) and 10.9% (2024), as in Week 4","(9.1, 10.9)","(np.float64(9.1), np.float64(10.9))",PASS
+years are not significantly different as a group (chi-square p > 0.05),>0.05,0.265,PASS
+"trend test result is reproducible (p between 0.02 and 0.04, Week 4 value 0.030)",0.02-0.04,0.03,PASS
+number of segment cuts tested,12,12,PASS
+no cut is significant after Holm adjustment (all adjusted p > 0.05),>0.05,0.45,PASS
+every effect size is negligible (Cramer's V < 0.05),<0.05,0.032,PASS
+"segment orders add up to 20,000 in every cut",20000,[np.int64(20000)],PASS
+the real scan is no stronger than shuffled scans (family-wise permutation p > 0.05),>0.05,0.367,PASS
+permutation and Holm agree on the verdict (both non-significant),True,"(np.float64(0.37), np.float64(0.45))",PASS
+"no segment of 1,000+ orders can be cancelling more than 3 points above the overall rate",<3,2.12,PASS
+the 2019-2024 rise interval is wide enough to include zero or very small values (lower bound under 0.5 points),<0.5,0.25,PASS
+30 products tested,30,30,PASS
+no product is significant after Holm adjustment,>0.05,0.349,PASS
+no category is significant after Holm adjustment,>0.05,0.756,PASS
+customers do not differ more than chance (p > 0.05),>0.05,0.841,PASS
+cancelled orders are not larger or smaller than delivered ones (order value p > 0.05),>0.05,0.528,PASS
+all cancelled orders carry a delivery date (data quality flag),1.0,1.0,PASS
+a typical segment could detect a gap under 3 points (the smallest only about 4),<3 (median segment),1.46,PASS
+even the smallest segment could detect a gap under 5 points,<5,4.1,PASS
+every segment shown in the segment chart has an interval that covers the overall rate,True,True,PASS

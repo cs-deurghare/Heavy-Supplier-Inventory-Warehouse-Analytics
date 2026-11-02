@@ -1,0 +1,7 @@
+industry_segment,customers,orders_per_customer,avg_order_value,gross_margin_pct
+Manufacturing,70,37.84,1285648.56,21.53
+Rental,67,36.58,1297766.5,21.53
+Infrastructure,79,36.25,1294985.55,21.54
+Logistics,96,36.05,1273317.99,21.6
+Construction,90,35.71,1252055.03,21.59
+Mining,98,34.63,1251755.36,21.55

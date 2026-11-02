@@ -1,0 +1,26 @@
+Check_Item,Expected,Actual,Status
+Q3: notebook exists,True,True,PASS
+Q3: notebook finishes with no error outputs,0,0,PASS
+Q5: notebook exists,True,True,PASS
+Q5: notebook finishes with no error outputs,0,0,PASS
+Q6: notebook exists,True,True,PASS
+Q6: notebook finishes with no error outputs,0,0,PASS
+Q7: notebook exists,True,True,PASS
+Q7: notebook finishes with no error outputs,0,0,PASS
+Q11: notebook exists,True,True,PASS
+Q11: notebook finishes with no error outputs,0,0,PASS
+Q12: notebook exists,True,True,PASS
+Q12: notebook finishes with no error outputs,0,0,PASS
+Q3: 27 checks present,27,27,PASS
+Q3: every check passes,27,27,PASS
+Q5: 34 checks present,34,34,PASS
+Q5: every check passes,34,34,PASS
+Q6: 38 checks present,38,38,PASS
+Q6: every check passes,38,38,PASS
+Q7: 34 checks present,34,34,PASS
+Q7: every check passes,34,34,PASS
+Q11: 16 checks present,16,16,PASS
+Q11: every check passes,16,16,PASS
+Q12: 18 checks present,18,18,PASS
+Q12: every check passes,18,18,PASS
+all Week 5 question checks combined: 167 of 167,167,167,PASS

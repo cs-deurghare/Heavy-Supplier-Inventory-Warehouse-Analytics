@@ -1,0 +1,46 @@
+dimension,segment,orders,cancelled,rate_pct,ci_low_pct,ci_high_pct,max_excess_points,max_shortfall_points
+Customer region,East,3491,330,9.453,8.526,10.468,0.633,1.309
+Customer region,North,3333,304,9.121,8.19,10.146,0.311,1.645
+Customer region,South,6384,662,10.37,9.646,11.142,1.307,0.189
+Customer region,West,5923,588,9.927,9.192,10.715,0.88,0.643
+Branch region,East,3794,381,10.042,9.126,11.039,1.204,0.709
+Branch region,North,2953,271,9.177,8.188,10.272,0.437,1.647
+Branch region,South,6835,680,9.949,9.262,10.681,0.846,0.573
+Branch region,West,6418,635,9.894,9.187,10.649,0.814,0.648
+Customer type,Corporate,4064,392,9.646,8.776,10.592,0.757,1.059
+Customer type,Dealer,4016,383,9.537,8.667,10.484,0.649,1.168
+Customer type,Fleet Owner,3834,377,9.833,8.93,10.816,0.981,0.905
+Customer type,Government,4551,476,10.459,9.603,11.382,1.547,0.232
+Customer type,Retail,3535,339,9.59,8.663,10.605,0.77,1.172
+Sales channel,Counter Sale,5014,507,10.112,9.307,10.977,1.142,0.528
+Sales channel,Dealer Network,5028,493,9.805,9.014,10.658,0.823,0.821
+Sales channel,Field Sales,5036,488,9.69,8.904,10.538,0.703,0.931
+Sales channel,Online,4922,479,9.732,8.935,10.592,0.757,0.9
+Payment terms,Advance,4183,428,10.232,9.35,11.187,1.352,0.485
+Payment terms,Net 15,3493,335,9.591,8.658,10.612,0.777,1.177
+Payment terms,Net 30,3604,344,9.545,8.628,10.548,0.713,1.207
+Payment terms,Net 45,4485,433,9.654,8.824,10.554,0.719,1.011
+Payment terms,Net 60,4235,427,10.083,9.212,11.026,1.191,0.623
+Industry segment,Construction,3571,357,9.997,9.056,11.024,1.189,0.779
+Industry segment,Infrastructure,3160,296,9.367,8.4,10.433,0.598,1.435
+Industry segment,Logistics,3813,352,9.232,8.353,10.192,0.357,1.482
+Industry segment,Manufacturing,2941,292,9.929,8.9,11.062,1.227,0.935
+Industry segment,Mining,3785,391,10.33,9.401,11.34,1.505,0.434
+Industry segment,Rental,2730,279,10.22,9.139,11.413,1.578,0.696
+Customer rating,1,4263,397,9.313,8.477,10.222,0.387,1.358
+Customer rating,2,3519,337,9.577,8.648,10.593,0.758,1.187
+Customer rating,3,4335,450,10.381,9.507,11.324,1.489,0.328
+Customer rating,4,4082,405,9.922,9.042,10.877,1.042,0.793
+Customer rating,5,3801,378,9.945,9.033,10.937,1.102,0.802
+Warehouse type,Branch,6562,671,10.226,9.516,10.982,1.147,0.319
+Warehouse type,Central,2953,271,9.177,8.188,10.272,0.437,1.647
+Warehouse type,Regional,7039,694,9.859,9.185,10.578,0.743,0.65
+Warehouse type,Service Hub,3446,331,9.605,8.666,10.635,0.8,1.169
+Order value quartile,1 low,5000,496,9.92,9.122,10.78,0.945,0.713
+Order value quartile,2,5000,491,9.82,9.026,10.676,0.841,0.809
+Order value quartile,3,5000,504,10.08,9.276,10.945,1.11,0.559
+Order value quartile,4 high,5000,476,9.52,8.737,10.365,0.53,1.098
+Lines per order,1-4 lines,6594,646,9.797,9.103,10.538,0.703,0.732
+Lines per order,5-6,3378,327,9.68,8.728,10.724,0.889,1.107
+Lines per order,7-8,3301,358,10.845,9.83,11.952,2.117,0.005
+Lines per order,9+,6727,636,9.454,8.778,10.177,0.342,1.057

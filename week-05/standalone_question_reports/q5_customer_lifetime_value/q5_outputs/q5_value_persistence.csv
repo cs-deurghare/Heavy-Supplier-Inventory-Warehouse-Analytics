@@ -1,0 +1,5 @@
+measure,value
+"Spearman rho, early vs late gross profit",-0.0251
+p-value,0.5752
+"bootstrap 95% low (1,000 resamples)",-0.1148
+bootstrap 95% high,0.0701

@@ -1,0 +1,13 @@
+series,method,mape_pct
+Lead time (days),Plain mean (2019 to 2023),2.157767508421721
+Lead time (days),Mean x month index,2.3783559684488793
+Lead time (days),Same month last year (2023),2.6988164771296086
+Lead time (days),Mean of last 12 months,2.179820652851548
+Delivered orders,Plain mean (2019 to 2023),6.8298714264767995
+Delivered orders,Mean x month index,6.8769899832570385
+Delivered orders,Same month last year (2023),8.357894660192947
+Delivered orders,Mean of last 12 months,6.8812998112399315
+Net revenue,Plain mean (2019 to 2023),7.491192109642859
+Net revenue,Mean x month index,8.244151375305382
+Net revenue,Same month last year (2023),9.364957502887004
+Net revenue,Mean of last 12 months,7.021221855900782

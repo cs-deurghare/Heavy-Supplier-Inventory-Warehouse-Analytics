@@ -1,0 +1,19 @@
+check,passed,detail
+180 product–branch pairs in inventory_master,True,180
+inventory_with_ledger.ledger_latest_balance equals the last running_balance of every pair,True,
+14 pairs differ (reproduces Week 2/3),True,14
+13 of the 14 gaps are negative,True,"13 negative, 1 positive"
+ledger rows are in chronological order within every pair (file order usable),True,
+no duplicate movement_id,True,
+every IN/OUT step in running_balance equals +qty / -qty,True,234776 of 234776
+every ADJUSTMENT quantity is positive (5 to 50) in the quantity column,True,"min 5, max 50"
+every ADJUSTMENT step in running_balance is exactly +qty or -qty,True,"+qty 1227, -qty 1227, other 0"
+"replay with sign read from running_balance reproduces the ledger on 180 of 180 pairs (true by construction: a consistency check, not independent evidence)",True,
+replay with all adjustments positive reproduces the ledger on 0 pairs,True,
+the signed replay matches inventory_master on 166 pairs; the same 14 differ,True,
+"openings reconcile: the first IN/OUT of each pair equals opening_stock ± qty, and a first adjustment moves the balance by exactly its qty",True,"167 pairs start with IN/OUT, 13 start with an adjustment"
+each of the 14 gaps equals minus the net of the last 1 or 2 ledger movements,True,"{1: 11, 2: 3}"
+"for all 14, current_stock equals the ledger balance just before those movements",True,
+"none of the missing movements is an ADJUSTMENT, so the 14-gap finding does not depend on sign recovery",True,"{'IN': 16, 'OUT': 1}"
+no single cut-off date: many matching pairs have final movements later than the earliest missing one,True,163 of 166
+chart written,True,

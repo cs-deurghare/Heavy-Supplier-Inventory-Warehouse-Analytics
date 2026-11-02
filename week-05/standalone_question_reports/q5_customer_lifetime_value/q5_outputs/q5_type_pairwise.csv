@@ -1,0 +1,11 @@
+type_a,type_b,mean_diff,p_value,p_holm_adjusted
+Corporate,Dealer,-450758.0225,0.2391,1.0
+Corporate,Fleet Owner,-254298.5223,0.5818,1.0
+Corporate,Government,189132.0918,0.4358,1.0
+Corporate,Retail,-289886.0402,0.8358,1.0
+Dealer,Fleet Owner,196459.5003,0.5342,1.0
+Dealer,Government,639890.1143,0.0571,0.5711
+Dealer,Retail,160871.9823,0.4175,1.0
+Fleet Owner,Government,443430.614,0.2327,1.0
+Fleet Owner,Retail,-35587.5179,0.9166,1.0
+Government,Retail,-479018.132,0.2949,1.0

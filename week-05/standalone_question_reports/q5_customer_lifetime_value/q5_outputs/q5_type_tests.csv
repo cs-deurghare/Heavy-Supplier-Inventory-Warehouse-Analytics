@@ -1,0 +1,5 @@
+measure,kruskal_h,p_value,epsilon_squared
+Gross profit per customer (lifetime value),3.9558,0.412,0.0
+Orders per customer,1.8608,0.7613,0.0
+Average order value,3.3485,0.5013,0.0
+Net revenue per customer,3.8153,0.4316,0.0

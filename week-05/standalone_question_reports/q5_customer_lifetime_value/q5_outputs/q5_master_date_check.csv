@@ -1,0 +1,5 @@
+measure,value
+customers with customer_since after first order (%),58.4
+customers with last_purchase_date before last order (%),93.0
+master total_purchase_value / Delivered net revenue (%),5.402
+correlation of master total_purchase_value with order revenue,-0.077

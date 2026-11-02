@@ -1,0 +1,12 @@
+measure,value
+ledger IN / OUT units,18.13
+median sales per pair per month (units),84.3
+median purchase receipts per pair per month (units),1572.9
+median max_stock,310.5
+median reorder_level,62.0
+median safety_stock,43.5
+median current_stock,107790.5
+median of per-pair current_stock / max_stock ratios,349.4
+median monthly receipts / max_stock,5.09
+median monthly sales / max_stock,0.277
+ratio of medians: median current_stock / median max_stock,347.2

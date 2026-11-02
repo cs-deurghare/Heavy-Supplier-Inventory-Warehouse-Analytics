@@ -1,0 +1,2 @@
+highest_type,lowest_type,highest_mean,lowest_mean,difference,naive_boot_low,naive_boot_high,range_of_type_means,null_median_range,null_95th_range,permutation_p
+Dealer,Government,10205306.869,9565416.754,639890.114,63076.393,1217808.318,639890.114,495275.538,824681.13,0.231

@@ -1,0 +1,39 @@
+Check_Item,Expected,Actual,Status
+sales lines,130402,130402,PASS
+unique orders,20000,20000,PASS
+delivered orders (Week 3),18033,18033,PASS
+delivered lines,117656,117656,PASS
+line_total = quantity x unit_price on every delivered line,0,0,PASS
+line_profit = quantity x (unit_price - unit_cost) on every delivered line,0,0,PASS
+net revenue is Rs 22.96B (Weeks 3 and 4),22.96,22.96,PASS
+gross profit is Rs 4.95B (Weeks 3 and 4),4.95,4.95,PASS
+portfolio margin is 21.56% (Weeks 3 and 4),21.56,21.56,PASS
+30 products,30,30,PASS
+every product has exactly one unit price over six years,1,1,PASS
+every product has exactly one unit cost over six years,1,1,PASS
+revenue shares add to 100%,100.0,100.0,PASS
+gross-profit shares add to 100%,100.0,100.0,PASS
+contributions to the margin gap add to zero,0.0,-0.0,PASS
+product revenue adds to total,22958987430,22958987430,PASS
+"EB-600 revenue Rs 4,856,985,000",4856985000,4856985000,PASS
+"EB-600 gross profit Rs 959,152,500",959152500,959152500,PASS
+"TA-800 revenue Rs 3,387,929,000",3387929000,3387929000,PASS
+"TA-800 gross profit Rs 608,610,000",608610000,608610000,PASS
+EB-600 and TA-800 are 35.9% of revenue (the sprint plan rounds this to 36.0%),35.9,35.9,PASS
+the other 28 products earn a 22.99% margin,22.99,22.99,PASS
+EB-600 margin 19.75% and TA-800 margin 17.96%,"(19.75, 17.96)","(np.float64(19.75), np.float64(17.96))",PASS
+15 categories,15,15,PASS
+category contributions add to zero,0.0,0.0,PASS
+"category revenue shares: Engine 33.04%, Hydraulic 28.40%, Transmission 14.76%","(33.04, 28.4, 14.76)","(np.float64(33.04), np.float64(28.4), np.float64(14.76))",PASS
+gross profit is less concentrated in the top 2 than revenue is,True,"(np.float64(35.9), np.float64(31.7))",PASS
+yearly portfolio margin stays within 21.5% to 21.6% in every year,"(21.5, 21.6)","(np.float64(21.52), np.float64(21.58))",PASS
+the year-to-year spread of portfolio margin is no larger than shuffled years produce (permutation p > 0.05),>0.05,0.843,PASS
+EB-600 revenue fell Rs 71.281M from 2023 to 2024 (Q1: Rs 71.3M),-71281000,-71281000,PASS
+total revenue fell Rs 146.7M from 2023 to 2024,-146680000,-146680000,PASS
+the largest product change among 30 is no bigger than chance produces (scan permutation p > 0.05),>0.05,0.252,PASS
+"SCENARIO: +1% on EB-600 adds exactly 1% of its revenue (Rs 48,569,850)",48569850,48569850,PASS
+"SCENARIO: at the break-even volume loss, gross profit returns to its base value",959152500,959152500,PASS
+SCENARIO: every scenario row carries the scenario label,6,6,PASS
+the master margin_percentage matches markup on cost (within 0.1 point) for 29 of 30 products,29,29,PASS
+the one exception is Engine Oil Filter OF-90 (master 37.3% vs markup 60.0%),OF-90,['Engine Oil Filter OF-90'],PASS
+the master margin_percentage matches margin on price (within 0.1 point) for none of the 30 products,0,0,PASS

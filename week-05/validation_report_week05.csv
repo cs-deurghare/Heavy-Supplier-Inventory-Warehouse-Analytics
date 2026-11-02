@@ -1,0 +1,168 @@
+Question,Check_Item,Expected,Actual,Status
+Q3,sales lines,130402,130402,PASS
+Q3,unique orders,20000,20000,PASS
+Q3,order status has only Delivered and Cancelled,"['Cancelled', 'Delivered']","['Cancelled', 'Delivered']",PASS
+Q3,status is the same on every line of an order,0,0,PASS
+Q3,"cancelled orders match Week 3 (1,967)",1967,1967,PASS
+Q3,cancellation rate is 9.8% (Week 3),9.8,9.8,PASS
+Q3,order value equals the sum of its lines,0,0.0,PASS
+Q3,"yearly rates are 9.1% (2019) and 10.9% (2024), as in Week 4","(9.1, 10.9)","(np.float64(9.1), np.float64(10.9))",PASS
+Q3,years are not significantly different as a group (chi-square p > 0.05),>0.05,0.265,PASS
+Q3,"trend test result is reproducible (p between 0.02 and 0.04, Week 4 value 0.030)",0.02-0.04,0.03,PASS
+Q3,number of segment cuts tested,12,12,PASS
+Q3,no cut is significant after Holm adjustment (all adjusted p > 0.05),>0.05,0.45,PASS
+Q3,every effect size is negligible (Cramer's V < 0.05),<0.05,0.032,PASS
+Q3,"segment orders add up to 20,000 in every cut",20000,[np.int64(20000)],PASS
+Q3,the real scan is no stronger than shuffled scans (family-wise permutation p > 0.05),>0.05,0.367,PASS
+Q3,permutation and Holm agree on the verdict (both non-significant),True,"(np.float64(0.37), np.float64(0.45))",PASS
+Q3,"no segment of 1,000+ orders can be cancelling more than 3 points above the overall rate",<3,2.12,PASS
+Q3,the 2019-2024 rise interval is wide enough to include zero or very small values (lower bound under 0.5 points),<0.5,0.25,PASS
+Q3,30 products tested,30,30,PASS
+Q3,no product is significant after Holm adjustment,>0.05,0.349,PASS
+Q3,no category is significant after Holm adjustment,>0.05,0.756,PASS
+Q3,customers do not differ more than chance (p > 0.05),>0.05,0.841,PASS
+Q3,cancelled orders are not larger or smaller than delivered ones (order value p > 0.05),>0.05,0.528,PASS
+Q3,all cancelled orders carry a delivery date (data quality flag),1.0,1.0,PASS
+Q3,a typical segment could detect a gap under 3 points (the smallest only about 4),<3 (median segment),1.46,PASS
+Q3,even the smallest segment could detect a gap under 5 points,<5,4.1,PASS
+Q3,every segment shown in the segment chart has an interval that covers the overall rate,True,True,PASS
+Q5,sales lines,130402,130402,PASS
+Q5,"net revenue (Delivered, ex-GST) matches Week 3, Rs 22.96B",22.96,22.96,PASS
+Q5,gross margin is 21.6% (Week 3),21.6,21.6,PASS
+Q5,line_profit equals quantity x (price - cost),0,0.0,PASS
+Q5,500 customers have Delivered orders,500,500,PASS
+Q5,each customer has one type,1,1,PASS
+Q5,customer revenue sums to total,0,0.0,PASS
+Q5,customer gross profit sums to total,0,0.0,PASS
+Q5,"Government has the most delivered orders (4,075)",4075,4075,PASS
+Q5,Government has the most customers,True,Government,PASS
+Q5,Government's order share is within one point of its customer share,<1,0.2,PASS
+Q5,Government has the lowest average order value,True,Government,PASS
+Q5,lifetime value does not differ by customer type (p > 0.05),>0.05,0.412,PASS
+Q5,customer-type effect on lifetime value is negligible (epsilon-squared < 0.01),<0.01,0.0,PASS
+Q5,no pair of types differs after Holm adjustment,>0.05,0.571,PASS
+Q5,the spread of the five type means is within chance (permutation p > 0.05),>0.05,0.231,PASS
+Q5,no customer segment (5 cuts) differs in lifetime value after adjustment (industry is closest),>0.05,0.059,PASS
+Q5,"industry is an exploratory lead, not a confirmed finding (raw permutation p < 0.05 but not significant once 5 cuts are adjusted)",True,"(np.float64(0.014), 0.059)",PASS
+Q5,the industry ranking repeats across the two halves of the period (rank correlation > 0.6),>0.6,0.94,PASS
+Q5,"the industry difference is driven by order frequency, not margin (orders p < 0.05, margin p > 0.05)",True,"(np.float64(0.034), np.float64(0.83))",PASS
+Q5,no customer dominates (largest < 1% of gross profit),<1,0.37,PASS
+Q5,value is spread evenly: top 10% of customers hold under 20% (the 80/20 rule does not apply),<20,14.2,PASS
+Q5,Gini is low (< 0.25),<0.25,0.121,PASS
+Q5,all 500 customers placed their first Delivered order in 2019,500,500,PASS
+Q5,all 500 customers placed a Delivered order in 2024,500,500,PASS
+Q5,at least 99% of customers (495 of 500) are active in every year,>=495,498,PASS
+Q5,value persistence is weak (|rho| < 0.2),<0.2,0.025,PASS
+Q5,one invoice per Delivered order,18033,18033,PASS
+Q5,every Delivered order is matched to exactly one invoice,18033,18033,PASS
+Q5,outstanding share of invoiced value is about 19.8% (Week 3),19.8,19.8,PASS
+Q5,86% of outstanding is over a year overdue (Week 3),86,86,PASS
+Q5,outstanding share does not differ by customer type (p > 0.05),>0.05,0.273,PASS
+Q5,the ranking message holds after the adjustment: no type differs (p > 0.05),>0.05,0.225,PASS
+Q5,customer master dates conflict with order history for a large share of customers (> 25%),>25,58.4,PASS
+Q6,sales lines,130402,130402,PASS
+Q6,unique orders,20000,20000,PASS
+Q6,delivered orders (Week 3),18033,18033,PASS
+Q6,delivered lines,117656,117656,PASS
+Q6,line_total = quantity x unit_price on every delivered line,0,0,PASS
+Q6,line_profit = quantity x (unit_price - unit_cost) on every delivered line,0,0,PASS
+Q6,net revenue is Rs 22.96B (Weeks 3 and 4),22.96,22.96,PASS
+Q6,gross profit is Rs 4.95B (Weeks 3 and 4),4.95,4.95,PASS
+Q6,portfolio margin is 21.56% (Weeks 3 and 4),21.56,21.56,PASS
+Q6,30 products,30,30,PASS
+Q6,every product has exactly one unit price over six years,1,1,PASS
+Q6,every product has exactly one unit cost over six years,1,1,PASS
+Q6,revenue shares add to 100%,100.0,100.0,PASS
+Q6,gross-profit shares add to 100%,100.0,100.0,PASS
+Q6,contributions to the margin gap add to zero,0.0,-0.0,PASS
+Q6,product revenue adds to total,22958987430,22958987430,PASS
+Q6,"EB-600 revenue Rs 4,856,985,000",4856985000,4856985000,PASS
+Q6,"EB-600 gross profit Rs 959,152,500",959152500,959152500,PASS
+Q6,"TA-800 revenue Rs 3,387,929,000",3387929000,3387929000,PASS
+Q6,"TA-800 gross profit Rs 608,610,000",608610000,608610000,PASS
+Q6,EB-600 and TA-800 are 35.9% of revenue (the sprint plan rounds this to 36.0%),35.9,35.9,PASS
+Q6,the other 28 products earn a 22.99% margin,22.99,22.99,PASS
+Q6,EB-600 margin 19.75% and TA-800 margin 17.96%,"(19.75, 17.96)","(np.float64(19.75), np.float64(17.96))",PASS
+Q6,15 categories,15,15,PASS
+Q6,category contributions add to zero,0.0,0.0,PASS
+Q6,"category revenue shares: Engine 33.04%, Hydraulic 28.40%, Transmission 14.76%","(33.04, 28.4, 14.76)","(np.float64(33.04), np.float64(28.4), np.float64(14.76))",PASS
+Q6,gross profit is less concentrated in the top 2 than revenue is,True,"(np.float64(35.9), np.float64(31.7))",PASS
+Q6,yearly portfolio margin stays within 21.5% to 21.6% in every year,"(21.5, 21.6)","(np.float64(21.52), np.float64(21.58))",PASS
+Q6,the year-to-year spread of portfolio margin is no larger than shuffled years produce (permutation p > 0.05),>0.05,0.843,PASS
+Q6,EB-600 revenue fell Rs 71.281M from 2023 to 2024 (Q1: Rs 71.3M),-71281000,-71281000,PASS
+Q6,total revenue fell Rs 146.7M from 2023 to 2024,-146680000,-146680000,PASS
+Q6,the largest product change among 30 is no bigger than chance produces (scan permutation p > 0.05),>0.05,0.252,PASS
+Q6,"SCENARIO: +1% on EB-600 adds exactly 1% of its revenue (Rs 48,569,850)",48569850,48569850,PASS
+Q6,"SCENARIO: at the break-even volume loss, gross profit returns to its base value",959152500,959152500,PASS
+Q6,SCENARIO: every scenario row carries the scenario label,6,6,PASS
+Q6,the master margin_percentage matches markup on cost (within 0.1 point) for 29 of 30 products,29,29,PASS
+Q6,the one exception is Engine Oil Filter OF-90 (master 37.3% vs markup 60.0%),OF-90,['Engine Oil Filter OF-90'],PASS
+Q6,the master margin_percentage matches margin on price (within 0.1 point) for none of the 30 products,0,0,PASS
+Q7,sales lines,130402,130402,PASS
+Q7,unique orders,20000,20000,PASS
+Q7,delivered orders (Week 3),18033,18033,PASS
+Q7,cancelled orders (Week 3),1967,1967,PASS
+Q7,lead time is one value per order (same on every line),0,0,PASS
+Q7,days_to_deliver equals delivery date minus order date on every delivered order,0,0,PASS
+Q7,net revenue of delivered orders is Rs 22.96B (Weeks 3 and 4),22.96,22.96,PASS
+Q7,mean lead time is 8.06 days (Week 3),8.06,8.06,PASS
+Q7,median lead time is 8 days,8.0,8.0,PASS
+Q7,lead time runs from 0 to 15 days,"(0, 15)","(0, 15)",PASS
+Q7,cancelled orders carry the same lead time (8.05 days) and are excluded,8.05,8.05,PASS
+Q7,lead times of 1 to 15 days are consistent with a uniform spread (chi-square p > 0.05),>0.05,0.125,PASS
+Q7,month of year does not change lead time (Kruskal-Wallis p > 0.05),>0.05,0.852,PASS
+Q7,month effect size is negligible (epsilon-squared < 0.01),<0.01,0.0,PASS
+Q7,highest and lowest monthly mean are under half a day apart,<0.5,0.283,PASS
+Q7,spread of lead time does not change by month (Levene p > 0.05),>0.05,0.991,PASS
+Q7,no pair of months differs after Holm adjustment over 66 pairs (smallest adjusted p > 0.05),>0.05,1.0,PASS
+Q7,a typical month would show a gap of under half a day at 80% power,<0.5,0.32,PASS
+Q7,series has 72 months,72,72,PASS
+Q7,no yearly wave in the 72 monthly means (harmonic F test p > 0.05),>0.05,0.83,PASS
+Q7,the 72 monthly means vary no more than sampling noise (chi-square p > 0.05),>0.05,0.795,PASS
+Q7,year does not change lead time (Kruskal-Wallis p > 0.05),>0.05,0.964,PASS
+Q7,ten cuts scanned and every effect size is negligible (largest epsilon-squared < 0.01),<0.01,0.00059,PASS
+Q7,nothing is significant after Holm over the ten cuts (smallest adjusted p > 0.05),>0.05,0.081,PASS
+Q7,whole-scan permutation: the smallest p-value is no stronger than chance (family-wise p > 0.05),>0.05,0.07,PASS
+Q7,weekday of the order does not change lead time (p > 0.05),>0.05,0.901,PASS
+Q7,order value is unrelated to lead time (|Spearman rho| < 0.05),<0.05,0.0011,PASS
+Q7,revenue series reconciles to Rs 22.96B,22.96,22.96,PASS
+Q7,order counts follow month length: no month pattern beyond the number of days (chi-square p > 0.05),>0.05,0.369,PASS
+Q7,no yearly wave in monthly orders (harmonic p > 0.05),>0.05,0.068,PASS
+Q7,no yearly wave in monthly revenue (harmonic p > 0.05),>0.05,0.118,PASS
+Q7,Lead time (days): the month index does not forecast 2024 better than the plain mean,>=2.16,2.38,PASS
+Q7,Delivered orders: the month index does not forecast 2024 better than the plain mean,>=6.83,6.88,PASS
+Q7,Net revenue: the month index does not forecast 2024 better than the plain mean,>=7.49,8.24,PASS
+Q11,ledger IN is about 18.1× OUT (Q10 reproduces),,18.13,PASS
+Q11,180 product–branch pairs,,,PASS
+Q11,monthly sales per pair is on the same order as the thresholds (median 80 to 110 units),,84.3,PASS
+Q11,current_stock is more than 200× max_stock (median of per-pair ratios about 349×; ratio of medians about 347×),,349.4 / 347.2,PASS
+Q11,ledger OUT holds about 91% of delivered units and lines,,"units 0.9108, lines 0.9108",PASS
+Q11,coverage explains the ledger median: 84.3 / 0.911 is within 1 unit of the delivered-lines median,,92.6 vs 92.7,PASS
+Q11,Week 4's about 95 is the mean across pairs on delivered lines (94.5 to 96),,94.8,PASS
+Q11,demand matrix total equals ledger OUT total,,1124832,PASS
+Q11,demand matrix has 180 pairs and a full daily calendar,,"(180, 2203)",PASS
+Q11,every pair has a lead time from received purchase-order lines,,180,PASS
+Q11,lead times are in a plausible range (5 to 35 days),,17–19,PASS
+Q11,simulation: sold + unmet equals demand for every policy and pair,,,PASS
+Q11,4 policies x 180 pairs simulated,,720,PASS
+Q11,fill rate lies between 0 and 1 everywhere,,,PASS
+Q11,higher service factor never lowers total fill rate (B90 <= B95 <= B99),,,PASS
+Q11,chart written,,,PASS
+Q12,180 product–branch pairs in inventory_master,,180,PASS
+Q12,inventory_with_ledger.ledger_latest_balance equals the last running_balance of every pair,,,PASS
+Q12,14 pairs differ (reproduces Week 2/3),,14,PASS
+Q12,13 of the 14 gaps are negative,,"13 negative, 1 positive",PASS
+Q12,ledger rows are in chronological order within every pair (file order usable),,,PASS
+Q12,no duplicate movement_id,,,PASS
+Q12,every IN/OUT step in running_balance equals +qty / -qty,,234776 of 234776,PASS
+Q12,every ADJUSTMENT quantity is positive (5 to 50) in the quantity column,,"min 5, max 50",PASS
+Q12,every ADJUSTMENT step in running_balance is exactly +qty or -qty,,"+qty 1227, -qty 1227, other 0",PASS
+Q12,"replay with sign read from running_balance reproduces the ledger on 180 of 180 pairs (true by construction: a consistency check, not independent evidence)",,,PASS
+Q12,replay with all adjustments positive reproduces the ledger on 0 pairs,,,PASS
+Q12,the signed replay matches inventory_master on 166 pairs; the same 14 differ,,,PASS
+Q12,"openings reconcile: the first IN/OUT of each pair equals opening_stock ± qty, and a first adjustment moves the balance by exactly its qty",,"167 pairs start with IN/OUT, 13 start with an adjustment",PASS
+Q12,each of the 14 gaps equals minus the net of the last 1 or 2 ledger movements,,"{1: 11, 2: 3}",PASS
+Q12,"for all 14, current_stock equals the ledger balance just before those movements",,,PASS
+Q12,"none of the missing movements is an ADJUSTMENT, so the 14-gap finding does not depend on sign recovery",,"{'IN': 16, 'OUT': 1}",PASS
+Q12,no single cut-off date: many matching pairs have final movements later than the earliest missing one,,163 of 166,PASS
+Q12,chart written,,,PASS

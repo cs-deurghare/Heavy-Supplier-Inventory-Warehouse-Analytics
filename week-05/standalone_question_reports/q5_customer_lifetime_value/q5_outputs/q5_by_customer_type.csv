@@ -1,0 +1,6 @@
+customer_type,customers,delivered_orders,orders_per_customer,mean_gross_profit,median_gross_profit,avg_order_value,net_revenue,customer_share_pct,order_share_pct,revenue_share_pct
+Government,114,4075,35.75,9565416.75,9402855.0,1240333.05,5049.34,22.8,22.6,21.99
+Corporate,104,3672,35.31,9754548.85,9674470.0,1284621.7,4717.36,20.8,20.36,20.55
+Dealer,99,3633,36.7,10205306.87,10158830.0,1288902.27,4683.09,19.8,20.15,20.4
+Fleet Owner,95,3457,36.39,10008847.37,9823730.0,1282658.05,4411.91,19.0,19.17,19.22
+Retail,88,3196,36.32,10044434.89,9647915.0,1277189.26,4097.28,17.6,17.72,17.85

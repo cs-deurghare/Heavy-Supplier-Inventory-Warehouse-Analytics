@@ -187,7 +187,7 @@ Open any notebook anywhere inside the repository checkout and run all cells. Eac
 │   ├── 05_deep_dive_analysis.ipynb   # Master notebook: re-runs all six, 25 checks, combined validation
 │   ├── standalone_question_reports/  # q3_cancellation_concentration, q5_customer_lifetime_value, q6_margin_concentration,
 │   │                                 # q7_lead_time_seasonality, q11_stock_scale_gate, q12_ledger_mismatches
-│ 
+│   │
 │   ├── validation_report_week05.csv  # 167 checks
 │   ├── validation_report_week05_master.csv  # 25 checks of the master notebook
 │   ├── Corrections_Log_week05.md

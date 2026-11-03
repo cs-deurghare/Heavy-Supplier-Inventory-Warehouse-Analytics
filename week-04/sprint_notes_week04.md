@@ -19,8 +19,8 @@ The full notebook covers all four questions (37 of 37 checks). The standalone fo
 | Order lines treated as independent in supplier tests | Tested per purchase order (Q8) |
 | Claims stronger than the tests supported (price, demand, cancellation, under-coverage) | Reworded to the evidence; stated as limits |
 | Hard-coded computer path (`/Users/...`) in the full notebook | Notebooks search the repository for the data; tested from a clean repository layout |
-| Single price list; no cancellation reason; cancelled orders carry a delivery date; PO quantities on a larger scale than sales; every ledger adjustment positive | Recorded as caveats; questions for the data owner |
+| Single price list; no cancellation reason; cancelled orders carry a delivery date; PO quantities on a larger scale than sales; ledger adjustment quantities unsigned (half reduce the balance) | Recorded as caveats; questions for the data owner |
 
 ## Open items
-- Data owner: price history, meaning of the Cancelled status, how PO quantities were set, why ledger adjustments are all positive.
+- Data owner: price history, meaning of the Cancelled status, how PO quantities were set, how the ledger adjustment sign is recorded (it is only visible in `running_balance`).
 - Week 5: cancellation analysis (Q3) builds on the Q1 cancellation finding.

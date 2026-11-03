@@ -1,0 +1,5 @@
+measure,purchase_orders,sales,ratio
+Order lines,155495,130402,1.1924280302449348
+Average quantity per line,159.92614553522623,10.494731675894542,15.238707427133392
+Units (received POs vs delivered orders),22387123,1234939,18.128120498259428
+Quantity range per line,20-300,1-20,

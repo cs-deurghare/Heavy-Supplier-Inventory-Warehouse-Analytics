@@ -3,7 +3,7 @@
 
 **Run it** from anywhere inside the repository checkout (it searches parent folders for the merged files), or set `CADETX_MERGED` to the merged folder. Tested from a clean copy of the repository layout.
 
-**Reproduce with:** `q10_stock_scale.ipynb` (executed, 19 of 19 checks pass, see `validation_report_week04_q10.csv`).
+**Reproduce with:** `q10_stock_scale.ipynb` (executed, 24 of 24 checks pass, see `validation_report_week04_q10.csv`).
 
 **Data:** corrected Week-2 merged files (`purchase_orders_full`, `sales_orders_full`, `stock_ledger_enriched`, `inventory_with_ledger`). Evidence table: `evidence_q10_stock_scale.csv`.
 
@@ -36,22 +36,24 @@ The gap is almost all quantity per line. The two tables have a similar number of
 The stock thresholds and sales agree with each other, and PO spend only reconciles to sales cost after scaling the PO quantity down by about 18. Sales scaled up by 18 would give revenue of about Rs 410B and would not match the thresholds.
 
 ## 5. Corrected-scale check
-Replaying the ledger with every IN quantity divided by a factor k:
-| k | Average balance | Share of days below zero | Share of days above max stock |
-|---:|---:|---:|---:|
-| 1 (as is) | 53,627 | 0% | 100% |
-| 10 | 2,860 | 0% | 96% |
-| 18.1 | 331 | 28% | 47% |
-| 20 | 40 | 40% | 33% |
+Replaying the ledger with every IN quantity divided by a factor k. **Adjustments are signed from `running_balance`**: `ADJUSTMENT` quantities are stored unsigned (5 to 50), but the ledger applies 1,227 of them as additions and 1,227 as reductions. (The first version of this check added every adjustment; that overstated the balances and was corrected in Week 5.)
+| k | Average balance | Share of days below zero | Share of days above max stock | Pairs with END balance within 0 and max stock |
+|---:|---:|---:|---:|---:|
+| 1 (as is) | 53,432 | 0% | 100% | 0 of 180 |
+| 10 | 2,671 | 0% | 96% | 0 |
+| 15 | 791 | 10% | 67% | 16 |
+| 18.1 | 142 | 37% | 38% | 10 |
+| 20 | -149 | 49% | 23% | 24 |
+| 18.1, adjustments all added (first method, comparison) | 330 | 28% | 47% | 12 |
 
-At k = 18.1 the average balance (336) lands near the typical maximum stock (322), but the balance still goes negative on 28% of days. That is because PO timing in the data does not respond to stock level, so replenishment logic is not in the data. The scale is therefore a good fit, the replenishment behaviour is not, and the ledger cannot be used to test a replenishment policy (Q11) without more information.
+At k = 18.1 the average balance (142) sits **well below** the typical maximum stock (322), and the balance is negative on 37% of days. Only 10 of the 180 pairs (5.6%) end between 0 and `max_stock` (the end-of-period balance is the headline definition; by average balance it is 24 pairs, and about 25% of pair-days are within bounds). The ratio of ledger receipts to issues also varies by pair, from 13.3x to 25.4x (median 18.4x). So scaling the receipts by one factor does **not** turn the ledger into a plausible stocked warehouse, and PO timing in the data does not respond to stock level, so replenishment logic is not in the data. The scale gap itself remains supported by independent evidence (scaled PO spend is within 4% of sales cost of goods, and the stock thresholds fit sales); the replay does not add to it. The ledger cannot be used to test a replenishment policy (Q11) without more information.
 
 ## 6. Open issues and caveats
 | ID | Issue | Impact | Owner |
 |---|---|---|---|
 | UI-Q10-01 | PO line quantity is about 15x sales line quantity, in every product | Confirm the correct PO quantities, or the intended number of POs | Data owner |
 | UI-Q10-02 | Ledger holds about 91% of both PO receipts and delivered sales (IN 20.40M of 22.39M, OUT 1.12M of 1.23M) | Small side gap; the 18.1x ratio holds inside the ledger | Data owner |
-| UI-Q10-03 | Ledger adjustment quantities are all positive (5 to 50), treated here as additions | The sign convention is not documented | Data owner |
+| UI-Q10-03 | Ledger adjustment quantities are stored unsigned (5 to 50); `running_balance` applies half as reductions and half as additions, so the sign is only visible there | The sign is read from `running_balance`; a reason code or sign field is not documented | Data owner |
 | UI-Q10-04 | Replenishment timing does not respond to stock level | Q11 (replenishment policy) cannot be answered from this ledger | Data owner |
 
 **Reading limits.** The 18x is a scale gap, not a measured error in any one field, and a correction factor of about 18 is an estimate. Stock-based KPIs stay not reportable until the data owner confirms the PO quantities.

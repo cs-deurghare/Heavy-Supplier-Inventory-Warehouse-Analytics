@@ -122,7 +122,7 @@ Five issues needing business input are recorded in `reports/week_02/task7_unreso
 | **Q1 Revenue drift** | Delivered revenue fell ₹192.0M (-4.96%) from 2019 to 2024. In the price/volume/mix bridge, volume explains 78% (-₹150.1M) and product mix 22% (-₹41.9M, not distinguishable from noise, p = 0.47). Price cannot be tested because the data holds one price list. There is no evidence of a fall in demand. 76% of the fall lands in 2024 (-₹146.7M, -3.8%), but that step is not distinguishable from no change (interval -7.8% to +0.4%). Cancellation rose from 9.1% to 10.9%, but the evidence is weak (all-years p = 0.27) and no segment explains it. |
 | **Q2 Regional concentration** | South (31.63%) and West (29.32%) hold 60.95% of revenue (interval 56.5% to 65.3%) and 61.8% of customers. A customer is worth about the same in every region (₹43M to ₹48M, p = 0.275). The gap is the size of the customer base. Central and North East have 11 customers each and no branch. The data cannot separate a small market from an unserved one. |
 | **Q8 Supplier differentiation** | Tested per purchase order, the 8 suppliers are not distinguishable on on-time rate (84.2% to 85.3%, p = 0.97), delay (p = 0.88), cancellation (p = 0.91) or unit cost (p = 0.84). They differ only on lead time (10.5 to 28.5 days). |
-| **Q10 Stock scale** | Unresolved. Received units are 18.1 times units sold and purchase spend is 17.3 times cost of goods sold, in every product. PO lines are about 15 times larger than sales lines. The ledger covers about 91% of both. Adjustment quantities are stored unsigned and half reduce the balance (see Q12). Stock KPIs stay not reportable until the data owner explains the PO quantities. |
+| **Q10 Stock scale** | Unresolved. Received units are 18.1 times units sold and purchase spend is 17.3 times cost of goods sold, in every product. PO lines are about 15 times larger than sales lines. The ledger covers about 91% of both. Adjustment quantities are stored unsigned and half reduce the balance (see Q12). Nothing in the data explains the PO quantities. The team uses the sales scale as the working reference from Week 6 and labels every stock result as resting on that assumption. |
 
 Supporting files in `week-04/`: `week4_findings_summary.md` (includes a method note reconciling the two Q1 decompositions), `sprint_notes_week04.md`, `Corrections_Log.md`, `README_how_to_run.md`.
 
@@ -136,12 +136,20 @@ Supporting files in `week-04/`: `week4_findings_summary.md` (includes a method n
 | **Q5 Customer lifetime value** (34 checks) | A customer is worth about the same whatever the type (mean ₹9.9M observed gross profit, type p = 0.41). No customer dominates (largest 0.37%, top 10% hold 14.2%). Government leads on orders because it has the most customers. Industry segment is an exploratory lead to re-test (adjusted p = 0.059). |
 | **Q6 Margin concentration** (38 checks) | EB-600 and TA-800 are 35.9% of revenue but 31.7% of gross profit and pull the 21.56% portfolio margin down by 0.91 points (about ₹210M). The portfolio margin is stable over time. A price what-if is arithmetic only (no price history); the 2024 EB-600 fall is within chance. |
 | **Q7 Lead-time seasonality** (34 checks) | Not seasonal. Lead time is an even spread of 1 to 15 days (mean 8.06); month p = 0.85, no yearly wave, and a month index does not improve a forecast. The delivery date looks generated or planned. |
-| **Q11 Replenishment policy** (16 checks) | Blocked by Q10: gate and labelled scenario only. Ledger receipts are 18.13 times units sold. On the sales side the existing thresholds fill 94.3% of demand; a demand-based trigger at 95% service gives 99.4% for about 19% more stock value. Not a stock finding. |
+| **Q11 Replenishment policy** (16 checks) | Gate and labelled scenario in Week 5; Week 6 reruns it on the agreed sales scale. Ledger receipts are 18.13 times units sold. On the sales side the existing thresholds fill 94.3% of demand; a demand-based trigger at 95% service gives 99.4% for about 19% more stock value. Not a stock finding until it is rerun on the agreed scale. |
 | **Q12 Ledger mismatches** (18 checks) | The 14 pairs differ because `inventory_master.current_stock` is behind the ledger by its last one or two movements (gaps 16 to 515 units, at most 0.45%). Adjustment quantities are stored unsigned, with 1,227 applied as additions and 1,227 as reductions; this is not the cause. |
 
-**Correction to a Week 4 caveat.** "Every ledger adjustment is positive" is true of the `quantity` column only: half of the adjustments reduce the balance (visible in `running_balance`). The Week 4 headline Q10 result (18.1 times) is unaffected, but the corrected-scale replay changes when adjustments are signed: at k = 18.1 the average balance is 142 (not 330) and the balance is below zero on 37% of days (not 28%). The Q10 notebook, report, findings summary, sprint notes and `Corrections_Log.md` in `week-04/` were updated accordingly (Q10 now has 24 checks), and `week-03/analysis_questions_locked.md` records the answered questions. The reasoning is in `week-05/week4_corrections_proposal/`.
+**Correction to a Week 4 caveat.** "Every ledger adjustment is positive" is true of the `quantity` column only: half of the adjustments reduce the balance (visible in `running_balance`). The Week 4 headline Q10 result (18.1 times) is unaffected, but the corrected-scale replay changes when adjustments are signed: at k = 18.1 the average balance is 142 (not 330) and the balance is below zero on 37% of days (not 28%). The Q10 notebook, report, findings summary, sprint notes and `Corrections_Log.md` in `week-04/` were updated accordingly (Q10 now has 24 checks), and `week-03/analysis_questions_locked.md` records the answered questions. These changes were agreed by the team; the reasoning is in `week-05/week4_corrections_proposal/`.
 
 Supporting files in `week-05/`: `05_deep_dive_analysis.ipynb` (master notebook: re-runs all six question notebooks and rebuilds the combined validation), `week5_findings_summary.md`, `sprint_notes_week05.md`, `Corrections_Log_week05.md`, `validation_report_week05.csv`, `README_how_to_run.md`, `week4_corrections_proposal/`.
+
+### Data limits (documented)
+The dataset is supplied with the programme and cannot be clarified, so these are stated as limits rather than questions:
+1. Pricing: one price list, so a price effect cannot be measured.
+2. Cancellations: no reason field, and cancelled orders carry a delivery date.
+3. Stock scale: PO quantities (20 to 300 per line) against sales lines of 1 to 20; the sales scale is the working reference.
+4. Ledger: adjustment quantities are stored unsigned (5 to 50) and half reduce the balance; the sign is visible only in `running_balance`.
+5. Customer master dates and `total_purchase_value` do not agree with the order history (Q13).
 
 ### Week 4 methods
 - Revenue change is split exactly into price, volume and mix; volume is further split into orders placed, cancellation rate and basket size (log-mean method).
@@ -151,7 +159,7 @@ Supporting files in `week-05/`: `05_deep_dive_analysis.ipynb` (master notebook: 
 
 ## 9. How to Run
 
-Open any notebook anywhere inside the repository checkout and run all cells. Each notebook searches its own folder and every parent folder for the corrected merged files (`week-02/reports/week_02/merged`) for Q5 the raw `customers.csv` (`raw_data`), and, for Q1, the Week 3 baseline (`week-03/kpi_outputs`). Otherwise set the environment variables `CADETX_MERGED`, `CADETX_RAW` and `CADETX_KPI` to those folders. If the data cannot be found, the notebook stops with a message saying so. Each notebook writes its outputs, charts and a validation report next to itself and asserts that every check passes. 
+Clone the repository and open any notebook (for example `week-05/05_deep_dive_analysis.ipynb`), then run all cells. Each notebook automatically finds the data it needs inside the repository: the corrected merged files in `week-02/reports/week_02/merged`, the raw `customers.csv` in `raw_data` (Q5), and the Week 3 baseline in `week-03/kpi_outputs` (Q1). Each notebook writes its outputs, charts and a validation report next to itself, and every check passes.
 
 ---
 
@@ -201,8 +209,9 @@ Open any notebook anywhere inside the repository checkout and run all cells. Eac
 
 ## 12. Next Steps (Week 6)
 
-- Agree and apply the Week 4 adjustment-sign corrections in one commit, and re-run Q10 Part D with signed adjustments.
 - Q4 follow-up (payment and outstanding balances) and Q13 (customer master dates), as set in `week-03/analysis_questions_locked.md`.
+- Rebuild the stock KPIs (turnover, cover, stock health) and rerun the Q11 replenishment comparison on the agreed sales scale, with the unscaled case shown as a sensitivity. Every result is labelled as resting on that assumption.
+- Phase 2 coverage proposed for the team to confirm: ABC classes for the 30 products, fast and slow movers, and orders and units per branch and month (all on sales and branch data).
 - Re-test the Q5 industry-segment lead and the Q3 2024 cancellation uptick when more data is available.
 
 ---
@@ -211,10 +220,10 @@ Open any notebook anywhere inside the repository checkout and run all cells. Eac
 
 Weeks 1 to 5 are complete, validated and submitted. The five corrected Week 2 merged datasets in `week-02/reports/week_02/merged/` are the authoritative data and the base for all later work; the earlier single `merged_dataset.csv` is no longer used.
 
-Carried forward as open items rather than closed issues:
+Documented limits, carried forward rather than closed:
 
-- Tracing the purchase-order versus sales stock-scale gap (Q10, about 18.1 times) to its source. This needs the data owner's answer (Section 7).
-- The 14 `stock_ledger` versus `inventory_master` product-branch mismatches are explained in Week 5 (Q12) as the master being behind the ledger by its last one or two movements; why only these 14 pairs is a question for the data owner.
-- Team agreement on the Week 4 adjustment-sign corrections made in Week 5 (Q10 notebook and report, findings summary, sprint notes, `Corrections_Log.md`).
+- **Stock scale (Q10).** Purchase receipts are about 18.1 times units sold and nothing in the data explains why. The dataset is supplied with the programme, so there is no data owner to ask. The team agreed to use the sales scale as the working reference (the stored stock thresholds fit monthly sales) and to label every stock result as resting on that assumption.
+- **Ledger mismatches (Q12).** The 14 `stock_ledger` versus `inventory_master` product-branch mismatches are explained in Week 5 as the master being behind the ledger by its last one or two movements. Why only these 14 pairs cannot be determined from the data.
+- **Week 4 adjustment-sign corrections** made in Week 5 (Q10 notebook and report, findings summary, sprint notes, `Corrections_Log.md`) were agreed by the team.
 
 Week 6 builds directly on this cleaned, merged and validated data.

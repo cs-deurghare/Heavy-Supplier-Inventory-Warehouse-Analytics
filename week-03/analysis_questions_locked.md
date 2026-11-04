@@ -31,13 +31,13 @@ Drawn from the corrected Week 3 KPI work. Questions that the data has already an
 
 ## Inventory & Data Quality
 10. Purchase receipts are 18× units sold (PO spend ≈ ₹312B vs net sales ₹23B). Are the PO quantities or the sales quantities on the wrong scale? **Required before any stock KPI (turnover, cover, stock health, replenishment policy) can be reported.**
-   **Week 4: unresolved.** Needs the data owner's answer on how purchase-order quantities were set (Week 5 data-owner pack). Replay with signed adjustments is in the Q10 report.
+   **Week 4: unexplained in the data.** There is no data owner to ask, so from Week 6 the team uses the sales scale as the working reference and labels every stock result as resting on that assumption. Replay with signed adjustments is in the Q10 report.
 11. Once Q10 is resolved, what replenishment policy minimises carrying cost without stockouts?
-   **Week 5 (Q11): gate run, still blocked by Q10.** A labelled sales-side scenario was run and must not be quoted as a stock result.
+   **Week 5 (Q11): gate and labelled sales-side scenario run.** To be rerun on the agreed sales scale in Week 6; until then it must not be quoted as a stock result.
 12. 14 of 180 product–branch pairs differ between `inventory_master` and the ledger (13 negative). Is the cause the unsigned `ADJUSTMENT` quantities?
    **Answered in Week 5 (Q12):** the unsigned `ADJUSTMENT` quantity is real (1,227 added, 1,227 removed, visible only in `running_balance`) but is **not** the cause. The master is behind the ledger by its last one or two movements for all 14 pairs.
 13. Customer master dates: many orders predate `customer_since` or follow `last_purchase_date`. Are those fields maintained, and should they be used?
    **Previewed in Week 5 (Q5):** `customer_since` is after the first order for 58% of customers and `last_purchase_date` is before the last order for 93%; to be completed in Week 6.
 
 ---
-**Status:** Locked for Phase 2 (Weeks 4–6), revised after validation against the corrected merged datasets. Updated after Week 5: Q1, Q2, Q3, Q5, Q6, Q7, Q8 and Q12 answered; Q10 and Q11 waiting on the data owner; Q4 follow-up and Q13 planned for Week 6.
+**Status:** Locked for Phase 2 (Weeks 4–6), revised after validation against the corrected merged datasets. Updated after Week 5: Q1, Q2, Q3, Q5, Q6, Q7, Q8 and Q12 answered; Q10 and Q11 to be completed in Week 6 on the agreed sales scale; Q4 follow-up and Q13 planned for Week 6.

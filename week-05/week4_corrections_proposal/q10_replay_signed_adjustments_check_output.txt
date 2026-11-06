@@ -1,0 +1,16 @@
+    k                                                method  avg_balance  below_zero  above_max  pairs_end_between_0_and_max
+ 1.00 Week 4 method (date+movement_id order, adjustments +)        53627      0.0000     0.9969                            0
+ 1.00                             file order, adjustments +        53620      0.0000     0.9969                            0
+ 1.00   file order, adjustments signed from running_balance        53432      0.0000     0.9968                            0
+10.00 Week 4 method (date+movement_id order, adjustments +)         2860      0.0000     0.9648                            0
+10.00                             file order, adjustments +         2859      0.0000     0.9646                            0
+10.00   file order, adjustments signed from running_balance         2671      0.0001     0.9603                            0
+15.00 Week 4 method (date+movement_id order, adjustments +)          980      0.0473     0.7555                           10
+15.00                             file order, adjustments +          979      0.0475     0.7548                           10
+15.00   file order, adjustments signed from running_balance          791      0.0966     0.6699                           16
+18.13 Week 4 method (date+movement_id order, adjustments +)          330      0.2847     0.4658                           12
+18.13                             file order, adjustments +          329      0.2851     0.4649                           12
+18.13   file order, adjustments signed from running_balance          141      0.3689     0.3781                           10
+20.00 Week 4 method (date+movement_id order, adjustments +)           40      0.4033     0.3259                           11
+20.00                             file order, adjustments +           39      0.4039     0.3254                           11
+20.00   file order, adjustments signed from running_balance         -149      0.4902     0.2270                           24

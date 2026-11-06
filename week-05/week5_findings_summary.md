@@ -34,3 +34,12 @@ Six questions were answered on the corrected Week 2 merged datasets (Delivered o
 The dataset is supplied with the programme, so there is no data owner to ask. The items below are stated as limits in every output that depends on them.
 
 The evidence for each item is in `standalone_question_reports/q11_stock_scale_gate/Data_Owner_Question_Pack.md`, kept as a reference list. In order of effect: (1) how purchase-order quantities were set (the team uses the sales scale as the working reference for Q10 and Q11); (2) whether `delivery_date` is actual or planned (it looks generated or planned); (3) what the `Cancelled` status means (no reason is recorded); (4) whether there is a price history (there is one price list); (5) how adjustments are signed (only `running_balance` shows it) and why the master missed the last postings for 14 pairs; (6) which customer dates are maintained (Q13 tests this); (7) holding cost, ordering cost and service target (Q11 states its assumptions); (8) the meaning of `margin_percentage` and the OF-90 value.
+
+## Recommendations
+
+1. Do not target any region, customer type, channel or product for cancellation reduction; watch the 2024 uptick over 2025.
+2. Do not build customer tiers or key-account programmes on lifetime value; re-test industry segment with more data.
+3. Look at supplier cost and the price list for EB-600 and TA-800 first; make no pricing claim until a price history and volume response are available.
+4. Quote delivery lead time as one company-wide figure (about 8 days, 1 to 15); do not plan around seasonality; state that the delivery date looks generated or planned.
+5. Report stock KPIs and the replenishment policy only on the agreed sales scale, labelled as resting on that assumption.
+6. Keep the data limits documented in the README; the agreed Week 4 adjustment-sign corrections go in with the Week 5 commit.

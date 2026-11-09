@@ -1,7 +1,7 @@
 # Heavy Supplier, Inventory & Warehouse Analytics
 
 ![Project](https://img.shields.io/badge/Project-Heavy%20Supplier%20Analytics-blue?style=for-the-badge)
-![Sprint](https://img.shields.io/badge/Sprint-Week%2005%20Complete-brightgreen?style=for-the-badge)
+![Sprint](https://img.shields.io/badge/Sprint-Week%2006%20In%20Progress-yellow?style=for-the-badge)
 ![Validation](https://img.shields.io/badge/Validation-All%20checks%20passing-success?style=for-the-badge)
 
 A CadetX Virtual Work Experience project analysing a heavy machinery supplier's sales, inventory, purchasing and warehouse operations across 12 relational data tables, to support evidence-based decisions on stock management, supplier performance and customer value.
@@ -19,6 +19,7 @@ This repository holds the code, cleaned data, documentation and findings produce
 | Measurement | 3 | Calculate the first KPIs and lock the analysis questions |
 | Deep dive | 4 | Answer four locked questions (Q1, Q2, Q8, Q10) with tested, reproducible analysis |
 | Deep dive | 5 | Answer Q3, Q5, Q6, Q7 and Q12, and run the Q11 gate with a labelled scenario |
+| Deep dive | 6 | Close Phase 2: Q4 follow-up, Q13, stock KPIs and Q11 on the agreed scale, ABC classes, fast and slow movers, branch throughput (in progress) |
 
 **Dataset:** 12 source tables covering sales orders, customers, products, suppliers, purchase orders, invoices, payments, stock ledger, branches and inventory.
 
@@ -157,13 +158,26 @@ The dataset is supplied with the programme and cannot be clarified, so these are
 - Purchase-order lines share a supplier and dates, so on-time, delay and lead time are tested per purchase order, not per line.
 - Claims are worded to match their tests: a result is called "not established" or "weak evidence" when the test does not support more.
 
-## 9. How to Run
+## 9. Week 6: Phase 2 Close (in progress)
+
+`week-06/standalone_question_reports/` holds one self-contained folder per question. The Q4 follow-up (43 checks), the Phase 2 coverage (43), Q13 (25) and the stock KPIs with the Q11 rerun (23) are complete, 134 of 134 checks in `week-06/validation_report_week06.csv`; the open items are in Section 13.
+
+| Question | Answer |
+| :--- | :--- |
+| **Q4 follow-up Payments and ageing** (43 checks) | The outstanding money is old because the invoices are old. About 20% of the value due in every full year (2019 to 2024) is still open (chi-square p = 0.82, no downward trend, p = 0.77), so the 86% of outstanding that is over a year past due mirrors the 85% of invoiced value that fell due over a year ago. No payment in the data arrives more than 75 days after the due date; the 5,274 open invoices past that point (₹5.71B, 98% of outstanding) have no precedent of closing. No customer type, region, payment term, channel or customer stands out (smallest Holm-adjusted p = 0.34). Exposure range if 25% to 100% of the past-75-day balances were never collected: ₹1.43B to ₹5.71B (5.0% to 20.0% of invoiced value). The data holds no collection or write-off records, so it cannot say whether the money will be collected. |
+| **Phase 2 coverage ABC, movers, branches and forecast readiness** (43 checks) | Ten products (class A) make 81.5% of revenue (B: 7 products, 14.1%; C: 13 products, 4.4%); the classes follow unit price, not volume, and class A has the lowest gross margin (20.3% against 31.8% in class C). No product is a fast or slow mover: monthly volumes run from 548 to 593 units, only 8% apart, and are equal within chance (Kruskal-Wallis p = 0.62; the product ranking does not hold across periods, rho = -0.09). Branches differ in how many orders they handle (Chennai 51.1 a month to Hyderabad 34.4) but not in order size, and none trends up or down. All 40 monthly series (totals, 30 products, 6 branches) are ready for a simple level forecast: no trend after Holm adjustment, no seasonality once months are put on a per-day basis, and no method beats the plain average in a rolling back-test. The data holds no capacity or timing records, so throughput means orders and units sold. |
+| **Q13 Customer master dates** (25 checks) | The three customer master fields do not agree with the order lines. `customer_since` is after the first order for 58.4% of customers (all 242 customers dated 2020 or later had already ordered in 2019); `last_purchase_date` is earlier than the last order for 93.0%; `total_purchase_value` is 5.4% of delivered revenue and no customer is within 10% of their revenue. Rank correlations with the order-derived values are −0.04, −0.01 and −0.09, and the gaps do not differ by region or customer type (smallest Holm-adjusted p = 0.75). All three fields are **Unusable**: tenure, recency and value for Phase 3 must be derived from the order lines, whose history covers 2019 to 2024 only. |
+| **Stock KPIs and Q11 rerun** (23 checks) | On the agreed sales scale (Q10 unresolved), the existing reorder levels fill 94.3% of demand and leave 72 of 180 pairs below a 95% fill. Stock KPIs: average stock ₹392.6M at cost, turnover 6.9 times a year, median cover 52.6 days against an 18-day lead time. A trigger based on each pair's demand and lead time fills 98.9% to 99.8% for 12% to 32% more stock value (95% service: 99.4%, ₹468.3M). Recorded `current_stock` gives 38,272 days of cover and cannot be used; at the purchase scale the stored thresholds would fill only 23.8%. The data has no holding or ordering cost, so no policy is called cost-optimal. **Every figure rests on the sales-scale assumption** (`week-06/stock_scale_note.md`). |
+
+---
+
+## 10. How to Run
 
 Clone the repository and open any notebook (for example `week-05/05_deep_dive_analysis.ipynb`), then run all cells. Each notebook automatically finds the data it needs inside the repository: the corrected merged files in `week-02/reports/week_02/merged`, the raw `customers.csv` in `raw_data` (Q5), and the Week 3 baseline in `week-03/kpi_outputs` (Q1). Each notebook writes its outputs, charts and a validation report next to itself, and every check passes.
 
 ---
 
-## 10. Tools Used
+## 11. Tools Used
 
 - **Python 3** with **pandas**, **NumPy** and **SciPy** for profiling, cleaning, merging, statistical testing and validation
 - **Jupyter Notebook** for a documented, reproducible workflow
@@ -172,7 +186,7 @@ Clone the repository and open any notebook (for example `week-05/05_deep_dive_an
 
 ---
 
-## 11. Repository Structure
+## 12. Repository Structure
 
 ```
 ├── processed_data/                 # Cleaned tables
@@ -202,23 +216,30 @@ Clone the repository and open any notebook (for example `week-05/05_deep_dive_an
 │   ├── sprint_notes_week05.md
 │   ├── README_how_to_run.md
 │   └── week5_findings_summary.md
+├── week-06/                        # Phase 2 close (in progress)
+│   ├── standalone_question_reports/  # q4_payment_followup, phase2_coverage, q13_customer_master_dates, stock_kpis_and_q11_rerun (each: notebook, report, outputs, charts, validation)
+│   ├── validation_report_week06.csv  # 134 checks
+│   ├── stock_scale_note.md
+│   ├── corrections_log_week06.md
+│   ├── sprint_notes_week06.md
+│   ├── readme_how_to_run.md
+│   └── week6_findings_summary.md
 └── README.md
 ```
 
 ---
 
-## 12. Next Steps (Week 6)
+## 13. Remaining Week 6 Work
 
-- Q4 follow-up (payment and outstanding balances) and Q13 (customer master dates), as set in `week-03/analysis_questions_locked.md`.
-- Rebuild the stock KPIs (turnover, cover, stock health) and rerun the Q11 replenishment comparison on the agreed sales scale, with the unscaled case shown as a sensitivity. Every result is labelled as resting on that assumption.
-- Phase 2 coverage proposed for the team to confirm: ABC classes for the 30 products, fast and slow movers, and orders and units per branch and month (all on sales and branch data).
+- Owner and reviewer sign-off on the four Week 6 packages.
+- Keep every stock result labelled as resting on the sales-scale assumption (`week-06/stock_scale_note.md`); rebuild first if a corrected purchase scale is ever confirmed.
 - Re-test the Q5 industry-segment lead and the Q3 2024 cancellation uptick when more data is available.
 
 ---
 
-## 13. Status
+## 14. Status
 
-Weeks 1 to 5 are complete, validated and submitted. The five corrected Week 2 merged datasets in `week-02/reports/week_02/merged/` are the authoritative data and the base for all later work; the earlier single `merged_dataset.csv` is no longer used.
+Weeks 1 to 5 are complete, validated and submitted. Week 6 is in progress: all Week 6 packages are complete (Q4 follow-up, Phase 2 coverage, Q13, stock KPIs with the Q11 rerun), pending owner and reviewer sign-off. The five corrected Week 2 merged datasets in `week-02/reports/week_02/merged/` are the authoritative data and the base for all later work; the earlier single `merged_dataset.csv` is no longer used.
 
 Documented limits, carried forward rather than closed:
 

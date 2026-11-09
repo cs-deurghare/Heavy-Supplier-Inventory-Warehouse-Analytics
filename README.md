@@ -1,7 +1,7 @@
 # Heavy Supplier, Inventory & Warehouse Analytics
 
 ![Project](https://img.shields.io/badge/Project-Heavy%20Supplier%20Analytics-blue?style=for-the-badge)
-![Sprint](https://img.shields.io/badge/Sprint-Week%2006%20In%20Progress-yellow?style=for-the-badge)
+![Sprint](https://img.shields.io/badge/Sprint-Week%2006%20Complete-brightgreen?style=for-the-badge)
 ![Validation](https://img.shields.io/badge/Validation-All%20checks%20passing-success?style=for-the-badge)
 
 A CadetX Virtual Work Experience project analysing a heavy machinery supplier's sales, inventory, purchasing and warehouse operations across 12 relational data tables, to support evidence-based decisions on stock management, supplier performance and customer value.
@@ -19,7 +19,7 @@ This repository holds the code, cleaned data, documentation and findings produce
 | Measurement | 3 | Calculate the first KPIs and lock the analysis questions |
 | Deep dive | 4 | Answer four locked questions (Q1, Q2, Q8, Q10) with tested, reproducible analysis |
 | Deep dive | 5 | Answer Q3, Q5, Q6, Q7 and Q12, and run the Q11 gate with a labelled scenario |
-| Deep dive | 6 | Close Phase 2: Q4 follow-up, Q13, stock KPIs and Q11 on the agreed scale, ABC classes, fast and slow movers, branch throughput (in progress) |
+| Deep dive | 6 | Close Phase 2: Q4 follow-up, Q13, stock KPIs and Q11 on the agreed scale, ABC classes, fast and slow movers, branch throughput (complete) |
 
 **Dataset:** 12 source tables covering sales orders, customers, products, suppliers, purchase orders, invoices, payments, stock ledger, branches and inventory.
 
@@ -40,7 +40,7 @@ A four-person analytics team working in agile sprints with rotating weekly leade
 
 ## 3. Current Status and Authoritative Data
 
-Weeks 1 to 5 are complete. Every notebook runs end to end with no errors and stops if any of its validation checks fail.
+Weeks 1 to 6 are complete. Every notebook runs end to end with no errors and stops if any of its validation checks fail.
 
 **The authoritative dataset is the set of corrected Week 2 merged files** in `week-02/reports/week_02/merged/`:
 `sales_orders_full.csv`, `invoices_with_payments.csv`, `purchase_orders_full.csv`, `inventory_with_ledger.csv` and `stock_ledger_enriched.csv`.
@@ -158,7 +158,7 @@ The dataset is supplied with the programme and cannot be clarified, so these are
 - Purchase-order lines share a supplier and dates, so on-time, delay and lead time are tested per purchase order, not per line.
 - Claims are worded to match their tests: a result is called "not established" or "weak evidence" when the test does not support more.
 
-## 9. Week 6: Phase 2 Close (in progress)
+## 9. Week 6: Phase 2 Close (complete)
 
 `week-06/standalone_question_reports/` holds one self-contained folder per question. The Q4 follow-up (43 checks), the Phase 2 coverage (43), Q13 (25) and the stock KPIs with the Q11 rerun (23) are complete, 134 of 134 checks in `week-06/validation_report_week06.csv`; the open items are in Section 13.
 
@@ -216,7 +216,7 @@ Clone the repository and open any notebook (for example `week-05/05_deep_dive_an
 │   ├── sprint_notes_week05.md
 │   ├── README_how_to_run.md
 │   └── week5_findings_summary.md
-├── week-06/                        # Phase 2 close (in progress)
+├── week-06/                        # Phase 2 close
 │   ├── standalone_question_reports/  # q4_payment_followup, phase2_coverage, q13_customer_master_dates, stock_kpis_and_q11_rerun (each: notebook, report, outputs, charts, validation)
 │   ├── validation_report_week06.csv  # 134 checks
 │   ├── stock_scale_note.md
@@ -229,9 +229,8 @@ Clone the repository and open any notebook (for example `week-05/05_deep_dive_an
 
 ---
 
-## 13. Remaining Week 6 Work
+## 13. Open Items After Week 6
 
-- Owner and reviewer sign-off on the four Week 6 packages.
 - Keep every stock result labelled as resting on the sales-scale assumption (`week-06/stock_scale_note.md`); rebuild first if a corrected purchase scale is ever confirmed.
 - Re-test the Q5 industry-segment lead and the Q3 2024 cancellation uptick when more data is available.
 
@@ -239,7 +238,7 @@ Clone the repository and open any notebook (for example `week-05/05_deep_dive_an
 
 ## 14. Status
 
-Weeks 1 to 5 are complete, validated and submitted. Week 6 is in progress: all Week 6 packages are complete (Q4 follow-up, Phase 2 coverage, Q13, stock KPIs with the Q11 rerun), pending owner and reviewer sign-off. The five corrected Week 2 merged datasets in `week-02/reports/week_02/merged/` are the authoritative data and the base for all later work; the earlier single `merged_dataset.csv` is no longer used.
+Weeks 1 to 6 are complete and validated (Week 6: Q4 follow-up, Phase 2 coverage, Q13, and stock KPIs with the Q11 rerun; 134 of 134 checks pass). The five corrected Week 2 merged datasets in `week-02/reports/week_02/merged/` are the authoritative data and the base for all later work; the earlier single `merged_dataset.csv` is no longer used.
 
 Documented limits, carried forward rather than closed:
 

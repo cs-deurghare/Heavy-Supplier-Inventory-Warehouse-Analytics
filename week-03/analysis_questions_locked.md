@@ -12,7 +12,7 @@ Drawn from the corrected Week 3 KPI work. Questions that the data has already an
    **Answered in Week 5 (Q3): no.** Cancellation is not concentrated by any segment or product (smallest adjusted p = 0.35); the 2019 to 2024 rise is weak, post-hoc evidence. No cancellation reason exists in the data.
 
 ## Customer & Payments
-4. ~~Is unpaid concentrated in specific customer types or regions?~~ **Answered in Week 3: no** — outstanding is 19.6–21.4% of value in every segment. Open follow-up: why is 86% of outstanding more than a year overdue, and is it collectable?
+4. ~~Is unpaid concentrated in specific customer types or regions?~~ **Answered in Week 3: no** — outstanding is 19.6–21.4% of value in every segment. **Follow-up answered in Week 6:** the outstanding money is old because the invoices are old (about 20% of every due year's value is still open); no late payment in the data arrives after 75 days; whether it will be collected is not testable (no collection or write-off records), so the Q4 report gives a labelled exposure range of ₹1.43B to ₹5.71B.
 5. Government leads on revenue through order count, not order size. What does a customer-lifetime-value view show?
    **Answered in Week 5 (Q5):** customers are worth about the same whatever the type (type p = 0.41); no customer dominates; Government leads because it has the most customers. Industry segment is an exploratory lead to re-test.
 
@@ -31,13 +31,13 @@ Drawn from the corrected Week 3 KPI work. Questions that the data has already an
 
 ## Inventory & Data Quality
 10. Purchase receipts are 18× units sold (PO spend ≈ ₹312B vs net sales ₹23B). Are the PO quantities or the sales quantities on the wrong scale? **Required before any stock KPI (turnover, cover, stock health, replenishment policy) can be reported.**
-   **Week 4: unexplained in the data.** There is no data owner to ask, so from Week 6 the team uses the sales scale as the working reference and labels every stock result as resting on that assumption. Replay with signed adjustments is in the Q10 report.
+   **Week 4: unexplained in the data.** There is no data owner to ask, so from Week 6 the team uses the sales scale as the working reference and labels every stock result as resting on that assumption (`week-06/stock_scale_note.md`). Replay with signed adjustments is in the Q10 report.
 11. Once Q10 is resolved, what replenishment policy minimises carrying cost without stockouts?
-   **Week 5 (Q11): gate and labelled sales-side scenario run.** To be rerun on the agreed sales scale in Week 6; until then it must not be quoted as a stock result.
+   **Answered in Week 6 on the agreed sales scale (labelled working result):** the existing reorder levels fill 94.3% of demand (72 of 180 pairs below 95%); a demand-based trigger fills 98.9% to 99.8% for 12% to 32% more stock value; no cost data exists, so no policy is called cost-optimal. Stock KPIs: turnover 6.9 a year, median cover 52.6 days. Every figure rests on the sales-scale assumption.
 12. 14 of 180 product–branch pairs differ between `inventory_master` and the ledger (13 negative). Is the cause the unsigned `ADJUSTMENT` quantities?
    **Answered in Week 5 (Q12):** the unsigned `ADJUSTMENT` quantity is real (1,227 added, 1,227 removed, visible only in `running_balance`) but is **not** the cause. The master is behind the ledger by its last one or two movements for all 14 pairs.
 13. Customer master dates: many orders predate `customer_since` or follow `last_purchase_date`. Are those fields maintained, and should they be used?
-   **Previewed in Week 5 (Q5):** `customer_since` is after the first order for 58% of customers and `last_purchase_date` is before the last order for 93%; to be completed in Week 6.
+   **Answered in Week 6 (Q13): no.** `customer_since` is after the first order for 58.4% of customers, `last_purchase_date` is before the last order for 93.0%, and `total_purchase_value` is 5.4% of delivered revenue; all three are Unusable and tenure, recency and value must be derived from the order lines.
 
 ---
-**Status:** Locked for Phase 2 (Weeks 4–6), revised after validation against the corrected merged datasets. Updated after Week 5: Q1, Q2, Q3, Q5, Q6, Q7, Q8 and Q12 answered; Q10 and Q11 to be completed in Week 6 on the agreed sales scale; Q4 follow-up and Q13 planned for Week 6.
+**Status:** Locked for Phase 2 (Weeks 4–6), revised after validation against the corrected merged datasets. Updated after Week 6: Q1 to Q8, Q12 and Q13 answered (including the Q4 follow-up); Phase 2 coverage (ABC, movers, branch throughput, forecast readiness) done; Q10 stays unexplained and Q11 and the stock KPIs are answered on the agreed sales scale, labelled as resting on that assumption.

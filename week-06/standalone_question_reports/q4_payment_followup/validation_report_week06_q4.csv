@@ -1,0 +1,44 @@
+Check_ID,Check_Item,Expected,Actual,Status
+1,invoices,18033,18033,PASS
+2,reliable invoices (unique invoice_id),17640,17640,PASS
+3,repeated-ID invoices set aside (UI-01),393,393,PASS
+4,repeated-ID invoices are worth Rs 654M incl. GST,654,654,PASS
+5,invoice_id is unique among the reliable invoices,0,0,PASS
+6,"one as-of date, 2025-03-14, equal to the latest due date",2025-03-14,['2025-03-14'],PASS
+7,outstanding equals grand_total minus total paid (max gap under Rs 1),0,0.0,PASS
+8,no outstanding amount is below minus one paisa (75 paid invoices are overpaid by exactly 0.01 and 92 are short by exactly 0.01; both are rounding differences),0,0,PASS
+9,an invoice is open exactly when its status is not Paid,0,0,PASS
+10,outstanding on reliable invoices is Rs 5.80B (Week 3),5.8,5.8,PASS
+11,"overdue invoices 5,375 (Week 3)",5375,5375,PASS
+12,days_overdue column agrees with as-of minus due date on every overdue invoice,0,0,PASS
+13,"more than 365 days overdue: 4,595 invoices",4595,4595,PASS
+14,more than 365 days overdue: Rs 4.99B,4.99,4.99,PASS
+15,86% of outstanding is more than 365 days overdue (Week 3),86,86,PASS
+16,only Delivered orders carry invoices,['Delivered'],['Delivered'],PASS
+17,"six full due years each hold 2,500 to 3,000 invoices",True,"[2596, 2951, 2961, 2940, 2944, 2902]",PASS
+18,open value share sits between 19% and 22% in every full year,"(19, 22)","(np.float64(19.6), np.float64(21.1))",PASS
+19,open share is not significantly different across the six years (p > 0.05),>0.05,0.819,PASS
+20,no downward trend with age: older invoices are not collected more (trend p > 0.05),>0.05,0.768,PASS
+21,2024 vs 2019 difference interval includes zero,True,"(np.float64(-1.61), np.float64(3.1))",PASS
+22,"86% of outstanding is over a year old, against 85% of invoiced value that fell due over a year ago: the gap is under 3 points",True,"(np.float64(85.9), np.float64(85.3))",PASS
+23,the interval for the gap between the two shares excludes a gap larger than 5 points,True,"(np.float64(-0.57), np.float64(1.69))",PASS
+24,payments are made at most 75 days after the due date,75,75,PASS
+25,no fully paid invoice was settled later than 75 days past due,0,0,PASS
+26,"5,274 open invoices are more than 75 days past due",5274,5274,PASS
+27,fully paid invoices were closed within 75 days of the due date (latest 45 days),<=75,45,PASS
+28,"balances more than 75 days past due are Rs 5.71B, 98% of outstanding","(5.71, 98)","(np.float64(5.71), 98)",PASS
+29,"unpaid invoices: 1,798 worth Rs 2.92B outstanding","(1798, 2.92)","(1798, np.float64(2.92))",PASS
+30,"partly paid invoices: 3,578 worth Rs 2.89B outstanding","(3578, 2.89)","(3578, np.float64(2.89))",PASS
+31,open invoices are only Unpaid or Partially Paid,"['Partially Paid', 'Unpaid']","['Partially Paid', 'Unpaid']",PASS
+32,partly paid fraction stays between 20% and 80%,"(0.2, 0.8)","(np.float64(0.2), np.float64(0.8))",PASS
+33,paid fraction is unrelated to invoice age (Spearman |rho| < 0.05),<0.05,0.003,PASS
+34,six cuts tested together,6,6,PASS
+35,no cut is significant after the Holm adjustment (smallest adjusted p > 0.05),>0.05,0.337,PASS
+36,every Cramer's V is below 0.03 (negligible effect),<0.03,0.0207,PASS
+37,open value share is within 17% to 23% at every level of every cut,"(17, 23)","(18.6, 22.1)",PASS
+38,500 customers carry the reliable invoices,500,500,PASS
+39,customer clustering of unpaid value is not above chance (spread test p > 0.05),>0.05,0.916,PASS
+40,the 50 customers owing most hold no more than chance (p > 0.05),>0.05,0.748,PASS
+41,chi-square across customers is not significant (p > 0.05),>0.05,0.361,PASS
+42,"exposure rows are 25, 50, 75 and 100% of the Rs 5.71B past-75-day balances","(1.43, 2.85, 4.28, 5.71)","(1.43, 2.85, 4.28, 5.71)",PASS
+43,full exposure is 20.0% of invoiced value,20.0,20.0,PASS

@@ -1,0 +1,135 @@
+Question,Check_ID,Check_Item,Expected,Actual,Status
+Q4 payment follow-up,1,invoices,18033,18033,PASS
+Q4 payment follow-up,2,reliable invoices (unique invoice_id),17640,17640,PASS
+Q4 payment follow-up,3,repeated-ID invoices set aside (UI-01),393,393,PASS
+Q4 payment follow-up,4,repeated-ID invoices are worth Rs 654M incl. GST,654,654,PASS
+Q4 payment follow-up,5,invoice_id is unique among the reliable invoices,0,0,PASS
+Q4 payment follow-up,6,"one as-of date, 2025-03-14, equal to the latest due date",2025-03-14,['2025-03-14'],PASS
+Q4 payment follow-up,7,outstanding equals grand_total minus total paid (max gap under Rs 1),0,0.0,PASS
+Q4 payment follow-up,8,no outstanding amount is below minus one paisa (75 paid invoices are overpaid by exactly 0.01 and 92 are short by exactly 0.01; both are rounding differences),0,0,PASS
+Q4 payment follow-up,9,an invoice is open exactly when its status is not Paid,0,0,PASS
+Q4 payment follow-up,10,outstanding on reliable invoices is Rs 5.80B (Week 3),5.8,5.8,PASS
+Q4 payment follow-up,11,"overdue invoices 5,375 (Week 3)",5375,5375,PASS
+Q4 payment follow-up,12,days_overdue column agrees with as-of minus due date on every overdue invoice,0,0,PASS
+Q4 payment follow-up,13,"more than 365 days overdue: 4,595 invoices",4595,4595,PASS
+Q4 payment follow-up,14,more than 365 days overdue: Rs 4.99B,4.99,4.99,PASS
+Q4 payment follow-up,15,86% of outstanding is more than 365 days overdue (Week 3),86,86,PASS
+Q4 payment follow-up,16,only Delivered orders carry invoices,['Delivered'],['Delivered'],PASS
+Q4 payment follow-up,17,"six full due years each hold 2,500 to 3,000 invoices",True,"[2596, 2951, 2961, 2940, 2944, 2902]",PASS
+Q4 payment follow-up,18,open value share sits between 19% and 22% in every full year,"(19, 22)","(np.float64(19.6), np.float64(21.1))",PASS
+Q4 payment follow-up,19,open share is not significantly different across the six years (p > 0.05),>0.05,0.819,PASS
+Q4 payment follow-up,20,no downward trend with age: older invoices are not collected more (trend p > 0.05),>0.05,0.768,PASS
+Q4 payment follow-up,21,2024 vs 2019 difference interval includes zero,True,"(np.float64(-1.61), np.float64(3.1))",PASS
+Q4 payment follow-up,22,"86% of outstanding is over a year old, against 85% of invoiced value that fell due over a year ago: the gap is under 3 points",True,"(np.float64(85.9), np.float64(85.3))",PASS
+Q4 payment follow-up,23,the interval for the gap between the two shares excludes a gap larger than 5 points,True,"(np.float64(-0.57), np.float64(1.69))",PASS
+Q4 payment follow-up,24,payments are made at most 75 days after the due date,75,75,PASS
+Q4 payment follow-up,25,no fully paid invoice was settled later than 75 days past due,0,0,PASS
+Q4 payment follow-up,26,"5,274 open invoices are more than 75 days past due",5274,5274,PASS
+Q4 payment follow-up,27,fully paid invoices were closed within 75 days of the due date (latest 45 days),<=75,45,PASS
+Q4 payment follow-up,28,"balances more than 75 days past due are Rs 5.71B, 98% of outstanding","(5.71, 98)","(np.float64(5.71), 98)",PASS
+Q4 payment follow-up,29,"unpaid invoices: 1,798 worth Rs 2.92B outstanding","(1798, 2.92)","(1798, np.float64(2.92))",PASS
+Q4 payment follow-up,30,"partly paid invoices: 3,578 worth Rs 2.89B outstanding","(3578, 2.89)","(3578, np.float64(2.89))",PASS
+Q4 payment follow-up,31,open invoices are only Unpaid or Partially Paid,"['Partially Paid', 'Unpaid']","['Partially Paid', 'Unpaid']",PASS
+Q4 payment follow-up,32,partly paid fraction stays between 20% and 80%,"(0.2, 0.8)","(np.float64(0.2), np.float64(0.8))",PASS
+Q4 payment follow-up,33,paid fraction is unrelated to invoice age (Spearman |rho| < 0.05),<0.05,0.003,PASS
+Q4 payment follow-up,34,six cuts tested together,6,6,PASS
+Q4 payment follow-up,35,no cut is significant after the Holm adjustment (smallest adjusted p > 0.05),>0.05,0.337,PASS
+Q4 payment follow-up,36,every Cramer's V is below 0.03 (negligible effect),<0.03,0.0207,PASS
+Q4 payment follow-up,37,open value share is within 17% to 23% at every level of every cut,"(17, 23)","(18.6, 22.1)",PASS
+Q4 payment follow-up,38,500 customers carry the reliable invoices,500,500,PASS
+Q4 payment follow-up,39,customer clustering of unpaid value is not above chance (spread test p > 0.05),>0.05,0.916,PASS
+Q4 payment follow-up,40,the 50 customers owing most hold no more than chance (p > 0.05),>0.05,0.748,PASS
+Q4 payment follow-up,41,chi-square across customers is not significant (p > 0.05),>0.05,0.361,PASS
+Q4 payment follow-up,42,"exposure rows are 25, 50, 75 and 100% of the Rs 5.71B past-75-day balances","(1.43, 2.85, 4.28, 5.71)","(1.43, 2.85, 4.28, 5.71)",PASS
+Q4 payment follow-up,43,full exposure is 20.0% of invoiced value,20.0,20.0,PASS
+Phase 2 coverage,1,sales lines,130402,130402,PASS
+Phase 2 coverage,2,orders,20000,20000,PASS
+Phase 2 coverage,3,products,30,30,PASS
+Phase 2 coverage,4,branches,6,6,PASS
+Phase 2 coverage,5,every order has one status,0,0,PASS
+Phase 2 coverage,6,every order has one branch_id,0,0,PASS
+Phase 2 coverage,7,every order has one order_date,0,0,PASS
+Phase 2 coverage,8,delivered orders,18033,18033,PASS
+Phase 2 coverage,9,cancelled orders set aside,1967,1967,PASS
+Phase 2 coverage,10,months covered,72,72,PASS
+Phase 2 coverage,11,delivered orders = invoices (count),18033,18033,PASS
+Phase 2 coverage,12,delivered order value incl GST equals the invoice file (Rs B),29.25,29.25,PASS
+Phase 2 coverage,13,reliable-invoice value matches the Q4 base (Rs B),28.6,28.6,PASS
+Phase 2 coverage,14,line_total = quantity x unit_price on every line,0,0,PASS
+Phase 2 coverage,15,ABC by revenue matches an independent loop,True,True,PASS
+Phase 2 coverage,16,ABC by gross_profit matches an independent loop,True,True,PASS
+Phase 2 coverage,17,product revenue adds up to delivered revenue,22958987430,22958987430,PASS
+Phase 2 coverage,18,product gross profit adds up to delivered gross profit,4950006740,4950006740,PASS
+Phase 2 coverage,19,classes by revenue cover all 30 products,30,30,PASS
+Phase 2 coverage,20,A class by revenue reaches at least 80%,>=80,81.5,PASS
+Phase 2 coverage,21,classes by gross_profit cover all 30 products,30,30,PASS
+Phase 2 coverage,22,A class by gross_profit reaches at least 80%,>=80,82.7,PASS
+Phase 2 coverage,23,Cohen kappa between the two views is a valid value,True,0.845,PASS
+Phase 2 coverage,24,product-month grid is 30 x 72,"(30, 72)","(30, 72)",PASS
+Phase 2 coverage,25,no product-month has zero sales,0,0,PASS
+Phase 2 coverage,26,monthly units add up to delivered units,1234939,1234939,PASS
+Phase 2 coverage,27,mover classes cover all 30 products,30,30,PASS
+Phase 2 coverage,28,no mover label is given when volumes do not differ beyond chance,True,True,PASS
+Phase 2 coverage,29,"permutation test uses 5,000 shuffles",5000,5000,PASS
+Phase 2 coverage,30,branch-month grid is 6 x 72,432,432,PASS
+Phase 2 coverage,31,branch orders add up to delivered orders,18033,18033,PASS
+Phase 2 coverage,32,branch units add up to delivered units,1234939,1234939,PASS
+Phase 2 coverage,33,no branch-month is empty,0,0,PASS
+Phase 2 coverage,34,branch table has 6 rows,6,6,PASS
+Phase 2 coverage,35,branch shares add up to 100%,100.0,100.0,PASS
+Phase 2 coverage,36,revenue series has 72 months,72,72,PASS
+Phase 2 coverage,37,units series has 72 months,72,72,PASS
+Phase 2 coverage,38,orders series has 72 months,72,72,PASS
+Phase 2 coverage,39,gross_profit series has 72 months,72,72,PASS
+Phase 2 coverage,40,back-test makes 24 one-step forecasts per method,24,24,PASS
+Phase 2 coverage,41,"series assessed (4 totals, 30 products, 6 branches)",40,40,PASS
+Phase 2 coverage,42,baseline error reproduces by hand,15.608604,15.608604,PASS
+Phase 2 coverage,43,five charts saved,5,5,PASS
+Q13 customer master dates,1,customers,500,500,PASS
+Q13 customer master dates,2,sales lines,130402,130402,PASS
+Q13 customer master dates,3,delivered orders,18033,18033,PASS
+Q13 customer master dates,4,every customer has delivered orders,0,0,PASS
+Q13 customer master dates,5,order-derived orders add up to delivered orders,18033,18033,PASS
+Q13 customer master dates,6,order-derived revenue adds up to delivered revenue,22958987430,22958987430,PASS
+Q13 customer master dates,7,order-derived history matches plain filtering for 50 customers,True,True,PASS
+Q13 customer master dates,8,every customer's first order is in 2019,500,500,PASS
+Q13 customer master dates,9,every customer's last order is in 2024,500,500,PASS
+Q13 customer master dates,10,master last_purchase_date is never before customer_since,0,0,PASS
+Q13 customer master dates,11,shares before and after add up,100.0,100.0,PASS
+Q13 customer master dates,12,year table column master_customer_since covers all 500 customers,500,500,PASS
+Q13 customer master dates,13,year table column actual_first_order covers all 500 customers,500,500,PASS
+Q13 customer master dates,14,year table column master_last_purchase covers all 500 customers,500,500,PASS
+Q13 customer master dates,15,year table column actual_last_order covers all 500 customers,500,500,PASS
+Q13 customer master dates,16,by-since-year table covers all 500 customers,500,500,PASS
+Q13 customer master dates,17,every customer with customer_since in 2020 or later had ordered before that date,242,242,PASS
+Q13 customer master dates,18,shares earlier and later add up,100.0,100.0,PASS
+Q13 customer master dates,19,no customer is within 10% of their revenue,0.0,0.0,PASS
+Q13 customer master dates,20,six group tests run,6,6,PASS
+Q13 customer master dates,21,all three fields tested,3,3,PASS
+Q13 customer master dates,22,verdicts follow the pre-set bar,True,True,PASS
+Q13 customer master dates,23,customer comparison table has 500 rows,500,500,PASS
+Q13 customer master dates,24,six result tables written,6,6,PASS
+Q13 customer master dates,25,four charts saved,4,4,PASS
+Stock KPIs and Q11 rerun,1,ledger IN is about 18.1 times OUT (Q10 reproduces),18.13 +/- 0.1,18.13,PASS
+Stock KPIs and Q11 rerun,2,180 product-branch pairs,180,180,PASS
+Stock KPIs and Q11 rerun,3,ledger OUT holds about 91% of delivered units,0.911 +/- 0.005,0.9108,PASS
+Stock KPIs and Q11 rerun,4,current_stock exceeds max_stock for every pair (recorded scale unusable),180,180,PASS
+Stock KPIs and Q11 rerun,5,demand matrix total equals ledger OUT total,1124832,1124832,PASS
+Stock KPIs and Q11 rerun,6,demand matrix is 180 pairs by a full daily calendar,"(180, 2203)","(180, 2203)",PASS
+Stock KPIs and Q11 rerun,7,every pair has a lead time from received purchase-order lines,180,180,PASS
+Stock KPIs and Q11 rerun,8,lead times are in a plausible range (5 to 35 days),5 to 35,17 to 19,PASS
+Stock KPIs and Q11 rerun,9,Policy A fill rate reproduces the Week 5 scenario (94.26%),94.26,94.26,PASS
+Stock KPIs and Q11 rerun,10,"policy A: fill rate, orders and pairs below 95% match Week 5",94.26% / 4457 / 72,94.26% / 4457 / 72,PASS
+Stock KPIs and Q11 rerun,11,"policy B90: fill rate, orders and pairs below 95% match Week 5",98.91% / 4804 / 0,98.91% / 4804 / 0,PASS
+Stock KPIs and Q11 rerun,12,"policy B95: fill rate, orders and pairs below 95% match Week 5",99.39% / 4839 / 0,99.39% / 4839 / 0,PASS
+Stock KPIs and Q11 rerun,13,"policy B99: fill rate, orders and pairs below 95% match Week 5",99.81% / 4872 / 0,99.81% / 4872 / 0,PASS
+Stock KPIs and Q11 rerun,14,every policy keeps the same total demand,1124832,1 distinct totals,PASS
+Stock KPIs and Q11 rerun,15,plain re-implementation matches the simulation on five pairs (max gap in units),< 0.001,0.0,PASS
+Stock KPIs and Q11 rerun,16,stock value of Policy A equals the policy summary,392.6,392.6,PASS
+Stock KPIs and Q11 rerun,17,pairs at risk equal pairs below 95% fill (health bar applied as set),72,72,PASS
+Stock KPIs and Q11 rerun,18,turnover recomputed by hand for one pair,6.2039,6.2039,PASS
+Stock KPIs and Q11 rerun,19,category table covers all 180 pairs,180,180,PASS
+Stock KPIs and Q11 rerun,20,recorded cover is more than 10 years of demand for every pair,> 3650 days,"min 27,077",PASS
+Stock KPIs and Q11 rerun,21,at purchase scale the stored thresholds fill much less than on the working scale,fill < working fill,0.238 < 0.943,PASS
+Stock KPIs and Q11 rerun,22,three charts written,3,3,PASS
+Stock KPIs and Q11 rerun,23,output tables written (eight),8,8,PASS

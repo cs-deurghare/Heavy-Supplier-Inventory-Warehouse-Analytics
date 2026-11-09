@@ -1,0 +1,7 @@
+measure,grouped_by,groups,statistic,p_value,effect_size_epsilon2,holm_p
+customer_since gap (days),region,6,8.63951021990413,0.124336006922299,0.007367429594947632,0.746016041533794
+customer_since gap (days),customer_type,5,1.5517167995430372,0.8174426854265298,0.0,1.0
+last_purchase_date gap (days),region,6,5.790543726563175,0.3271364057183563,0.0016002909444598691,1.0
+last_purchase_date gap (days),customer_type,5,5.102926915586783,0.2768986573657886,0.0022281351830036027,1.0
+total_purchase_value / revenue,region,6,4.824410474549495,0.43768321454104264,0.0,1.0
+total_purchase_value / revenue,customer_type,5,1.337472343253694,0.8549864867335143,0.0,1.0

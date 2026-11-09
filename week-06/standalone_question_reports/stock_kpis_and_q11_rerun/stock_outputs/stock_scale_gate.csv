@@ -1,0 +1,10 @@
+measure,value,label
+ledger IN units,20397795.0,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+ledger OUT units,1124832.0,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+IN / OUT,18.13,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+ledger OUT as share of delivered sales units,0.9108,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+median max_stock,310.5,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+median reorder_level,62.0,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+median safety_stock,43.5,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+median current_stock,107790.5,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+pairs with current_stock above max_stock,180.0,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption

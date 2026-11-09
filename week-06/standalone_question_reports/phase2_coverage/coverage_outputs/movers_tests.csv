@@ -1,0 +1,6 @@
+test,statistic,p_value,effect_size,effect_label
+Kruskal-Wallis on monthly units across the 30 products,26.075276129246664,0.6214650501364791,0.0,epsilon-squared
+Permutation: SD of product total units vs random product labels,711.5781279818979,0.4485102979404119,1.013003206621447,observed SD / mean SD under chance
+Spearman: product units 2019-2021 vs 2022-2024,-0.08944265268384884,0.638337110058849,-0.08944265268384884,rho
+Spearman: product units vs Q6 margin %,-0.23737486095661847,0.20656920522995412,-0.23737486095661847,rho
+Spearman: product revenue vs Q6 margin %,-0.9105672969966631,2.9475194992641486e-12,-0.9105672969966631,rho

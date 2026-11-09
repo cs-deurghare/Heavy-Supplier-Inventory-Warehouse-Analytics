@@ -1,0 +1,3 @@
+case,fill_rate,pairs_below_95,median_days_of_cover,label
+"Working scale (sales), Policy A",0.9426412121987995,72,52.601389596894975,SENSITIVITY
+"Purchase scale (demand x 18.13), Policy A thresholds",0.2377364041064689,180,1.3679430517321678,SENSITIVITY

@@ -1,0 +1,24 @@
+Check_ID,Check_Item,Expected,Actual,Status
+1,ledger IN is about 18.1 times OUT (Q10 reproduces),18.13 +/- 0.1,18.13,PASS
+2,180 product-branch pairs,180,180,PASS
+3,ledger OUT holds about 91% of delivered units,0.911 +/- 0.005,0.9108,PASS
+4,current_stock exceeds max_stock for every pair (recorded scale unusable),180,180,PASS
+5,demand matrix total equals ledger OUT total,1124832,1124832,PASS
+6,demand matrix is 180 pairs by a full daily calendar,"(180, 2203)","(180, 2203)",PASS
+7,every pair has a lead time from received purchase-order lines,180,180,PASS
+8,lead times are in a plausible range (5 to 35 days),5 to 35,17 to 19,PASS
+9,Policy A fill rate reproduces the Week 5 scenario (94.26%),94.26,94.26,PASS
+10,"policy A: fill rate, orders and pairs below 95% match Week 5",94.26% / 4457 / 72,94.26% / 4457 / 72,PASS
+11,"policy B90: fill rate, orders and pairs below 95% match Week 5",98.91% / 4804 / 0,98.91% / 4804 / 0,PASS
+12,"policy B95: fill rate, orders and pairs below 95% match Week 5",99.39% / 4839 / 0,99.39% / 4839 / 0,PASS
+13,"policy B99: fill rate, orders and pairs below 95% match Week 5",99.81% / 4872 / 0,99.81% / 4872 / 0,PASS
+14,every policy keeps the same total demand,1124832,1 distinct totals,PASS
+15,plain re-implementation matches the simulation on five pairs (max gap in units),< 0.001,0.0,PASS
+16,stock value of Policy A equals the policy summary,392.6,392.6,PASS
+17,pairs at risk equal pairs below 95% fill (health bar applied as set),72,72,PASS
+18,turnover recomputed by hand for one pair,6.2039,6.2039,PASS
+19,category table covers all 180 pairs,180,180,PASS
+20,recorded cover is more than 10 years of demand for every pair,> 3650 days,"min 27,077",PASS
+21,at purchase scale the stored thresholds fill much less than on the working scale,fill < working fill,0.238 < 0.943,PASS
+22,three charts written,3,3,PASS
+23,output tables written (eight),8,8,PASS

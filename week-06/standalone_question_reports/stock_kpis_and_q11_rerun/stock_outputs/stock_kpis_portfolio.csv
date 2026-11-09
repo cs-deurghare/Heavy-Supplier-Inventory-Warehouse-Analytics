@@ -1,0 +1,10 @@
+measure,value,label
+average on-hand units per pair,152.1,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+average stock value at cost (INR M),392.6,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+annual cost of units sold (INR M),2718.8,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+portfolio turnover per year (cost of units sold / average stock value),6.93,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+median days of cover,52.6,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+median lead time (days),18.0,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+pairs with cover below lead time,4.0,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+pairs at risk (fill rate below 95%),72.0,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+pairs adequate,108.0,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption

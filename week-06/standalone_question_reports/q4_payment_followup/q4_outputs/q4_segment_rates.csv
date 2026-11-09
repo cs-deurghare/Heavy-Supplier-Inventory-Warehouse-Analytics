@@ -1,0 +1,31 @@
+cut,level,invoices,open_invoice_share_pct,ci_low_pct,ci_high_pct,open_value_share_pct
+payment_terms,Advance,3661,29.254,27.803,30.749,19.316
+payment_terms,Net 15,3094,30.64,29.04,32.288,21.16
+payment_terms,Net 30,3197,30.028,28.464,31.64,20.188
+payment_terms,Net 45,3967,30.779,29.362,32.233,20.566
+payment_terms,Net 60,3721,31.604,30.13,33.117,20.334
+customer_type,Corporate,3589,31.402,29.904,32.939,21.417
+customer_type,Dealer,3567,31.091,29.593,32.629,19.978
+customer_type,Fleet Owner,3379,29.595,28.079,31.156,20.468
+customer_type,Government,3975,29.635,28.236,31.074,19.921
+customer_type,Retail,3130,30.735,29.143,32.374,19.644
+customer_region,Central,399,29.323,25.071,33.97,20.455
+customer_region,East,3090,31.197,29.588,32.853,20.894
+customer_region,North,2973,30.34,28.713,32.017,19.12
+customer_region,North East,367,29.973,25.513,34.848,18.575
+customer_region,South,5601,31.102,29.903,32.326,20.908
+customer_region,West,5210,29.578,28.354,30.832,20.066
+industry_segment,Construction,3146,30.547,28.962,32.179,20.75
+industry_segment,Infrastructure,2788,29.95,28.278,31.677,19.523
+industry_segment,Logistics,3387,29.879,28.361,31.443,19.007
+industry_segment,Manufacturing,2590,30.541,28.797,32.342,20.669
+industry_segment,Mining,3328,30.589,29.047,32.176,20.184
+industry_segment,Rental,2401,31.612,29.783,33.5,22.125
+sales_channel,Counter Sale,4410,30.113,28.777,31.484,20.807
+sales_channel,Dealer Network,4450,30.764,29.425,32.136,20.664
+sales_channel,Field Sales,4460,30.942,29.602,32.314,19.885
+sales_channel,Online,4320,30.069,28.72,31.454,19.812
+region,East,3339,31.746,30.189,33.345,20.8
+region,North,2629,31.419,29.673,33.219,19.986
+region,South,6027,30.496,29.347,31.671,20.709
+region,West,5645,29.265,28.092,30.465,19.706

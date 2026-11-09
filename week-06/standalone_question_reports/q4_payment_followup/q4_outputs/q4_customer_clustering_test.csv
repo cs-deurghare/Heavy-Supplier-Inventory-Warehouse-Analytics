@@ -1,0 +1,4 @@
+statistic,observed,chance_mean,chance_95th,p
+SD of customer open value share (pts),7.2674,7.6121,8.0247,0.9164
+share of outstanding held by top 50 customers (%),18.3816,18.6554,19.3182,0.7479
+highest customer open value share (%),44.3335,47.5682,54.5042,0.7996

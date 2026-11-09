@@ -1,0 +1,44 @@
+Check_ID,Check_Item,Expected,Actual,Status
+1,sales lines,130402,130402,PASS
+2,orders,20000,20000,PASS
+3,products,30,30,PASS
+4,branches,6,6,PASS
+5,every order has one status,0,0,PASS
+6,every order has one branch_id,0,0,PASS
+7,every order has one order_date,0,0,PASS
+8,delivered orders,18033,18033,PASS
+9,cancelled orders set aside,1967,1967,PASS
+10,months covered,72,72,PASS
+11,delivered orders = invoices (count),18033,18033,PASS
+12,delivered order value incl GST equals the invoice file (Rs B),29.25,29.25,PASS
+13,reliable-invoice value matches the Q4 base (Rs B),28.6,28.6,PASS
+14,line_total = quantity x unit_price on every line,0,0,PASS
+15,ABC by revenue matches an independent loop,True,True,PASS
+16,ABC by gross_profit matches an independent loop,True,True,PASS
+17,product revenue adds up to delivered revenue,22958987430,22958987430,PASS
+18,product gross profit adds up to delivered gross profit,4950006740,4950006740,PASS
+19,classes by revenue cover all 30 products,30,30,PASS
+20,A class by revenue reaches at least 80%,>=80,81.5,PASS
+21,classes by gross_profit cover all 30 products,30,30,PASS
+22,A class by gross_profit reaches at least 80%,>=80,82.7,PASS
+23,Cohen kappa between the two views is a valid value,True,0.845,PASS
+24,product-month grid is 30 x 72,"(30, 72)","(30, 72)",PASS
+25,no product-month has zero sales,0,0,PASS
+26,monthly units add up to delivered units,1234939,1234939,PASS
+27,mover classes cover all 30 products,30,30,PASS
+28,no mover label is given when volumes do not differ beyond chance,True,True,PASS
+29,"permutation test uses 5,000 shuffles",5000,5000,PASS
+30,branch-month grid is 6 x 72,432,432,PASS
+31,branch orders add up to delivered orders,18033,18033,PASS
+32,branch units add up to delivered units,1234939,1234939,PASS
+33,no branch-month is empty,0,0,PASS
+34,branch table has 6 rows,6,6,PASS
+35,branch shares add up to 100%,100.0,100.0,PASS
+36,revenue series has 72 months,72,72,PASS
+37,units series has 72 months,72,72,PASS
+38,orders series has 72 months,72,72,PASS
+39,gross_profit series has 72 months,72,72,PASS
+40,back-test makes 24 one-step forecasts per method,24,24,PASS
+41,"series assessed (4 totals, 30 products, 6 branches)",40,40,PASS
+42,baseline error reproduces by hand,15.608604,15.608604,PASS
+43,five charts saved,5,5,PASS

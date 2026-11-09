@@ -1,0 +1,4 @@
+age_band,invoiced,outstanding,invoiced_share_pct,outstanding_share_pct
+Not yet due,2843445.0,991895.18,0.01,0.017
+1-365 days past due,4201576117.4,814542071.65,14.691,14.033
+More than 365 days past due,24395218298.2,4988769989.9,85.299,85.949

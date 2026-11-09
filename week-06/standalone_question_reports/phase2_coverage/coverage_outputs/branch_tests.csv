@@ -1,0 +1,4 @@
+test,statistic,p_value,effect_size,effect_label
+"Kruskal-Wallis, orders per branch-month",191.32250200509927,2.0375409521345664e-39,0.4373767652701861,epsilon-squared
+"Kruskal-Wallis, units per branch-month",168.12701916412888,1.830976732316565e-34,0.38292727503316637,epsilon-squared
+"Kruskal-Wallis, units per order across branches",3.8921618301376237,0.5650442775510653,0.0,epsilon-squared

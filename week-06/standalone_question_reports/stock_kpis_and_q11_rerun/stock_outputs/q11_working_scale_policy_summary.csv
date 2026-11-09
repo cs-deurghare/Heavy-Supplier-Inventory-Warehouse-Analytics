@@ -1,0 +1,5 @@
+policy,fill_rate,share_pair_days_out,avg_on_hand,avg_stock_value_m,orders,pairs_below_95,label
+"A existing (reorder_level, max_stock)",0.9426412121987995,0.013975891461138852,152.13642507691532,392.58975589650476,4457,72,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+B z=1.28 (90%),0.9890917043611847,0.002806778635194432,170.34231351187776,441.37219951883793,4804,0,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+B z=1.645 (95%),0.9939004224630879,0.0015887426236949613,180.2971074796994,468.3393947526101,4839,0,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption
+B z=2.33 (99%),0.9980814912804756,0.0005472335703838201,199.70312200534624,519.0848459373582,4872,0,WORKING SCALE - sales scale assumed (Q10 unresolved); results rest on this assumption

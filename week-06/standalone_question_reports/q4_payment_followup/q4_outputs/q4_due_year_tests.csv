@@ -1,0 +1,4 @@
+test,statistic,p,effect
+open share equal across 2019-2024 (chi-square),2.2094,0.8195,0.01130289054970389
+trend across 2019-2024 (Cochran-Armitage),-0.2947,0.7682,0.06445620405544489
+2024 minus 2019 open value share (bootstrap),0.7808,,-1.61 to 3.10

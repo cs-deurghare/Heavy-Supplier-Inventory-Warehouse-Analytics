@@ -1,0 +1,7 @@
+cutoffs,measure,A,B,C
+70/90,revenue,7,7,16
+70/90,gross_profit,9,7,14
+80/95,revenue,10,7,13
+80/95,gross_profit,12,6,12
+85/97,revenue,12,6,12
+85/97,gross_profit,13,7,10

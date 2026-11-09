@@ -1,0 +1,26 @@
+Check_ID,Check_Item,Expected,Actual,Status
+1,customers,500,500,PASS
+2,sales lines,130402,130402,PASS
+3,delivered orders,18033,18033,PASS
+4,every customer has delivered orders,0,0,PASS
+5,order-derived orders add up to delivered orders,18033,18033,PASS
+6,order-derived revenue adds up to delivered revenue,22958987430,22958987430,PASS
+7,order-derived history matches plain filtering for 50 customers,True,True,PASS
+8,every customer's first order is in 2019,500,500,PASS
+9,every customer's last order is in 2024,500,500,PASS
+10,master last_purchase_date is never before customer_since,0,0,PASS
+11,shares before and after add up,100.0,100.0,PASS
+12,year table column master_customer_since covers all 500 customers,500,500,PASS
+13,year table column actual_first_order covers all 500 customers,500,500,PASS
+14,year table column master_last_purchase covers all 500 customers,500,500,PASS
+15,year table column actual_last_order covers all 500 customers,500,500,PASS
+16,by-since-year table covers all 500 customers,500,500,PASS
+17,every customer with customer_since in 2020 or later had ordered before that date,242,242,PASS
+18,shares earlier and later add up,100.0,100.0,PASS
+19,no customer is within 10% of their revenue,0.0,0.0,PASS
+20,six group tests run,6,6,PASS
+21,all three fields tested,3,3,PASS
+22,verdicts follow the pre-set bar,True,True,PASS
+23,customer comparison table has 500 rows,500,500,PASS
+24,six result tables written,6,6,PASS
+25,four charts saved,4,4,PASS

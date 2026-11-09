@@ -1,0 +1,34 @@
+measure,grouped_by,group,customers,median,mean
+customer_since gap (days),region,Central,11,1289.0,923.4545454545455
+customer_since gap (days),region,East,87,132.0,220.632183908046
+customer_since gap (days),region,North,82,-110.0,94.97560975609755
+customer_since gap (days),region,North East,11,866.0,549.5454545454545
+customer_since gap (days),region,South,158,272.5,309.22151898734177
+customer_since gap (days),region,West,151,381.0,361.56953642384104
+customer_since gap (days),customer_type,Corporate,104,215.5,186.32692307692307
+customer_since gap (days),customer_type,Dealer,99,277.0,348.020202020202
+customer_since gap (days),customer_type,Fleet Owner,95,300.0,321.6736842105263
+customer_since gap (days),customer_type,Government,114,223.5,287.85087719298247
+customer_since gap (days),customer_type,Retail,88,258.5,334.47727272727275
+last_purchase_date gap (days),region,Central,11,-188.0,-657.1818181818181
+last_purchase_date gap (days),region,East,87,-824.0,-984.4597701149426
+last_purchase_date gap (days),region,North,82,-570.5,-877.890243902439
+last_purchase_date gap (days),region,North East,11,-386.0,-732.7272727272727
+last_purchase_date gap (days),region,South,158,-653.0,-817.246835443038
+last_purchase_date gap (days),region,West,151,-697.0,-871.7549668874173
+last_purchase_date gap (days),customer_type,Corporate,104,-582.0,-835.8653846153846
+last_purchase_date gap (days),customer_type,Dealer,99,-542.0,-748.8686868686868
+last_purchase_date gap (days),customer_type,Fleet Owner,95,-732.0,-920.5368421052632
+last_purchase_date gap (days),customer_type,Government,114,-679.0,-887.3684210526316
+last_purchase_date gap (days),customer_type,Retail,88,-799.0,-954.6022727272727
+total_purchase_value / revenue,region,Central,11,0.08336870643895312,0.07487548675104848
+total_purchase_value / revenue,region,East,87,0.05608427416357645,0.05796088704368581
+total_purchase_value / revenue,region,North,82,0.044959060497287706,0.05204358914493802
+total_purchase_value / revenue,region,North East,11,0.03948807679999525,0.05593201113200286
+total_purchase_value / revenue,region,South,158,0.056698671398777864,0.05861257058571448
+total_purchase_value / revenue,region,West,151,0.054246045587491944,0.058716637694220704
+total_purchase_value / revenue,customer_type,Corporate,104,0.053293102118719196,0.06040097215515184
+total_purchase_value / revenue,customer_type,Dealer,99,0.0457769929944169,0.05485919545615717
+total_purchase_value / revenue,customer_type,Fleet Owner,95,0.055643430035575446,0.059259227175803106
+total_purchase_value / revenue,customer_type,Government,114,0.05360869316365532,0.05807285388307999
+total_purchase_value / revenue,customer_type,Retail,88,0.05296854944771166,0.055833625285245374

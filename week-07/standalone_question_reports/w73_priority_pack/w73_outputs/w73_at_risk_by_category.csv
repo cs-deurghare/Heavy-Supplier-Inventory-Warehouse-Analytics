@@ -1,0 +1,16 @@
+category,pairs,at_risk,at_risk_share_pct,label
+Sensors,6,5,83.33,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Seals,12,9,75.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Brakes,6,3,50.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Cooling,6,3,50.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Lubricants,6,3,50.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Pins & Bushes,6,3,50.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Transmission,6,3,50.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Engine,24,11,45.83,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Undercarriage,24,9,37.5,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Filters,12,4,33.33,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Attachments,6,2,33.33,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Belts,6,2,33.33,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Cabin,6,2,33.33,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Electrical,18,5,27.78,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Hydraulic,36,8,22.22,Sales scale assumed (Q10 unresolved); results rest on this assumption.

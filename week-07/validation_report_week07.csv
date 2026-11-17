@@ -1,0 +1,114 @@
+Question,Check_ID,Check_Item,Expected,Actual,Status
+W7-1 Forecast baseline,1,delivered orders,18033,18033,PASS
+W7-1 Forecast baseline,2,delivered revenue before GST (Rs),22958987430,22958987430,PASS
+W7-1 Forecast baseline,3,"72 calendar months, 2,192 days",2192,2192,PASS
+W7-1 Forecast baseline,4,"40 series (4 totals, 30 products, 6 branches)",40 = 4+30+6,40 = 4+30+6,PASS
+W7-1 Forecast baseline,5,no empty month in any series,0 zero months,0,PASS
+W7-1 Forecast baseline,6,product units add up to total units,1234939,1234939,PASS
+W7-1 Forecast baseline,7,branch orders add up to total orders,18033,18033,PASS
+W7-1 Forecast baseline,8,gross profit equals revenue minus cost of goods,4950006740,4950006740,PASS
+W7-1 Forecast baseline,9,baseline error reproduces by a plain loop (total orders),13.81698,13.81698,PASS
+W7-1 Forecast baseline,10,a forecast uses only earlier months (changing month 61 leaves month 51's forecast unchanged),255.054207,255.054207,PASS
+W7-1 Forecast baseline,11,"24 one-step forecasts per series, Jan 2023 to Dec 2024",24,24,PASS
+W7-1 Forecast baseline,12,baseline and challenger scored on the same months for every series,40 series x 24,960 rows,PASS
+W7-1 Forecast baseline,13,Week 6 raw-month baseline error reproduces: revenue (%),6.730281,6.730281,PASS
+W7-1 Forecast baseline,14,Week 6 raw-month baseline error reproduces: units (%),5.443945,5.443945,PASS
+W7-1 Forecast baseline,15,Week 6 raw-month baseline error reproduces: orders (%),6.232017,6.232016,PASS
+W7-1 Forecast baseline,16,Week 6 raw-month baseline error reproduces: gross_profit (%),6.459684,6.459684,PASS
+W7-1 Forecast baseline,17,point forecast lies inside its interval,all 960 rows,960,PASS
+W7-1 Forecast baseline,18,95% interval coverage in the back-test is near 95% (bar set in advance: 85% to 99%),0.85 to 0.99,0.961,PASS
+W7-1 Forecast baseline,19,sign-flip p-values are valid (0 < p <= 1),0 < p <= 1,0.0092 to 0.9982,PASS
+W7-1 Forecast baseline,20,Holm-adjusted p is never below the raw p,adj >= raw,ok,PASS
+W7-1 Forecast baseline,21,bootstrap interval brackets the observed mean difference (all 40),40 of 40,40 of 40,PASS
+W7-1 Forecast baseline,22,verdicts re-derived from the pre-set bar,0,0,PASS
+W7-1 Forecast baseline,23,forecast table: 40 series x 12 months,480,480,PASS
+W7-1 Forecast baseline,24,2025 forecast revenue is close to the 2024 level (within 10%),0.90 to 1.10,1.039,PASS
+W7-1 Forecast baseline,25,"one challenger only (trend), as set in the plan",1,1,PASS
+W7-1 Forecast baseline,26,three charts written,3,3,PASS
+W7-1 Forecast baseline,27,five result tables written,5,5,PASS
+W7-2 Customer behaviour,28,"500 customers, all with delivered orders",500,500,PASS
+W7-2 Customer behaviour,29,order count equals delivered orders,18033,18033,PASS
+W7-2 Customer behaviour,30,revenue adds up to delivered revenue,22958987430,22958987430,PASS
+W7-2 Customer behaviour,31,every customer has a region and a customer type,0 missing,0,PASS
+W7-2 Customer behaviour,32,50 customers recomputed with a plain filter match,50 of 50,50 of 50,PASS
+W7-2 Customer behaviour,33,orders by period add up to orders,18033,18033,PASS
+W7-2 Customer behaviour,34,recency is never negative and ends at the last order date,0 negative; min 0,min 0,PASS
+W7-2 Customer behaviour,35,every customer ordered more than once,0 single-order customers,0,PASS
+W7-2 Customer behaviour,36,top 10% share is between 10% and 100%,10% to 100%,14.3%,PASS
+W7-2 Customer behaviour,37,top 20% share is at least the top 10% share,top20 >= top10,0.266 >= 0.143,PASS
+W7-2 Customer behaviour,38,Gini recomputed by pairwise formula matches (50-customer subset),equal,0.00e+00,PASS
+W7-2 Customer behaviour,39,random assignment of orders gives an order-count spread near the Poisson value,SD about sqrt(mean) = 6.01,6.01,PASS
+W7-2 Customer behaviour,40,customer shuffle keeps total revenue and order count,same,22958987430,PASS
+W7-2 Customer behaviour,41,"ten group tests run (four measures by two groupings, plus two by industry)",10,10,PASS
+W7-2 Customer behaviour,42,Holm-adjusted p is never below the raw p,adj >= raw,ok,PASS
+W7-2 Customer behaviour,43,group medians cover all 500 customers in each dimension,500 each,"[500, 500, 500]",PASS
+W7-2 Customer behaviour,44,period order counts are non-negative whole numbers,min >= 0,min 6,PASS
+W7-2 Customer behaviour,45,period revenue adds up to revenue,22958987430,22958987430,PASS
+W7-2 Customer behaviour,46,Spearman is within -1 and 1 for every comparison,-1 to 1,-0.135 to 0.004,PASS
+W7-2 Customer behaviour,47,quiet count recomputed by loop,9,9,PASS
+W7-2 Customer behaviour,48,three charts written,3,3,PASS
+W7-2 Customer behaviour,49,eight result tables written,8,8,PASS
+W7-3 Priority pack,50,delivered orders,18033,18033,PASS
+W7-3 Priority pack,51,delivered revenue before GST (Rs),22958987430,22958987430,PASS
+W7-3 Priority pack,52,gross profit (Rs),4950006740,4950006740,PASS
+W7-3 Priority pack,53,portfolio margin (%),21.56,21.56,PASS
+W7-3 Priority pack,54,class A is 10 products,10,10,PASS
+W7-3 Priority pack,55,class A revenue share (%) (Week 6: 81.5),81.5,81.5,PASS
+W7-3 Priority pack,56,class A is the same ten products as Week 6,"['P001', 'P004', 'P010', 'P011', 'P014', 'P015', 'P019', 'P021', 'P022', 'P030']","['P001', 'P004', 'P010', 'P011', 'P014', 'P015', 'P019', 'P021', 'P022', 'P030']",PASS
+W7-3 Priority pack,57,"margin recomputed with a plain loop for three products (P015, P014, P010)",equal,equal,PASS
+W7-3 Priority pack,58,"class A margin range from the data (%), not assumed",computed,17.19 to 25.11,PASS
+W7-3 Priority pack,59,product revenue adds up to delivered revenue,22958987430,22958987430,PASS
+W7-3 Priority pack,60,every class A row has a name and a category,0 missing,0,PASS
+W7-3 Priority pack,61,six branches,6,6,PASS
+W7-3 Priority pack,62,"432 branch-months (72 x 6), none empty",432,432,PASS
+W7-3 Priority pack,63,branch orders add up to delivered orders,18033,18033,PASS
+W7-3 Priority pack,64,each interval brackets its mean,6 of 6,6 of 6,PASS
+W7-3 Priority pack,65,busiest to quietest branch ratio (Week 6: 1.48),1.48,1.48,PASS
+W7-3 Priority pack,66,orders a month match Week 6 for all six (to 0.1),"51.1,47.4,43.3,37.2,37.1,34.4","51.1,47.4,43.3,37.2,37.1,34.4",PASS
+W7-3 Priority pack,67,Week 6 stock file covers 180 pairs,180,180,PASS
+W7-3 Priority pack,68,72 at-risk pairs (Week 6),72,72,PASS
+W7-3 Priority pack,69,"at risk means fill rate under 95% (Week 6 health bar), for every pair","72 below, 108 not","72 below, 108 not",PASS
+W7-3 Priority pack,70,at-risk pairs per category equal the Week 6 category table (15 categories),equal,15 of 15 equal,PASS
+W7-3 Priority pack,71,"every at-risk pair has a product name, category and branch name",0 missing,0,PASS
+W7-3 Priority pack,72,demand in the Week 6 file equals ledger OUT total (Week 6 gate),1124832,1124832,PASS
+W7-3 Priority pack,73,every row carries the sales-scale label,72 of 72,72 of 72,PASS
+W7-3 Priority pack,74,three charts written,3,3,PASS
+W7-3 Priority pack,75,five result tables written,5,5,PASS
+W7-4 Lead-time robustness,76,ledger IN is about 18.1 times OUT (Q10 reproduces),18.13 +/- 0.1,18.13,PASS
+W7-4 Lead-time robustness,77,180 product-branch pairs,180,180,PASS
+W7-4 Lead-time robustness,78,demand matrix total equals ledger OUT total,1124832,1124832,PASS
+W7-4 Lead-time robustness,79,"full daily calendar of 2,203 days","(180, 2203)","(180, 2203)",PASS
+W7-4 Lead-time robustness,80,every pair has at least 600 received PO lines with a lead time,>= 600,671,PASS
+W7-4 Lead-time robustness,81,pooled lead time ranges 7 to 35 days,7 to 35,7.0 to 35.0,PASS
+W7-4 Lead-time robustness,82,pooled lead-time SD is about 6.7 days (6.5 to 6.9),6.5 to 6.9,6.67,PASS
+W7-4 Lead-time robustness,83,every pair's lead-time SD is at least 6 days (variation is not a few pairs),>= 6,6.26,PASS
+W7-4 Lead-time robustness,84,constant lead times are the rounded pair means (17 to 19 days),17 to 19,17 to 19,PASS
+W7-4 Lead-time robustness,85,vectorised simulator equals a plain day-by-day loop on 5 pairs (policy A),identical,identical,PASS
+W7-4 Lead-time robustness,86,vectorised simulator equals a plain day-by-day loop on 5 pairs (policy B95),identical,identical,PASS
+W7-4 Lead-time robustness,87,"constant-lead rerun reproduces Week 6 fill rates (A 94.3%, B 98.9 / 99.4 / 99.8%)",0.943 / 0.989 / 0.994 / 0.998,0.943 / 0.989 / 0.994 / 0.998,PASS
+W7-4 Lead-time robustness,88,"constant-lead rerun reproduces Week 6 orders (4,457 / 4,804 / 4,839 / 4,872)",4457 / 4804 / 4839 / 4872,4457 / 4804 / 4839 / 4872,PASS
+W7-4 Lead-time robustness,89,"constant-lead rerun reproduces Week 6 stock value (A 392.6M, B 441.4M / 468.3M / 519.1M)",392.6 / 441.4 / 468.3 / 519.1,392.6 / 441.4 / 468.3 / 519.1,PASS
+W7-4 Lead-time robustness,90,constant-lead rerun reproduces 72 pairs below 95% under policy A,72,72,PASS
+W7-4 Lead-time robustness,91,"1,000 replications for the varying-lead case, seed 42",1000,1000,PASS
+W7-4 Lead-time robustness,92,fill rate lies between 0 and 1 for every policy and pair,0 to 1,ok,PASS
+W7-4 Lead-time robustness,93,"7 policies x 180 pairs in the varying-lead case, 4 x 180 in the constant case",1260 + 720 rows,1980,PASS
+W7-4 Lead-time robustness,94,higher service factor never lowers fill (B 90 <= 95 <= 99; B-LT likewise),monotone,monotone,PASS
+W7-4 Lead-time robustness,95,drawn lead times average the pair means (within 0.05 day overall),within 0.05,0.014,PASS
+W7-4 Lead-time robustness,96,"5,000 bootstrap resamples, seed 42",5000,5000,PASS
+W7-4 Lead-time robustness,97,under varying lead times every B variant has a higher portfolio fill than A in 100% of replications,1.0,1.0,PASS
+W7-4 Lead-time robustness,98,pair-level bootstrap interval for the fill gain excludes zero for every B variant,low > 0,3.603,PASS
+W7-4 Lead-time robustness,99,lead-time variation lowers fill under A and under every B (constant -> varying),all lower,all lower,PASS
+W7-4 Lead-time robustness,100,existing levels leave more pairs below 95% fill than any B variant under varying lead times,A has most,"A 81, max B 1",PASS
+W7-4 Lead-time robustness,101,three charts written,3,3,PASS
+W7-4 Lead-time robustness,102,B-LT trigger is at least the mean-lead trigger for every pair (it only adds lead-time variance),all pairs,all pairs,PASS
+W7-4 Lead-time robustness,103,every output table carries the sales-scale label,5 of 5,5 of 5,PASS
+W7-4 Lead-time robustness,104,summary and pair tables carry an assumptions column,2 of 2,2 of 2,PASS
+W7-4 Lead-time robustness,105,output tables written (six),6,6,PASS
+Cross-check,106,customer revenue (W7-2) equals product revenue (W7-3),22958987430,22958987430 / 22958987430,PASS
+Cross-check,107,customer orders (W7-2) equal branch orders (W7-3),18033,18033 / 18033,PASS
+Cross-check,108,orders a month per branch: W7-1 series means equal W7-3 table (6 of 6),equal,6 of 6,PASS
+Cross-check,109,W7-1 mean monthly revenue times 72 equals total revenue,22958987430,22958987430,PASS
+Cross-check,110,product units (W7-1) equal class A units (W7-3) for the ten class A products,equal,equal,PASS
+Cross-check,111,W7-4 constant-lead policy A fails 95% fill for the same 72 pairs as the W7-3 at-risk list,72,72 / 72; identical sets: True,PASS
+Cross-check,112,W7-4 covers the same 180 pairs as the W7-3 category table,180,180 / 180,PASS
+Cross-check,113,all four items use 500 customers / 6 branches / 30 products / 180 pairs,500 / 6 / 30,500 / 6 / 30,PASS

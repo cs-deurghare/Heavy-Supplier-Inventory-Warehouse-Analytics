@@ -1,0 +1,31 @@
+Check_ID,Check_Item,Expected,Actual,Status
+1,ledger IN is about 18.1 times OUT (Q10 reproduces),18.13 +/- 0.1,18.13,PASS
+2,180 product-branch pairs,180,180,PASS
+3,demand matrix total equals ledger OUT total,1124832,1124832,PASS
+4,"full daily calendar of 2,203 days","(180, 2203)","(180, 2203)",PASS
+5,every pair has at least 600 received PO lines with a lead time,>= 600,671,PASS
+6,pooled lead time ranges 7 to 35 days,7 to 35,7.0 to 35.0,PASS
+7,pooled lead-time SD is about 6.7 days (6.5 to 6.9),6.5 to 6.9,6.67,PASS
+8,every pair's lead-time SD is at least 6 days (variation is not a few pairs),>= 6,6.26,PASS
+9,constant lead times are the rounded pair means (17 to 19 days),17 to 19,17 to 19,PASS
+10,vectorised simulator equals a plain day-by-day loop on 5 pairs (policy A),identical,identical,PASS
+11,vectorised simulator equals a plain day-by-day loop on 5 pairs (policy B95),identical,identical,PASS
+12,"constant-lead rerun reproduces Week 6 fill rates (A 94.3%, B 98.9 / 99.4 / 99.8%)",0.943 / 0.989 / 0.994 / 0.998,0.943 / 0.989 / 0.994 / 0.998,PASS
+13,"constant-lead rerun reproduces Week 6 orders (4,457 / 4,804 / 4,839 / 4,872)",4457 / 4804 / 4839 / 4872,4457 / 4804 / 4839 / 4872,PASS
+14,"constant-lead rerun reproduces Week 6 stock value (A 392.6M, B 441.4M / 468.3M / 519.1M)",392.6 / 441.4 / 468.3 / 519.1,392.6 / 441.4 / 468.3 / 519.1,PASS
+15,constant-lead rerun reproduces 72 pairs below 95% under policy A,72,72,PASS
+16,"1,000 replications for the varying-lead case, seed 42",1000,1000,PASS
+17,fill rate lies between 0 and 1 for every policy and pair,0 to 1,ok,PASS
+18,"7 policies x 180 pairs in the varying-lead case, 4 x 180 in the constant case",1260 + 720 rows,1980,PASS
+19,higher service factor never lowers fill (B 90 <= 95 <= 99; B-LT likewise),monotone,monotone,PASS
+20,drawn lead times average the pair means (within 0.05 day overall),within 0.05,0.014,PASS
+21,"5,000 bootstrap resamples, seed 42",5000,5000,PASS
+22,under varying lead times every B variant has a higher portfolio fill than A in 100% of replications,1.0,1.0,PASS
+23,pair-level bootstrap interval for the fill gain excludes zero for every B variant,low > 0,3.603,PASS
+24,lead-time variation lowers fill under A and under every B (constant -> varying),all lower,all lower,PASS
+25,existing levels leave more pairs below 95% fill than any B variant under varying lead times,A has most,"A 81, max B 1",PASS
+26,three charts written,3,3,PASS
+27,B-LT trigger is at least the mean-lead trigger for every pair (it only adds lead-time variance),all pairs,all pairs,PASS
+28,every output table carries the sales-scale label,5 of 5,5 of 5,PASS
+29,summary and pair tables carry an assumptions column,2 of 2,2 of 2,PASS
+30,output tables written (six),6,6,PASS

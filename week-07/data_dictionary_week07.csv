@@ -1,0 +1,185 @@
+file,column,dtype,example,usability,note,source_week
+inventory_with_ledger.csv,product_id,str,P001,Not flagged,,week-03
+inventory_with_ledger.csv,branch_id,str,DEL001,Not flagged,,week-03
+inventory_with_ledger.csv,opening_stock,int64,196,Usable with caution,"STOCK SCALE: thresholds fit monthly sales (medians 310.5 / 62 / 43.5 for max, reorder, safety) and not recorded stock. Sales scale assumed (Q10 unresolved); results rest on this assumption",week-03
+inventory_with_ledger.csv,reorder_level,int64,59,Usable with caution,"STOCK SCALE: thresholds fit monthly sales (medians 310.5 / 62 / 43.5 for max, reorder, safety) and not recorded stock. Sales scale assumed (Q10 unresolved); results rest on this assumption",week-03
+inventory_with_ledger.csv,safety_stock,int64,46,Usable with caution,"STOCK SCALE: thresholds fit monthly sales (medians 310.5 / 62 / 43.5 for max, reorder, safety) and not recorded stock. Sales scale assumed (Q10 unresolved); results rest on this assumption",week-03
+inventory_with_ledger.csv,max_stock,int64,340,Usable with caution,"STOCK SCALE: thresholds fit monthly sales (medians 310.5 / 62 / 43.5 for max, reorder, safety) and not recorded stock. Sales scale assumed (Q10 unresolved); results rest on this assumption",week-03
+inventory_with_ledger.csv,current_stock,int64,115928,Unusable,"STOCK SCALE: recorded current_stock is about 350 times max_stock (median per pair 349x). Do not use for turnover, cover or health. Shown only as a sensitivity",week-03
+inventory_with_ledger.csv,warehouse_bin,str,C15,Not flagged,,week-03
+inventory_with_ledger.csv,ledger_latest_balance,int64,115928,Unusable,"STOCK SCALE: recorded current_stock is about 350 times max_stock (median per pair 349x). Do not use for turnover, cover or health. Shown only as a sensitivity",week-03
+inventory_with_ledger.csv,latest_movement_date,str,2025-01-19,Not flagged,,week-03
+inventory_with_ledger.csv,total_movements,int64,1311,Not flagged,,week-03
+inventory_with_ledger.csv,total_adjustment_qty,int64,298,Usable with caution,"Adjustment quantities are unsigned; read the sign from steps in running_balance (1,227 add, 1,227 reduce)",week-03
+inventory_with_ledger.csv,total_in_qty,int64,121433,Unusable,STOCK SCALE: ledger IN is 18.13 times OUT (20.4M against 1.12M units); not used as a stock reference,week-03
+inventory_with_ledger.csv,total_out_qty,int64,5859,Usable,Holds about 91% of delivered sales units. Basis of the daily demand series. Sales scale assumed (Q10 unresolved); results rest on this assumption,week-03
+inventory_with_ledger.csv,product_name,str,Hydraulic Pump HP-300,Not flagged,,week-03
+inventory_with_ledger.csv,category,str,Hydraulic,Not flagged,,week-03
+inventory_with_ledger.csv,unit_cost,int64,18950,Not flagged,,week-03
+inventory_with_ledger.csv,unit_price,int64,24500,Not flagged,,week-03
+inventory_with_ledger.csv,balance_difference,int64,0,Unusable,"STOCK SCALE: recorded current_stock is about 350 times max_stock (median per pair 349x). Do not use for turnover, cover or health. Shown only as a sensitivity",week-03
+inventory_with_ledger.csv,balance_mismatch,bool,False,Usable with caution,14 of 180 pairs differ between master current_stock and the last ledger balance: the master lags the ledger by its last 1-2 movements,week-03
+inventory_with_ledger.csv,stock_value_cost,int64,2196835600,Unusable,"STOCK SCALE: recorded current_stock is about 350 times max_stock (median per pair 349x). Do not use for turnover, cover or health. Shown only as a sensitivity",week-03
+inventory_with_ledger.csv,below_reorder,bool,False,Unusable,"STOCK SCALE: recorded current_stock is about 350 times max_stock (median per pair 349x). Do not use for turnover, cover or health. Shown only as a sensitivity",week-03
+invoices_with_payments.csv,row_key,int64,1,Not flagged,,week-03
+invoices_with_payments.csv,invoice_id,str,INV-325361,Usable with caution,"Not unique: 197 ids are reused for different sales orders; 393 invoices (Rs 654M, 2.2% of value) cannot be matched to payments",week-03
+invoices_with_payments.csv,so_id,str,SO-990591,Not flagged,,week-03
+invoices_with_payments.csv,customer_id,str,C0070,Not flagged,,week-03
+invoices_with_payments.csv,branch_id,str,AHM001,Not flagged,,week-03
+invoices_with_payments.csv,invoice_date,str,2022-05-28,Not flagged,,week-03
+invoices_with_payments.csv,due_date,str,2022-06-27,Not flagged,,week-03
+invoices_with_payments.csv,total_order_value,int64,1345720,Not flagged,,week-03
+invoices_with_payments.csv,total_gst_amount,float64,374439.6,Not flagged,,week-03
+invoices_with_payments.csv,grand_total,float64,1720159.6,Not flagged,,week-03
+invoices_with_payments.csv,payment_status,str,Unpaid,Not flagged,,week-03
+invoices_with_payments.csv,duplicate_invoice_id_flag,bool,False,Not flagged,,week-03
+invoices_with_payments.csv,payment_count,float64,1.0,Usable with caution,"Reliable only where payment_total_reliable is true (17,640 invoices)",week-03
+invoices_with_payments.csv,total_paid_amount,float64,3354624.0,Usable with caution,"Reliable only where payment_total_reliable is true (17,640 invoices)",week-03
+invoices_with_payments.csv,first_payment_date,str,2023-10-07,Usable with caution,"Reliable only where payment_total_reliable is true (17,640 invoices)",week-03
+invoices_with_payments.csv,last_payment_date,str,2023-10-07,Usable with caution,"Reliable only where payment_total_reliable is true (17,640 invoices)",week-03
+invoices_with_payments.csv,payment_methods,str,Cheque,Not flagged,,week-03
+invoices_with_payments.csv,payment_total_reliable,bool,True,Not flagged,,week-03
+invoices_with_payments.csv,outstanding_amount,float64,1720159.6,Usable with caution,"Reliable only where payment_total_reliable is true (17,640 invoices)",week-03
+invoices_with_payments.csv,customer_type,str,Government,Usable,"Copied from the customer master; no regional or customer-type difference found in payment behaviour (Q4, Q13)",week-03
+invoices_with_payments.csv,industry_segment,str,Logistics,Usable,"Copied from the customer master; no regional or customer-type difference found in payment behaviour (Q4, Q13)",week-03
+invoices_with_payments.csv,customer_city,str,Ahmedabad,Usable,"Copied from the customer master; no regional or customer-type difference found in payment behaviour (Q4, Q13)",week-03
+invoices_with_payments.csv,customer_state,str,Gujarat,Usable,"Copied from the customer master; no regional or customer-type difference found in payment behaviour (Q4, Q13)",week-03
+invoices_with_payments.csv,customer_region,str,West,Usable,"Copied from the customer master; no regional or customer-type difference found in payment behaviour (Q4, Q13)",week-03
+invoices_with_payments.csv,customer_rating,int64,3,Usable,"Copied from the customer master; no regional or customer-type difference found in payment behaviour (Q4, Q13)",week-03
+invoices_with_payments.csv,branch_name,str,Ahmedabad West Hub,Not flagged,,week-03
+invoices_with_payments.csv,branch_city,str,Ahmedabad,Not flagged,,week-03
+invoices_with_payments.csv,region,str,West,Not flagged,,week-03
+invoices_with_payments.csv,order_date,str,2022-05-24,Not flagged,,week-03
+invoices_with_payments.csv,delivery_date,str,2022-05-28,Not flagged,,week-03
+invoices_with_payments.csv,order_status,str,Delivered,Not flagged,,week-03
+invoices_with_payments.csv,sales_channel,str,Counter Sale,Not flagged,,week-03
+invoices_with_payments.csv,payment_terms,str,Net 30,Not flagged,,week-03
+invoices_with_payments.csv,as_of_date,str,2025-03-14,Usable with caution,"As-of date is the latest due date in the data (2025-03-14), not today",week-03
+invoices_with_payments.csv,is_overdue,bool,True,Usable with caution,"As-of date is the latest due date in the data (2025-03-14), not today",week-03
+invoices_with_payments.csv,days_overdue,int64,991,Usable with caution,"As-of date is the latest due date in the data (2025-03-14), not today",week-03
+purchase_orders_full.csv,po_id,str,PO-141186,Not flagged,,week-03
+purchase_orders_full.csv,line_number,int64,1,Not flagged,,week-03
+purchase_orders_full.csv,product_id,str,P004,Not flagged,,week-03
+purchase_orders_full.csv,quantity,int64,234,Usable with caution,"STOCK SCALE: receipts are 18.13 times units sold. Valid as money spent as recorded, not as a stock-scale reference",week-03
+purchase_orders_full.csv,unit_cost,float64,34709.54,Not flagged,,week-03
+purchase_orders_full.csv,gst_rate,int64,28,Not flagged,,week-03
+purchase_orders_full.csv,line_total,float64,8122032.36,Usable with caution,"STOCK SCALE: receipts are 18.13 times units sold. Valid as money spent as recorded, not as a stock-scale reference",week-03
+purchase_orders_full.csv,gst_amount,float64,2274169.0608,Not flagged,,week-03
+purchase_orders_full.csv,line_grand_total,float64,10396201.4208,Not flagged,,week-03
+purchase_orders_full.csv,supplier_id,str,SUP0001,Not flagged,,week-03
+purchase_orders_full.csv,branch_id,str,PUN001,Not flagged,,week-03
+purchase_orders_full.csv,order_date,str,2019-04-10,Not flagged,,week-03
+purchase_orders_full.csv,expected_delivery_date,str,2019-04-29,Not flagged,,week-03
+purchase_orders_full.csv,received_date,str,2019-04-29,Not flagged,,week-03
+purchase_orders_full.csv,po_status,str,Received,Not flagged,,week-03
+purchase_orders_full.csv,total_cost,float64,22955232.11,Usable with caution,"STOCK SCALE: receipts are 18.13 times units sold. Valid as money spent as recorded, not as a stock-scale reference",week-03
+purchase_orders_full.csv,total_gst_amount,float64,6427464.990800001,Not flagged,,week-03
+purchase_orders_full.csv,grand_total,float64,29382697.1008,Usable with caution,"STOCK SCALE: receipts are 18.13 times units sold. Valid as money spent as recorded, not as a stock-scale reference",week-03
+purchase_orders_full.csv,product_name,str,Track Chain TC-45,Not flagged,,week-03
+purchase_orders_full.csv,category,str,Undercarriage,Not flagged,,week-03
+purchase_orders_full.csv,machine_type,str,Bulldozer,Not flagged,,week-03
+purchase_orders_full.csv,brand,str,Volvo,Not flagged,,week-03
+purchase_orders_full.csv,uom,str,set,Not flagged,,week-03
+purchase_orders_full.csv,unit_price,int64,39800,Not flagged,,week-03
+purchase_orders_full.csv,margin_percentage,float64,22.5,Usable with caution,"Copied from the product master, not computed from the purchase-order unit_cost; a markup on the sales unit_cost for 29 of 30 products (OF-90 is the exception: 37.3 matches a margin on price, 37.5%)",week-03
+purchase_orders_full.csv,criticality_level,str,High,Not flagged,,week-03
+purchase_orders_full.csv,lead_time_days,int64,30,Not flagged,,week-03
+purchase_orders_full.csv,supplier_name,str,Shenzhen OEM Supplies,Not flagged,,week-03
+purchase_orders_full.csv,supplier_type,str,OEM,Not flagged,,week-03
+purchase_orders_full.csv,product_category,str,Medium Parts,Not flagged,,week-03
+purchase_orders_full.csv,supplier_city,str,Shenzhen,Not flagged,,week-03
+purchase_orders_full.csv,supplier_province,str,Guangdong,Not flagged,,week-03
+purchase_orders_full.csv,supplier_region,str,South China,Not flagged,,week-03
+purchase_orders_full.csv,supplier_lead_days,int64,19,Not flagged,,week-03
+purchase_orders_full.csv,reliability_score,int64,5,Not flagged,,week-03
+purchase_orders_full.csv,branch_name,str,Pune Distribution,Not flagged,,week-03
+purchase_orders_full.csv,branch_city,str,Pune,Not flagged,,week-03
+purchase_orders_full.csv,branch_state,str,Maharashtra,Not flagged,,week-03
+purchase_orders_full.csv,branch_region,str,West,Not flagged,,week-03
+purchase_orders_full.csv,delivery_delay_days,float64,0.0,Not flagged,,week-03
+purchase_orders_full.csv,lead_time_actual_days,float64,19.0,Usable,"Received lines only. Ranges 7 to 35 days, mean 17.9, SD 6.7, the same spread for all 180 pairs; values cluster on a few days. Use the distribution, not only the mean (W7-4)",week-03
+sales_orders_full.csv,so_id,str,SO-990591,Not flagged,,week-03
+sales_orders_full.csv,line_number,int64,1,Not flagged,,week-03
+sales_orders_full.csv,product_id,str,P018,Not flagged,,week-03
+sales_orders_full.csv,quantity,int64,19,Usable,"Delivered orders only (18,033 of 20,000); revenue before GST for ABC and customer work",week-03
+sales_orders_full.csv,unit_price,int64,11300,Usable,"Delivered orders only (18,033 of 20,000); revenue before GST for ABC and customer work",week-03
+sales_orders_full.csv,gst_rate,int64,28,Not flagged,,week-03
+sales_orders_full.csv,line_total,int64,214700,Usable,"Delivered orders only (18,033 of 20,000); revenue before GST for ABC and customer work",week-03
+sales_orders_full.csv,gst_amount,float64,60116.00000000001,Not flagged,,week-03
+sales_orders_full.csv,line_grand_total,float64,274816.0,Not flagged,,week-03
+sales_orders_full.csv,customer_id,str,C0070,Not flagged,,week-03
+sales_orders_full.csv,branch_id,str,AHM001,Not flagged,,week-03
+sales_orders_full.csv,order_date,str,2022-05-24,Not flagged,,week-03
+sales_orders_full.csv,delivery_date,str,2022-05-28,Usable with caution,Delivery dates look generated or planned (Q7); not evidence of actual dispatch or delivery speed,week-03
+sales_orders_full.csv,order_status,str,Delivered,Not flagged,,week-03
+sales_orders_full.csv,payment_terms,str,Net 30,Not flagged,,week-03
+sales_orders_full.csv,total_order_value,int64,1345720,Not flagged,,week-03
+sales_orders_full.csv,total_gst_amount,float64,374439.6,Not flagged,,week-03
+sales_orders_full.csv,grand_total,float64,1720159.6,Not flagged,,week-03
+sales_orders_full.csv,sales_channel,str,Counter Sale,Not flagged,,week-03
+sales_orders_full.csv,product_name,str,Wheel Rim WR-24,Not flagged,,week-03
+sales_orders_full.csv,category,str,Undercarriage,Not flagged,,week-03
+sales_orders_full.csv,machine_type,str,Bulldozer,Not flagged,,week-03
+sales_orders_full.csv,brand,str,CAT,Not flagged,,week-03
+sales_orders_full.csv,uom,str,piece,Not flagged,,week-03
+sales_orders_full.csv,unit_cost,int64,8200,Not flagged,,week-03
+sales_orders_full.csv,margin_percentage,float64,37.8,Usable with caution,"A markup on cost, not a margin on price, for 29 of 30 products against the sales unit_cost; Engine Oil Filter OF-90 is the exception (37.3 matches a margin on price, 37.5%). Use line_margin_pct for margin on price",week-03
+sales_orders_full.csv,criticality_level,str,High,Not flagged,,week-03
+sales_orders_full.csv,customer_type,str,Government,Not flagged,,week-03
+sales_orders_full.csv,industry_segment,str,Logistics,Not flagged,,week-03
+sales_orders_full.csv,customer_city,str,Ahmedabad,Not flagged,,week-03
+sales_orders_full.csv,customer_state,str,Gujarat,Not flagged,,week-03
+sales_orders_full.csv,customer_region,str,West,Not flagged,,week-03
+sales_orders_full.csv,customer_payment_terms,str,Net 30,Not flagged,,week-03
+sales_orders_full.csv,customer_rating,int64,3,Not flagged,,week-03
+sales_orders_full.csv,branch_name,str,Ahmedabad West Hub,Not flagged,,week-03
+sales_orders_full.csv,branch_city,str,Ahmedabad,Not flagged,,week-03
+sales_orders_full.csv,branch_state,str,Gujarat,Not flagged,,week-03
+sales_orders_full.csv,branch_region,str,West,Not flagged,,week-03
+sales_orders_full.csv,warehouse_type,str,Service Hub,Not flagged,,week-03
+sales_orders_full.csv,line_profit,int64,58900,Usable,"Delivered orders only (18,033 of 20,000); revenue before GST for ABC and customer work",week-03
+sales_orders_full.csv,line_margin_pct,float64,27.43362831858407,Usable,"Delivered orders only (18,033 of 20,000); revenue before GST for ABC and customer work",week-03
+sales_orders_full.csv,days_to_deliver,int64,4,Usable with caution,Delivery dates look generated or planned (Q7); not evidence of actual dispatch or delivery speed,week-03
+stock_ledger_enriched.csv,movement_id,str,MOV-OUT-184742,Not flagged,,week-03
+stock_ledger_enriched.csv,product_id,str,P001,Not flagged,,week-03
+stock_ledger_enriched.csv,branch_id,str,AHM001,Not flagged,,week-03
+stock_ledger_enriched.csv,movement_type,str,OUT,Not flagged,,week-03
+stock_ledger_enriched.csv,movement_date,str,2019-01-03,Not flagged,,week-03
+stock_ledger_enriched.csv,quantity,int64,8,Usable with caution,IN quantities are on the unresolved purchase scale (18.13 times OUT); OUT quantities are used for demand. Adjustment quantity is unsigned,week-03
+stock_ledger_enriched.csv,reference_type,str,SO,Not flagged,,week-03
+stock_ledger_enriched.csv,reference_id,str,SO-157767,Not flagged,,week-03
+stock_ledger_enriched.csv,running_balance,int64,228,Usable with caution,Use to sign adjustments only; the level is on the unresolved purchase scale,week-03
+stock_ledger_enriched.csv,product_name,str,Hydraulic Pump HP-300,Not flagged,,week-03
+stock_ledger_enriched.csv,category,str,Hydraulic,Not flagged,,week-03
+stock_ledger_enriched.csv,unit_cost,int64,18950,Not flagged,,week-03
+stock_ledger_enriched.csv,unit_price,int64,24500,Not flagged,,week-03
+stock_ledger_enriched.csv,movement_value_cost,int64,151600,Usable with caution,Inherits the quantity scale; IN values are on the purchase scale,week-03
+stock_ledger_enriched.csv,movement_value_price,int64,196000,Usable with caution,Inherits the quantity scale; IN values are on the purchase scale,week-03
+customers_clean.csv,customer_id,str,C0001,Usable,Descriptive attributes; not contradicted by the order lines,week-07
+customers_clean.csv,customer_type,str,Retail,Usable,Descriptive attributes; not contradicted by the order lines,week-07
+customers_clean.csv,industry_segment,str,Construction,Usable,Descriptive attributes; not contradicted by the order lines,week-07
+customers_clean.csv,city,str,Kolkata,Usable,Descriptive attributes; not contradicted by the order lines,week-07
+customers_clean.csv,state,str,West Bengal,Usable,Descriptive attributes; not contradicted by the order lines,week-07
+customers_clean.csv,pincode,int64,991035,Usable,Descriptive attributes; not contradicted by the order lines,week-07
+customers_clean.csv,region,str,East,Usable,Descriptive attributes; not contradicted by the order lines,week-07
+customers_clean.csv,branch_id,str,KOL001,Usable,Descriptive attributes; not contradicted by the order lines,week-07
+customers_clean.csv,credit_limit,int64,45896,Not tested,Not tested against the order or invoice data,week-07
+customers_clean.csv,current_balance,int64,43284,Not tested,Not tested against the order or invoice data,week-07
+customers_clean.csv,payment_terms,str,Advance,Not tested,Not tested against the order or invoice data,week-07
+customers_clean.csv,customer_since,str,2024-04-10,Unusable,Q13: after the customer's first order for 58.4% of customers; rank correlation with the first order -0.04. Use the first delivered order date instead,week-07
+customers_clean.csv,last_purchase_date,str,2024-04-25,Unusable,Q13: earlier than the customer's last order for 93.0% of customers; rank correlation -0.01. Use the last delivered order date instead,week-07
+customers_clean.csv,total_purchase_value,int64,3892818,Unusable,Q13: adds to 5.4% of delivered revenue; no customer within 10%; rank correlation -0.09. Use revenue and order count from the order lines,week-07
+customers_clean.csv,customer_rating,int64,4,Not tested,Not tested against the order or invoice data,week-07
+branches_clean.csv,branch_id,str,DEL001,Not flagged,,week-07
+branches_clean.csv,branch_name,str,Delhi Central,Not flagged,,week-07
+branches_clean.csv,city,str,Delhi,Not flagged,,week-07
+branches_clean.csv,state,str,Delhi,Not flagged,,week-07
+branches_clean.csv,region,str,North,Not flagged,,week-07
+branches_clean.csv,warehouse_type,str,Central,Not flagged,,week-07
+branches_clean.csv,warehouse_capacity,str,45230 sqft,Usable with caution,"Text such as '45230 sqft', one static figure per branch. There is no utilisation, bin, pallet or volume data to set against it, so no capacity or speed claim can be made",week-07
+branches_clean.csv,service_center_available,str,Yes,Usable with caution,"One headcount per branch; no shift, pick-and-pack or timing data, so no staffing or throughput claim",week-07
+branches_clean.csv,manager_id,int64,9593,Usable with caution,"One headcount per branch; no shift, pick-and-pack or timing data, so no staffing or throughput claim",week-07
+branches_clean.csv,total_employees,int64,92,Usable with caution,"One headcount per branch; no shift, pick-and-pack or timing data, so no staffing or throughput claim",week-07
+branches_clean.csv,avg_monthly_revenue,int64,5234890,Not tested,Not tested; branch revenue is better taken from the order lines,week-07
+branches_clean.csv,monthly_operational_cost,int64,3189000,Not tested,Not tested; branch revenue is better taken from the order lines,week-07
+branches_clean.csv,market_demand_index,int64,9,Not tested,Not tested; branch revenue is better taken from the order lines,week-07

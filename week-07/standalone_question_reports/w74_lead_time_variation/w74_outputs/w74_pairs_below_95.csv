@@ -1,0 +1,8 @@
+policy,pairs_below_95,worst_pair_fill,median_pair_fill,label
+"A existing (reorder_level, max_stock)",81,0.7090731401329822,0.9614693531136386,Sales scale assumed (Q10 unresolved); results rest on this assumption
+B 90% (mean-lead trigger),1,0.9466734412244387,0.9833659318617068,Sales scale assumed (Q10 unresolved); results rest on this assumption
+B 95% (mean-lead trigger),0,0.9653364697026736,0.9891039795700061,Sales scale assumed (Q10 unresolved); results rest on this assumption
+B 99% (mean-lead trigger),0,0.982910550746455,0.9957219248151281,Sales scale assumed (Q10 unresolved); results rest on this assumption
+B-LT 90% (lead-time-aware trigger),0,0.9644037134612982,0.9876727674345636,Sales scale assumed (Q10 unresolved); results rest on this assumption
+B-LT 95% (lead-time-aware trigger),0,0.9777548613724759,0.9926819556489098,Sales scale assumed (Q10 unresolved); results rest on this assumption
+B-LT 99% (lead-time-aware trigger),0,0.9903336348833002,0.9976939270069668,Sales scale assumed (Q10 unresolved); results rest on this assumption

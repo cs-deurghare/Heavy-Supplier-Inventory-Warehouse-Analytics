@@ -1,0 +1,11 @@
+product_id,product_name,category,revenue,units,gross_profit,list_price,unit_cost,orders,revenue_share_pct,share_before,abc_class,margin_pct,gross_profit_share_pct,cumulative_revenue_share_pct,margin_vs_portfolio_pts,gross_profit_lost_vs_portfolio_margin,below_portfolio_margin,label
+P015,Engine Block EB-600,Engine,4856985000,40815,959152500,119000.0,95500.0,3411,21.155,0.0,A,19.7479,19.3768,21.155,-1.8123,88023842.5709,True,Realised margin from the order lines; no stock figures
+P014,Transmission Assembly TA-800,Transmission,3387929000,40574,608610000,83500.0,68500.0,3462,14.7564,21.155,A,17.9641,12.2951,35.9115,-3.5961,121834730.447,True,Realised margin from the order lines; no stock figures
+P021,Boom Cylinder BC-400,Hydraulic,1934116800,41864,443758400,46200.0,35600.0,3481,8.4242,35.9115,A,22.9437,8.9648,44.3357,1.3835,-26758685.8298,False,Realised margin from the order lines; no stock figures
+P019,Swing Motor SWM-350,Hydraulic,1653411400,41543,357269800,39800.0,31200.0,3476,7.2016,44.3357,A,21.608,7.2176,51.5373,0.0478,-790769.7751,False,Realised margin from the order lines; no stock figures
+P004,Track Chain TC-45,Undercarriage,1627461800,40891,298504300,39800.0,32500.0,3392,7.0886,51.5373,A,18.3417,6.0304,58.6259,-3.2185,52379941.0256,True,Realised margin from the order lines; no stock figures
+P010,Turbocharger TB-900,Engine,1475990800,42292,253752000,34900.0,28900.0,3542,6.4288,58.6259,A,17.192,5.1263,65.0547,-4.3682,64474769.8196,True,Realised margin from the order lines; no stock figures
+P011,Hydraulic Cylinder HC-200,Hydraulic,1161766800,42093,256767300,27600.0,21500.0,3595,5.0602,65.0547,A,22.1014,5.1872,70.1149,0.5412,-6287895.8955,False,Realised margin from the order lines; no stock figures
+P001,Hydraulic Pump HP-300,Hydraulic,1011948000,41304,229237200,24500.0,18950.0,3499,4.4076,70.1149,A,22.6531,4.631,74.5225,1.0928,-11059049.2518,False,Realised margin from the order lines; no stock figures
+P030,Fuel Pump FP-350,Engine,910930500,41595,228772500,21900.0,16400.0,3509,3.9676,74.5225,A,25.1142,4.6217,78.4901,3.5539,-32373938.0678,False,Realised margin from the order lines; no stock figures
+P022,Control Valve CV-75,Hydraulic,697919300,41297,169317700,16900.0,12800.0,3493,3.0399,78.4901,A,24.2604,3.4206,81.53,2.7001,-18844807.8697,False,Realised margin from the order lines; no stock figures

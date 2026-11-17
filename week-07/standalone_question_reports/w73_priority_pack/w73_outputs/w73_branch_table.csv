@@ -1,0 +1,7 @@
+branch_id,branch_name,orders_per_month,ci95_low,ci95_high,units_per_month,total_orders,units_per_order,revenue_share_pct,months,orders_share_pct,rank,overlaps_next_branch,label
+CHN001,Chennai South Hub,51.0694,49.083,53.125,3526.6806,3677,69.0566,20.3938,72,20.3904,1,False,Orders and units sold only; no capacity or timing data
+KOL001,Kolkata East Depot,47.4028,45.7083,49.0694,3206.5,3413,67.6437,18.9027,72,18.9264,2,False,Orders and units sold only; no capacity or timing data
+AHM001,Ahmedabad West Hub,43.2639,41.5556,44.875,2975.3194,3115,68.7714,17.3628,72,17.2739,3,False,Orders and units sold only; no capacity or timing data
+DEL001,Delhi Central,37.25,35.9583,38.5972,2573.875,2682,69.0973,15.2447,72,14.8727,4,True,Orders and units sold only; no capacity or timing data
+PUN001,Pune Distribution,37.0556,35.625,38.4309,2522.6806,2668,68.0783,14.6937,72,14.7951,5,True,Orders and units sold only; no capacity or timing data
+HYD001,Hyderabad Logistics,34.4167,33.0833,35.6667,2346.875,2478,68.1901,13.4024,72,13.7415,6,False,Orders and units sold only; no capacity or timing data

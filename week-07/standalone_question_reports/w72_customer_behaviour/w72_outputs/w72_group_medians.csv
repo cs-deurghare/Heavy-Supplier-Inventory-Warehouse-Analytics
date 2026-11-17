@@ -1,0 +1,18 @@
+dimension,group,customers,median_orders,median_revenue_m,median_recency_days,median_mean_gap_days
+region,Central,11,37.0,42.76889,55.0,57.729729729729726
+region,East,87,36.0,45.45707,39.0,60.0
+region,North,82,36.0,47.037715,45.5,59.63235294117647
+region,North East,11,33.0,44.8842,64.0,63.46875
+region,South,158,35.0,45.581925,50.0,59.55050505050505
+region,West,151,36.0,44.21623,45.0,60.5
+customer_type,Corporate,104,36.0,45.403335,50.5,60.52142857142857
+customer_type,Dealer,99,36.0,47.33339,49.0,58.68571428571428
+customer_type,Fleet Owner,95,36.0,45.45707,41.0,60.31428571428572
+customer_type,Government,114,36.0,43.934945,45.0,59.93055555555556
+customer_type,Retail,88,35.0,44.48112,43.5,60.23529411764706
+industry_segment,Construction,90,35.0,43.142995,46.0,60.254978354978356
+industry_segment,Infrastructure,79,36.0,45.83956,53.0,59.22857142857143
+industry_segment,Logistics,96,36.0,44.02379,55.5,59.378787878787875
+industry_segment,Manufacturing,70,37.0,48.94696,39.5,57.75347222222222
+industry_segment,Mining,98,34.0,44.30146,43.5,62.455882352941174
+industry_segment,Rental,67,35.0,47.58769,46.0,60.22857142857143

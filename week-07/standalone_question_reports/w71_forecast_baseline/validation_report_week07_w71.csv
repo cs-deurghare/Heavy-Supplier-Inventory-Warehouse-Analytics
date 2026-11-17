@@ -1,0 +1,28 @@
+Check_ID,Check_Item,Expected,Actual,Status
+1,delivered orders,18033,18033,PASS
+2,delivered revenue before GST (Rs),22958987430,22958987430,PASS
+3,"72 calendar months, 2,192 days",2192,2192,PASS
+4,"40 series (4 totals, 30 products, 6 branches)",40 = 4+30+6,40 = 4+30+6,PASS
+5,no empty month in any series,0 zero months,0,PASS
+6,product units add up to total units,1234939,1234939,PASS
+7,branch orders add up to total orders,18033,18033,PASS
+8,gross profit equals revenue minus cost of goods,4950006740,4950006740,PASS
+9,baseline error reproduces by a plain loop (total orders),13.81698,13.81698,PASS
+10,a forecast uses only earlier months (changing month 61 leaves month 51's forecast unchanged),255.054207,255.054207,PASS
+11,"24 one-step forecasts per series, Jan 2023 to Dec 2024",24,24,PASS
+12,baseline and challenger scored on the same months for every series,40 series x 24,960 rows,PASS
+13,Week 6 raw-month baseline error reproduces: revenue (%),6.730281,6.730281,PASS
+14,Week 6 raw-month baseline error reproduces: units (%),5.443945,5.443945,PASS
+15,Week 6 raw-month baseline error reproduces: orders (%),6.232017,6.232016,PASS
+16,Week 6 raw-month baseline error reproduces: gross_profit (%),6.459684,6.459684,PASS
+17,point forecast lies inside its interval,all 960 rows,960,PASS
+18,95% interval coverage in the back-test is near 95% (bar set in advance: 85% to 99%),0.85 to 0.99,0.961,PASS
+19,sign-flip p-values are valid (0 < p <= 1),0 < p <= 1,0.0092 to 0.9982,PASS
+20,Holm-adjusted p is never below the raw p,adj >= raw,ok,PASS
+21,bootstrap interval brackets the observed mean difference (all 40),40 of 40,40 of 40,PASS
+22,verdicts re-derived from the pre-set bar,0,0,PASS
+23,forecast table: 40 series x 12 months,480,480,PASS
+24,2025 forecast revenue is close to the 2024 level (within 10%),0.90 to 1.10,1.039,PASS
+25,"one challenger only (trend), as set in the plan",1,1,PASS
+26,three charts written,3,3,PASS
+27,five result tables written,5,5,PASS

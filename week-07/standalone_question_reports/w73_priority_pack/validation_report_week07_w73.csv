@@ -1,0 +1,27 @@
+Check_ID,Check_Item,Expected,Actual,Status
+1,delivered orders,18033,18033,PASS
+2,delivered revenue before GST (Rs),22958987430,22958987430,PASS
+3,gross profit (Rs),4950006740,4950006740,PASS
+4,portfolio margin (%),21.56,21.56,PASS
+5,class A is 10 products,10,10,PASS
+6,class A revenue share (%) (Week 6: 81.5),81.5,81.5,PASS
+7,class A is the same ten products as Week 6,"['P001', 'P004', 'P010', 'P011', 'P014', 'P015', 'P019', 'P021', 'P022', 'P030']","['P001', 'P004', 'P010', 'P011', 'P014', 'P015', 'P019', 'P021', 'P022', 'P030']",PASS
+8,"margin recomputed with a plain loop for three products (P015, P014, P010)",equal,equal,PASS
+9,"class A margin range from the data (%), not assumed",computed,17.19 to 25.11,PASS
+10,product revenue adds up to delivered revenue,22958987430,22958987430,PASS
+11,every class A row has a name and a category,0 missing,0,PASS
+12,six branches,6,6,PASS
+13,"432 branch-months (72 x 6), none empty",432,432,PASS
+14,branch orders add up to delivered orders,18033,18033,PASS
+15,each interval brackets its mean,6 of 6,6 of 6,PASS
+16,busiest to quietest branch ratio (Week 6: 1.48),1.48,1.48,PASS
+17,orders a month match Week 6 for all six (to 0.1),"51.1,47.4,43.3,37.2,37.1,34.4","51.1,47.4,43.3,37.2,37.1,34.4",PASS
+18,Week 6 stock file covers 180 pairs,180,180,PASS
+19,72 at-risk pairs (Week 6),72,72,PASS
+20,"at risk means fill rate under 95% (Week 6 health bar), for every pair","72 below, 108 not","72 below, 108 not",PASS
+21,at-risk pairs per category equal the Week 6 category table (15 categories),equal,15 of 15 equal,PASS
+22,"every at-risk pair has a product name, category and branch name",0 missing,0,PASS
+23,demand in the Week 6 file equals ledger OUT total (Week 6 gate),1124832,1124832,PASS
+24,every row carries the sales-scale label,72 of 72,72 of 72,PASS
+25,three charts written,3,3,PASS
+26,five result tables written,5,5,PASS

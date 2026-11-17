@@ -1,0 +1,73 @@
+category,product_id,product_name,branch_id,branch_name,fill_rate,unmet_demand,total_demand,unmet_share_pct,stockout_days,avg_on_hand,days_of_cover,lead_time_days,s,S,label
+Attachments,P008,Bucket Tooth BT-10,KOL001,Kolkata East Depot,0.8939,711.0,6702.0,10.6088,57,108.1366,35.5454,18,43.0,262.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Attachments,P008,Bucket Tooth BT-10,PUN001,Pune Distribution,0.9164,426.0,5096.0,8.3595,44,63.9156,27.6307,17,33.0,147.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Belts,P017,Fan Belt FB-30,HYD001,Hyderabad Logistics,0.8525,732.0,4963.0,14.7491,72,76.118,33.7876,17,26.0,172.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Belts,P017,Fan Belt FB-30,CHN001,Chennai South Hub,0.9348,519.0,7961.0,6.5193,47,128.0,35.4207,18,59.0,300.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Brakes,P012,Brake Pad BP-40,AHM001,Ahmedabad West Hub,0.7878,1494.0,7040.0,21.2216,122,60.5897,18.9601,18,32.0,156.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Brakes,P012,Brake Pad BP-40,CHN001,Chennai South Hub,0.9155,618.0,7311.0,8.453,53,118.2846,35.6423,18,54.0,274.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Brakes,P012,Brake Pad BP-40,HYD001,Hyderabad Logistics,0.9231,409.0,5317.0,7.6923,39,107.8193,44.6729,18,42.0,241.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Cabin,P025,Cabin Glass CG-20,HYD001,Hyderabad Logistics,0.8454,852.0,5512.0,15.4572,77,53.4671,21.3694,18,26.0,133.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Cabin,P025,Cabin Glass CG-20,DEL001,Delhi Central,0.9425,305.0,5304.0,5.7504,26,148.3205,61.6044,18,54.0,310.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Cooling,P016,Radiator RD-250,AHM001,Ahmedabad West Hub,0.8278,1155.0,6706.0,17.2234,93,65.2115,21.4228,18,33.0,164.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Cooling,P016,Radiator RD-250,HYD001,Hyderabad Logistics,0.8673,669.0,5041.0,13.2712,56,75.168,32.8496,18,35.0,177.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Cooling,P016,Radiator RD-250,KOL001,Kolkata East Depot,0.9303,475.0,6816.0,6.9689,40,122.3727,39.5521,18,49.0,277.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Electrical,P006,Alternator ALT-500,KOL001,Kolkata East Depot,0.8239,1282.0,7281.0,17.6075,110,71.9237,21.7618,18,33.0,181.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Electrical,P006,Alternator ALT-500,CHN001,Chennai South Hub,0.8602,1085.0,7760.0,13.982,97,66.1448,18.778,18,41.0,181.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Electrical,P009,Starter Motor SM-700,KOL001,Kolkata East Depot,0.8741,844.0,6703.0,12.5914,79,84.1012,27.6406,18,35.0,201.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Electrical,P028,Light Assembly LA-18,CHN001,Chennai South Hub,0.9007,726.0,7310.0,9.9316,65,77.4099,23.3289,17,43.0,198.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Electrical,P006,Alternator ALT-500,DEL001,Delhi Central,0.9361,365.0,5711.0,6.3912,32,105.158,40.5643,18,43.0,234.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Engine,P015,Engine Block EB-600,AHM001,Ahmedabad West Hub,0.7797,1454.0,6600.0,22.0303,126,49.3768,16.4814,18,28.0,131.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Engine,P010,Turbocharger TB-900,CHN001,Chennai South Hub,0.8495,1134.0,7535.0,15.0498,99,76.5261,22.3739,18,44.0,191.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Engine,P005,Fuel Injector FI-220,AHM001,Ahmedabad West Hub,0.8522,963.0,6514.0,14.7835,72,72.1276,24.3932,18,37.0,175.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Engine,P030,Fuel Pump FP-350,CHN001,Chennai South Hub,0.8657,1088.0,8099.0,13.4338,80,102.3373,27.8366,18,46.0,246.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Engine,P015,Engine Block EB-600,PUN001,Pune Distribution,0.8938,573.0,5398.0,10.615,42,95.1838,38.8459,18,43.0,210.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Engine,P010,Turbocharger TB-900,KOL001,Kolkata East Depot,0.9005,783.0,7866.0,9.9542,62,126.0971,35.3155,19,61.0,294.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Engine,P010,Turbocharger TB-900,AHM001,Ahmedabad West Hub,0.923,519.0,6742.0,7.698,43,105.3273,34.4165,18,43.0,245.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Engine,P030,Fuel Pump FP-350,AHM001,Ahmedabad West Hub,0.9242,460.0,6071.0,7.577,40,99.6051,36.144,18,46.0,231.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Engine,P010,Turbocharger TB-900,PUN001,Pune Distribution,0.93,388.0,5541.0,7.0023,27,121.2982,48.226,18,48.0,267.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Engine,P005,Fuel Injector FI-220,CHN001,Chennai South Hub,0.9327,510.0,7576.0,6.7318,39,152.7989,44.4319,18,68.0,336.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Engine,P015,Engine Block EB-600,HYD001,Hyderabad Logistics,0.946,262.0,4855.0,5.3965,25,104.1226,47.2465,18,56.0,226.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Filters,P002,Engine Oil Filter OF-90,AHM001,Ahmedabad West Hub,0.8127,1214.0,6483.0,18.7259,92,69.3214,23.5562,18,36.0,179.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Filters,P003,Air Filter AF-120,DEL001,Delhi Central,0.8817,672.0,5681.0,11.8289,49,84.2129,32.6564,18,44.0,190.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Filters,P002,Engine Oil Filter OF-90,PUN001,Pune Distribution,0.915,458.0,5389.0,8.4988,41,77.3981,31.64,18,41.0,180.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Filters,P003,Air Filter AF-120,CHN001,Chennai South Hub,0.926,587.0,7934.0,7.3985,49,166.9764,46.3636,18,62.0,365.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Hydraulic,P019,Swing Motor SWM-350,KOL001,Kolkata East Depot,0.755,1748.0,7135.0,24.4989,138,52.3931,16.1769,18,30.0,141.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Hydraulic,P011,Hydraulic Cylinder HC-200,PUN001,Pune Distribution,0.8063,1139.0,5881.0,19.3675,93,53.4993,20.0406,18,31.0,138.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Hydraulic,P019,Swing Motor SWM-350,DEL001,Delhi Central,0.8662,857.0,6407.0,13.376,70,84.2506,28.9689,18,37.0,208.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Hydraulic,P022,Control Valve CV-75,CHN001,Chennai South Hub,0.8941,817.0,7718.0,10.5856,72,92.2646,26.3357,18,44.0,227.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Hydraulic,P011,Hydraulic Cylinder HC-200,CHN001,Chennai South Hub,0.8991,779.0,7721.0,10.0894,72,94.448,26.9485,18,50.0,233.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Hydraulic,P019,Swing Motor SWM-350,PUN001,Pune Distribution,0.9086,470.0,5144.0,9.1369,44,93.7481,40.1491,18,36.0,207.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Hydraulic,P001,Hydraulic Pump HP-300,CHN001,Chennai South Hub,0.9278,575.0,7965.0,7.2191,46,137.7304,38.0942,18,62.0,311.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Hydraulic,P011,Hydraulic Cylinder HC-200,HYD001,Hyderabad Logistics,0.9414,302.0,5153.0,5.8607,31,108.1108,46.2193,18,46.0,244.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Lubricants,P026,Grease Cartridge GC-5,CHN001,Chennai South Hub,0.8398,1215.0,7584.0,16.0206,123,69.9977,20.3329,18,36.0,181.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Lubricants,P026,Grease Cartridge GC-5,DEL001,Delhi Central,0.8547,803.0,5527.0,14.5287,65,79.6931,31.7648,18,28.0,186.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Lubricants,P026,Grease Cartridge GC-5,PUN001,Pune Distribution,0.885,604.0,5251.0,11.5026,54,83.6505,35.0946,18,36.0,189.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Pins & Bushes,P020,Pivot Pin PP-12,PUN001,Pune Distribution,0.8028,1105.0,5604.0,19.7181,89,57.1144,22.4524,18,24.0,140.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Pins & Bushes,P020,Pivot Pin PP-12,DEL001,Delhi Central,0.8249,1085.0,6196.0,17.5113,92,52.468,18.6551,18,31.0,140.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Pins & Bushes,P020,Pivot Pin PP-12,AHM001,Ahmedabad West Hub,0.917,521.0,6276.0,8.3015,46,120.5157,42.3034,18,54.0,270.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Seals,P027,O-Ring Set OR-50,CHN001,Chennai South Hub,0.7222,2214.0,7971.0,27.7757,170,45.2097,12.4949,18,33.0,133.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Seals,P013,Seal Kit SK-15,AHM001,Ahmedabad West Hub,0.7899,1368.0,6512.0,21.0074,106,59.9809,20.2915,18,25.0,150.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Seals,P013,Seal Kit SK-15,PUN001,Pune Distribution,0.8318,886.0,5269.0,16.8153,70,55.2152,23.0858,17,25.0,133.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Seals,P027,O-Ring Set OR-50,DEL001,Delhi Central,0.8811,655.0,5508.0,11.8918,48,78.9564,31.5797,18,31.0,193.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Seals,P013,Seal Kit SK-15,KOL001,Kolkata East Depot,0.8988,714.0,7052.0,10.1248,61,96.631,30.1869,18,44.0,233.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Seals,P013,Seal Kit SK-15,CHN001,Chennai South Hub,0.9261,557.0,7540.0,7.3873,43,134.8711,39.406,18,56.0,307.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Seals,P027,O-Ring Set OR-50,AHM001,Ahmedabad West Hub,0.9379,401.0,6461.0,6.2065,36,128.2329,43.7234,18,51.0,294.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Seals,P027,O-Ring Set OR-50,HYD001,Hyderabad Logistics,0.9431,268.0,4711.0,5.6888,30,98.5883,46.1027,17,46.0,211.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Seals,P013,Seal Kit SK-15,DEL001,Delhi Central,0.9448,283.0,5130.0,5.5166,26,113.3613,48.6813,19,48.0,249.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Sensors,P029,Pressure Sensor PS-90,CHN001,Chennai South Hub,0.8164,1408.0,7667.0,18.3644,122,64.2547,18.4626,19,33.0,173.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Sensors,P029,Pressure Sensor PS-90,DEL001,Delhi Central,0.8741,662.0,5257.0,12.5927,55,76.6559,32.1235,18,33.0,174.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Sensors,P029,Pressure Sensor PS-90,KOL001,Kolkata East Depot,0.9272,562.0,7723.0,7.277,50,127.3745,36.3338,18,57.0,299.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Sensors,P029,Pressure Sensor PS-90,AHM001,Ahmedabad West Hub,0.9345,442.0,6745.0,6.553,38,115.3922,37.6885,18,49.0,267.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Sensors,P029,Pressure Sensor PS-90,PUN001,Pune Distribution,0.9404,346.0,5803.0,5.9624,34,97.4094,36.9797,18,40.0,225.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Transmission,P014,Transmission Assembly TA-800,AHM001,Ahmedabad West Hub,0.8292,1067.0,6248.0,17.0775,87,70.8348,24.9758,18,32.0,171.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Transmission,P014,Transmission Assembly TA-800,PUN001,Pune Distribution,0.86,771.0,5506.0,14.0029,67,65.6346,26.261,18,33.0,164.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Transmission,P014,Transmission Assembly TA-800,CHN001,Chennai South Hub,0.9384,481.0,7813.0,6.1564,38,131.8366,37.1734,18,60.0,303.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Undercarriage,P004,Track Chain TC-45,KOL001,Kolkata East Depot,0.8647,949.0,7014.0,13.5301,81,76.8584,24.1401,18,44.0,187.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Undercarriage,P024,Track Roller TR-60,CHN001,Chennai South Hub,0.8711,992.0,7694.0,12.8932,86,82.5256,23.6293,18,44.0,204.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Undercarriage,P023,Idler Wheel IW-55,HYD001,Hyderabad Logistics,0.8842,533.0,4601.0,11.5844,55,56.409,27.0091,18,31.0,134.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Undercarriage,P023,Idler Wheel IW-55,CHN001,Chennai South Hub,0.8985,818.0,8061.0,10.1476,67,91.7227,25.067,18,53.0,231.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Undercarriage,P023,Idler Wheel IW-55,KOL001,Kolkata East Depot,0.9219,525.0,6722.0,7.8102,42,122.2973,40.0805,18,49.0,273.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Undercarriage,P023,Idler Wheel IW-55,PUN001,Pune Distribution,0.9256,404.0,5433.0,7.436,37,85.7118,34.7548,18,40.0,198.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Undercarriage,P004,Track Chain TC-45,CHN001,Chennai South Hub,0.9423,434.0,7520.0,5.7713,39,148.512,43.5069,18,58.0,339.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Undercarriage,P024,Track Roller TR-60,KOL001,Kolkata East Depot,0.9471,379.0,7162.0,5.2918,33,103.6704,31.8886,18,58.0,242.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.
+Undercarriage,P018,Wheel Rim WR-24,KOL001,Kolkata East Depot,0.9494,364.0,7193.0,5.0605,31,126.1611,38.6394,18,59.0,284.0,Sales scale assumed (Q10 unresolved); results rest on this assumption.

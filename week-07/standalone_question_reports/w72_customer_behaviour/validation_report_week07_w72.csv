@@ -1,0 +1,23 @@
+Check_ID,Check_Item,Expected,Actual,Status
+1,"500 customers, all with delivered orders",500,500,PASS
+2,order count equals delivered orders,18033,18033,PASS
+3,revenue adds up to delivered revenue,22958987430,22958987430,PASS
+4,every customer has a region and a customer type,0 missing,0,PASS
+5,50 customers recomputed with a plain filter match,50 of 50,50 of 50,PASS
+6,orders by period add up to orders,18033,18033,PASS
+7,recency is never negative and ends at the last order date,0 negative; min 0,min 0,PASS
+8,every customer ordered more than once,0 single-order customers,0,PASS
+9,top 10% share is between 10% and 100%,10% to 100%,14.3%,PASS
+10,top 20% share is at least the top 10% share,top20 >= top10,0.266 >= 0.143,PASS
+11,Gini recomputed by pairwise formula matches (50-customer subset),equal,0.00e+00,PASS
+12,random assignment of orders gives an order-count spread near the Poisson value,SD about sqrt(mean) = 6.01,6.01,PASS
+13,customer shuffle keeps total revenue and order count,same,22958987430,PASS
+14,"ten group tests run (four measures by two groupings, plus two by industry)",10,10,PASS
+15,Holm-adjusted p is never below the raw p,adj >= raw,ok,PASS
+16,group medians cover all 500 customers in each dimension,500 each,"[500, 500, 500]",PASS
+17,period order counts are non-negative whole numbers,min >= 0,min 6,PASS
+18,period revenue adds up to revenue,22958987430,22958987430,PASS
+19,Spearman is within -1 and 1 for every comparison,-1 to 1,-0.135 to 0.004,PASS
+20,quiet count recomputed by loop,9,9,PASS
+21,three charts written,3,3,PASS
+22,eight result tables written,8,8,PASS

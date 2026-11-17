@@ -1,0 +1,4 @@
+group,series,median_mae_pct_plain,median_mae_pct_trend,median_interval_coverage,challenger_wins,raw_p_below_005
+branch,6,12.9351,13.265,0.9375,0,0
+product,30,12.6934,13.0028,0.9583,0,4
+total,4,5.8823,5.8014,0.9583,0,0

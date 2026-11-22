@@ -1,0 +1,4 @@
+benchmark,test_months,mape_pct,mape_lo,mape_hi
+same month last year,24,8.401,6.408,10.57
+mean of previous 12 months,24,6.592,4.999,8.188
+last month (naive),24,6.841,4.909,8.873

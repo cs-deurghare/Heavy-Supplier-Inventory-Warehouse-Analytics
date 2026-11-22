@@ -1,0 +1,8 @@
+measure,value,label
+median pair: test mean daily demand / train mean daily demand,0.9700375259627361,Sales scale assumed (Q10 unresolved); results rest on this assumption
+median pair: test mean lead time minus train mean lead time (days),-0.15098218538042119,Sales scale assumed (Q10 unresolved); results rest on this assumption
+pairs whose test demand is within 15% of train demand,159.0,Sales scale assumed (Q10 unresolved); results rest on this assumption
+existing reorder_level: coefficient of variation across pairs,0.3716264418560315,Sales scale assumed (Q10 unresolved); results rest on this assumption
+training mean lead-time demand: coefficient of variation across pairs,0.16699013916836686,Sales scale assumed (Q10 unresolved); results rest on this assumption
+"Spearman, existing reorder_level vs training mean lead-time demand",0.08812111856768644,Sales scale assumed (Q10 unresolved); results rest on this assumption
+  p-value of that correlation,0.2394661516875227,Sales scale assumed (Q10 unresolved); results rest on this assumption

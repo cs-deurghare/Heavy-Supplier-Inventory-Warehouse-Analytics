@@ -1,0 +1,11 @@
+Check_Item,Actual,Status
+demand matrix total equals ledger OUT total,1124832,PASS
+test window is 744 days,744,PASS
+every pair has at least 400 training and 200 test lead-time lines,457 / 206,PASS
+more than 90% of lead-time variance is between suppliers,0.934,PASS
+fitted B-LT 95% beats A in all 500 out-of-sample paths,1.000,PASS
+A leaves between 70 and 85 pairs below 95% fill in the test period (full notebook: 78),78,PASS
+B-LT 95% leaves no pair below 95% fill,0,PASS
+training-data risk score separates the pairs that ran short (AUC above 0.9),0.966,PASS
+"one reorder point per pair, order-up-to above it",,PASS
+chart written,,PASS

@@ -1,0 +1,39 @@
+Check_ID,Check_Item,Expected,Actual,Status
+1,PO lines,155495,155495,PASS
+2,purchase orders,24000,24000,PASS
+3,header fields are constant within each PO,0,0,PASS
+4,eight suppliers,8,8,PASS
+5,received plus cancelled equals all POs,24000,24000,PASS
+6,received POs,21630,21630,PASS
+7,received spend before GST (INR B),312.03,312.03,PASS
+8,delay = received date - expected date on every received PO,0,0,PASS
+9,lead time = received date - order date on every received PO,0,0,PASS
+10,SUP0001 four components recomputed with plain filters,"[15.0773, 9.8845, 12.6396, 1.7215]","[15.0773, 9.8845, 12.6396, 1.7215]",PASS
+11,SUP0004 four components recomputed with plain filters,"[15.1652, 10.1821, 12.1864, 1.6869]","[15.1652, 10.1821, 12.1864, 1.6869]",PASS
+12,SUP0007 four components recomputed with plain filters,"[15.3282, 9.9406, 12.5135, 1.7267]","[15.3282, 9.9406, 12.5135, 1.7267]",PASS
+13,spend shares add to 100,100.0,100.0,PASS
+14,each of the four components scales to exactly 0 and 1 across suppliers,True,True,PASS
+15,risk score recomputed by hand for the riskiest supplier,72.784845,72.784845,PASS
+16,spend HHI is at least 1/8,True,0.125,PASS
+17,"5,000 bootstrap resamples",5000,5000,PASS
+18,bootstrap components have the same shape as the data components,"(8, 4)","(8, 4)",PASS
+19,pairwise probabilities of i riskier than j and j riskier than i add to 1 (no ties),28,28,PASS
+20,probabilities of being riskiest add to at least 1 (ties share the top rank),True,1.0,PASS
+21,each supplier's rank interval contains its median,8,8,PASS
+22,"5,000 true-label and 5,000 shuffled-label splits",10000,10000,PASS
+23,all split-half correlations are valid (between -1 and 1),True,True,PASS
+24,base variant reproduces the base ranking (Spearman 1),1.0,1.0,PASS
+25,six scoring variants compared,6,6,PASS
+26,line-level spend equals PO-level spend on received POs (INR B),312.03,312.03,PASS
+27,products where a supplier is the largest source add to 30,30,30,PASS
+28,region shares add to 100,100.0,100.0,PASS
+29,every supplier is in China,True,True,PASS
+30,delivered orders (Week 7 basis),18033,18033,PASS
+31,"delivered net revenue before GST (INR B, Week 7 basis)",22.96,22.96,PASS
+32,72 months from 2019-01 to 2024-12,72,72,PASS
+33,12-month-mean benchmark recomputed with a plain loop (MAPE %),6.592165,6.592165,PASS
+34,24 test months (2023 and 2024),24,24,PASS
+35,intervals contain the point estimate,3,3,PASS
+36,three charts written,3,3,PASS
+37,every output table written,9,9,PASS
+38,money-bearing tables carry the procurement-scale label,3,3,PASS

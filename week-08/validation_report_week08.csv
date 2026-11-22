@@ -1,0 +1,121 @@
+Check_ID,Work_item,Check_Item,Expected,Actual,Status
+1,W8-1 Supplier reliability,PO lines,155495,155495,PASS
+2,W8-1 Supplier reliability,purchase orders,24000,24000,PASS
+3,W8-1 Supplier reliability,"header fields are constant within each PO (supplier, cost, status, dates)",0,0,PASS
+4,W8-1 Supplier reliability,eight suppliers,8,8,PASS
+5,W8-1 Supplier reliability,received POs,21630,21630,PASS
+6,W8-1 Supplier reliability,cancelled POs,2370,2370,PASS
+7,W8-1 Supplier reliability,cancelled POs have no received date,0,0,PASS
+8,W8-1 Supplier reliability,delay = received date - expected date on every received PO,0,0,PASS
+9,W8-1 Supplier reliability,lead time = received date - order date on every received PO,0,0,PASS
+10,W8-1 Supplier reliability,received spend before GST (INR B),312.03,312.03,PASS
+11,W8-1 Supplier reliability,SUP0001 on-time rate recomputed with a plain loop,84.923,84.923,PASS
+12,W8-1 Supplier reliability,SUP0004 on-time rate recomputed with a plain loop,84.835,84.835,PASS
+13,W8-1 Supplier reliability,SUP0007 on-time rate recomputed with a plain loop,84.672,84.672,PASS
+14,W8-1 Supplier reliability,"PO counts add up to 24,000",24000,24000,PASS
+15,W8-1 Supplier reliability,spend shares add up to 100%,100.0,100.0,PASS
+16,W8-1 Supplier reliability,"on-time test has 21,630 POs",21630,21630,PASS
+17,W8-1 Supplier reliability,on-time rates of the eight suppliers fit within a few points (range < 3 points),<3,1.13,PASS
+18,W8-1 Supplier reliability,every Holm-adjusted p is at least the raw p,True,True,PASS
+19,W8-1 Supplier reliability,between-supplier spread of lead time is more than 5 times the within-supplier SD,True,True,PASS
+20,W8-1 Supplier reliability,every supplier is late on average by less than one day,0.0,0.55,PASS
+21,W8-1 Supplier reliability,six order years present,6,6,PASS
+22,W8-1 Supplier reliability,critical flag matches a plain filter on 200 sampled POs,0,0,PASS
+23,W8-1 Supplier reliability,supplier HHI is at least 0.125 and below 0.13,0.125,0.125,PASS
+24,W8-1 Supplier reliability,HHI recomputed by loop,0.125046,0.125046,PASS
+25,W8-1 Supplier reliability,thirty products,30,30,PASS
+26,W8-1 Supplier reliability,every product is bought from all 8 suppliers,30,30,PASS
+27,W8-1 Supplier reliability,no product is more concentrated than chance after Holm adjustment,0,0,PASS
+28,W8-1 Supplier reliability,three charts written,3,3,PASS
+29,W8-1 Supplier reliability,nine result tables written,9,9,PASS
+30,W8-2 Supplier risk,PO lines,155495,155495,PASS
+31,W8-2 Supplier risk,purchase orders,24000,24000,PASS
+32,W8-2 Supplier risk,header fields are constant within each PO,0,0,PASS
+33,W8-2 Supplier risk,eight suppliers,8,8,PASS
+34,W8-2 Supplier risk,received plus cancelled equals all POs,24000,24000,PASS
+35,W8-2 Supplier risk,received POs,21630,21630,PASS
+36,W8-2 Supplier risk,received spend before GST (INR B),312.03,312.03,PASS
+37,W8-2 Supplier risk,delay = received date - expected date on every received PO,0,0,PASS
+38,W8-2 Supplier risk,lead time = received date - order date on every received PO,0,0,PASS
+39,W8-2 Supplier risk,SUP0001 four components recomputed with plain filters,"[15.0773, 9.8845, 12.6396, 1.7215]","[15.0773, 9.8845, 12.6396, 1.7215]",PASS
+40,W8-2 Supplier risk,SUP0004 four components recomputed with plain filters,"[15.1652, 10.1821, 12.1864, 1.6869]","[15.1652, 10.1821, 12.1864, 1.6869]",PASS
+41,W8-2 Supplier risk,SUP0007 four components recomputed with plain filters,"[15.3282, 9.9406, 12.5135, 1.7267]","[15.3282, 9.9406, 12.5135, 1.7267]",PASS
+42,W8-2 Supplier risk,spend shares add to 100,100.0,100.0,PASS
+43,W8-2 Supplier risk,each of the four components scales to exactly 0 and 1 across suppliers,True,True,PASS
+44,W8-2 Supplier risk,risk score recomputed by hand for the riskiest supplier,72.784845,72.784845,PASS
+45,W8-2 Supplier risk,spend HHI is at least 1/8,True,0.125,PASS
+46,W8-2 Supplier risk,"5,000 bootstrap resamples",5000,5000,PASS
+47,W8-2 Supplier risk,bootstrap components have the same shape as the data components,"(8, 4)","(8, 4)",PASS
+48,W8-2 Supplier risk,pairwise probabilities of i riskier than j and j riskier than i add to 1 (no ties),28,28,PASS
+49,W8-2 Supplier risk,probabilities of being riskiest add to at least 1 (ties share the top rank),True,1.0,PASS
+50,W8-2 Supplier risk,each supplier's rank interval contains its median,8,8,PASS
+51,W8-2 Supplier risk,"5,000 true-label and 5,000 shuffled-label splits",10000,10000,PASS
+52,W8-2 Supplier risk,all split-half correlations are valid (between -1 and 1),True,True,PASS
+53,W8-2 Supplier risk,base variant reproduces the base ranking (Spearman 1),1.0,1.0,PASS
+54,W8-2 Supplier risk,six scoring variants compared,6,6,PASS
+55,W8-2 Supplier risk,line-level spend equals PO-level spend on received POs (INR B),312.03,312.03,PASS
+56,W8-2 Supplier risk,products where a supplier is the largest source add to 30,30,30,PASS
+57,W8-2 Supplier risk,region shares add to 100,100.0,100.0,PASS
+58,W8-2 Supplier risk,every supplier is in China,True,True,PASS
+59,W8-2 Supplier risk,delivered orders (Week 7 basis),18033,18033,PASS
+60,W8-2 Supplier risk,"delivered net revenue before GST (INR B, Week 7 basis)",22.96,22.96,PASS
+61,W8-2 Supplier risk,72 months from 2019-01 to 2024-12,72,72,PASS
+62,W8-2 Supplier risk,12-month-mean benchmark recomputed with a plain loop (MAPE %),6.592165,6.592165,PASS
+63,W8-2 Supplier risk,24 test months (2023 and 2024),24,24,PASS
+64,W8-2 Supplier risk,intervals contain the point estimate,3,3,PASS
+65,W8-2 Supplier risk,three charts written,3,3,PASS
+66,W8-2 Supplier risk,every output table written,9,9,PASS
+67,W8-2 Supplier risk,money-bearing tables carry the procurement-scale label,3,3,PASS
+68,W8-3 Stockout and reorder,ledger IN is about 18.1 times OUT (Q10 reproduces),18.13 +/- 0.1,18.13,PASS
+69,W8-3 Stockout and reorder,180 product-branch pairs,180,180,PASS
+70,W8-3 Stockout and reorder,demand matrix total equals ledger OUT total,1124832,1124832,PASS
+71,W8-3 Stockout and reorder,"full daily calendar of 2,203 days","(180, 2203)","(180, 2203)",PASS
+72,W8-3 Stockout and reorder,train window is 2019 to 2022 and the test window holds at least two years,>= 730 test days,"train 1459, test 744",PASS
+73,W8-3 Stockout and reorder,lead_time_actual_days equals received date minus order date for every received line,100%,1.0000,PASS
+74,W8-3 Stockout and reorder,supplier_lead_days equals expected delivery minus order date for every received line,100%,1.0000,PASS
+75,W8-3 Stockout and reorder,every pair has at least 400 training and 200 test received lines,>= 400 / >= 200,457 / 206,PASS
+76,W8-3 Stockout and reorder,training demand uses only 2019 to 2022 days,mean over first 1459 days,ok,PASS
+77,W8-3 Stockout and reorder,every pair is supplied by all 8 suppliers,8 per pair,8-8,PASS
+78,W8-3 Stockout and reorder,"more than 90% of lead-time variance is between suppliers (the supplier mix, not delay, drives the spread)",> 0.90,0.934,PASS
+79,W8-3 Stockout and reorder,delay against the promised date runs from -3 to +7 days for every supplier,-3 to +7,-3 to 7,PASS
+80,W8-3 Stockout and reorder,vectorised simulator equals a plain day-by-day loop on 5 pairs (A existing),identical,identical,PASS
+81,W8-3 Stockout and reorder,vectorised simulator equals a plain day-by-day loop on 5 pairs (B-LT 95%),identical,identical,PASS
+82,W8-3 Stockout and reorder,fill rate lies between 0 and 1 for every policy and pair,0 to 1,ok,PASS
+83,W8-3 Stockout and reorder,"500 replications, seed 42, 5,000 bootstrap resamples",500 / 42 / 5000,500 / 42 / 5000,PASS
+84,W8-3 Stockout and reorder,higher service factor never lowers back-test fill (B-LT 90 < 95 < 99),monotone,monotone,PASS
+85,W8-3 Stockout and reorder,policies were counted over the same test window (744 days) after a 60-day warm-up,T - t_cut days,744,PASS
+86,W8-3 Stockout and reorder,fitted B-LT 95% beats A in 100% of out-of-sample paths,1.0,1.0,PASS
+87,W8-3 Stockout and reorder,pair-level bootstrap interval for the B-LT 95% fill gain excludes zero,low > 0,4.4,PASS
+88,W8-3 Stockout and reorder,existing reorder levels are not related to the lead-time demand they should cover (|Spearman| < 0.3),< 0.3,0.088,PASS
+89,W8-3 Stockout and reorder,AUC by ranks equals AUC by brute-force pair comparison,equal,equal,PASS
+90,W8-3 Stockout and reorder,cycle stockout probabilities lie between 0 and 1,0 to 1,ok,PASS
+91,W8-3 Stockout and reorder,test period has both at-risk and adequate pairs under A,mixed,78 at risk,PASS
+92,W8-3 Stockout and reorder,every pair has a reorder point of at least 1 unit and an order-up-to level above it,all 180,all 180,PASS
+93,W8-3 Stockout and reorder,one row per pair in the reorder table,180,180,PASS
+94,W8-3 Stockout and reorder,reorder points rise with the service level for every pair (90 <= 95 <= 99),all pairs,all pairs,PASS
+95,W8-3 Stockout and reorder,three charts written,3,3,PASS
+96,W8-3 Stockout and reorder,every output table carries the sales-scale label,7 of 7,7 of 7,PASS
+97,W8-3 Stockout and reorder,"summary, pair and comparison tables carry an assumptions column",3 of 3,3 of 3,PASS
+98,W8-3 Stockout and reorder,output tables written (seven),7,7,PASS
+99,W8-4 Customer segments,delivered orders,18033,18033.0,PASS
+100,W8-4 Customer segments,delivered revenue before GST (INR B),22.96,22.96,PASS
+101,W8-4 Customer segments,500 customers in the master and in the orders,500,500.0,PASS
+102,W8-4 Customer segments,each order belongs to one customer,18033,18033.0,PASS
+103,W8-4 Customer segments,every customer ordered in both halves,500,500.0,PASS
+104,W8-4 Customer segments,"full-window orders sum to 18,033",18033,18033.0,PASS
+105,W8-4 Customer segments,half-window orders add up to the full window,18033,18033.0,PASS
+106,W8-4 Customer segments,"R, F and M recomputed with a plain filter for 25 customers",0,0.0,PASS
+107,W8-4 Customer segments,scores run from 1 to 5 with 100 customers in each fifth,100,100.0,PASS
+108,W8-4 Customer segments,every customer lands in exactly one of the five segments,500,500.0,PASS
+109,W8-4 Customer segments,segment sizes add up to 500,500,500.0,PASS
+110,W8-4 Customer segments,segment revenue shares add up to 100%,100.0,100.0,PASS
+111,W8-4 Customer segments,transition matrix covers 500 customers,500,500.0,PASS
+112,W8-4 Customer segments,segments are not stable: adjusted Rand index is within chance (permutation p above 0.05),>0.05,0.085,PASS
+113,W8-4 Customer segments,ARI recomputed from the transition matrix by the pair-counting formula,0.005095,0.005095,PASS
+114,W8-4 Customer segments,no prediction effect: Holm-adjusted p above 0.05 for both outcomes,>0.05,0.147,PASS
+115,W8-4 Customer segments,null clouds keep each measure's mean and spread (within 0.05 SD),0.05,0.032,PASS
+116,W8-4 Customer segments,null clouds keep the rank correlation between measures (within 0.1),0.1,0.016,PASS
+117,W8-4 Customer segments,five values of k tested,5,5.0,PASS
+118,W8-4 Customer segments,three profile tables cover 500 customers each,1500,1500.0,PASS
+119,W8-4 Customer segments,"no segment differs by region, type or industry after Holm adjustment",0,0.0,PASS
+120,W8-4 Customer segments,three charts written,3,3.0,PASS

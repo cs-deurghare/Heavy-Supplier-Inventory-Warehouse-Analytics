@@ -1,0 +1,4 @@
+dimension,test,n,p_value,cramers_v,min_expected_count,p_holm
+region,"chi-square, permutation p (2,000 shuffles)",500,0.09695152423788106,0.120097234088856,1.518,0.19390304847576212
+customer_type,"chi-square, permutation p (2,000 shuffles)",500,0.5557221389305347,0.08617681226029253,12.144,0.5557221389305347
+industry_segment,"chi-square, permutation p (2,000 shuffles)",500,0.03498250874562719,0.12740168255850282,9.246,0.10494752623688156

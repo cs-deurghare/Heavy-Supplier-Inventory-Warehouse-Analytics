@@ -1,0 +1,6 @@
+dimension,test,unit,n,p_value,effect_size,p_holm
+on-time rate,chi-square,PO,21630,0.9702279011709752,0.012217012240117934,1.0
+PO cancellation rate,chi-square,PO,24000,0.9076959229177779,0.017707523421041878,1.0
+delay in days,Kruskal-Wallis,PO,21630,0.8767298568051308,0.0,1.0
+lead time minus contract,Kruskal-Wallis,PO,21630,0.8767298568051308,0.0,1.0
+spread of lead time,Levene (median-centred),PO,21630,0.8534736287738882,,1.0

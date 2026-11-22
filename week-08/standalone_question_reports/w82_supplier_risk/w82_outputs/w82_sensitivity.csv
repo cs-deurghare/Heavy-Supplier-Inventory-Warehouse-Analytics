@@ -1,0 +1,7 @@
+variant,riskiest,least_risky,spearman_vs_base,top3
+"base: equal pillars, min-max",SUP0003,SUP0004,1.0,"SUP0003, SUP0008, SUP0007"
+reliability-heavy 50/25/25,SUP0003,SUP0005,0.9286,"SUP0003, SUP0008, SUP0007"
+concentration-heavy 25/50/25,SUP0003,SUP0004,0.881,"SUP0003, SUP0008, SUP0001"
+spread-heavy 25/25/50,SUP0003,SUP0005,0.9762,"SUP0003, SUP0008, SUP0007"
+"equal pillars, z-score",SUP0003,SUP0004,0.9762,"SUP0003, SUP0008, SUP0007"
+"equal pillars, rank scaling",SUP0003,SUP0006,0.9286,"SUP0003, SUP0008, SUP0007"

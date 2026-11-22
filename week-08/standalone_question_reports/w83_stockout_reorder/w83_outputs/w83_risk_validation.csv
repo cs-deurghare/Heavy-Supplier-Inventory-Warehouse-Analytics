@@ -1,0 +1,5 @@
+score,auc,auc_ci_low,auc_ci_high,spearman_with_shortfall,permutation_p,top20_truly_below_95,pairs_below_95_in_test,label
+Model: cycle stockout probability (training data),0.9661890397184515,0.9405596829154999,0.9858207195378151,0.922511852244002,0.0001999600079984003,20,78,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Baseline 1: low reorder_level only,0.9649321266968326,0.938078537117286,0.9857893388254754,0.909168757138767,0.0001999600079984003,20,78,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Baseline 2: low cover ratio (reorder_level / mean lead-time demand),0.9653092006033183,0.9392343435771745,0.9854041970090555,0.9180117040909669,0.0001999600079984003,20,78,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Baseline 3: training-period fill under A (persistence),0.9710910005027652,0.9497279903906847,0.9877697498607243,0.9326335846467364,0.0001999600079984003,20,78,Sales scale assumed (Q10 unresolved); results rest on this assumption

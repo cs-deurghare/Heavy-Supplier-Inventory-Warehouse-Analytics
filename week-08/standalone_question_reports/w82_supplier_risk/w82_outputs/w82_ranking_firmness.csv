@@ -1,0 +1,6 @@
+statistic,value
+pairs firm at 95%,0.0
+pairs total,28.0
+"mean Spearman, resample vs base ranking",0.4797
+share of resamples with same riskiest supplier as base,0.4146
+median width of 95% rank interval (ranks),7.0

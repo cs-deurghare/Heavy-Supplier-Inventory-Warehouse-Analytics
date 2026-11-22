@@ -1,0 +1,4 @@
+dimension,test,n,p_value,p_holm
+on-time rate by order year (pooled),chi-square,21630,0.9545464247312037,1.0
+monthly on-time rate vs month index (trend),"Spearman, permutation",72,0.8302,1.0
+"on-time rate, critical vs other POs (pooled)",chi-square,21630,0.5151852274977697,1.0

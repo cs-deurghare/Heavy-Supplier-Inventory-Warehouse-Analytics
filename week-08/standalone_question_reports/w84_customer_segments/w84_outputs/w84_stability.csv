@@ -1,0 +1,5 @@
+score,spearman_1_vs_2,perm_p,p_holm
+segment (adjusted Rand),0.005094594576125224,0.0852,0.0852
+recency score,-0.06600000000000002,0.1384,0.4152
+frequency score,0.02500000000000001,0.5906,1.0
+value score,-0.017000000000000005,0.7138,1.0

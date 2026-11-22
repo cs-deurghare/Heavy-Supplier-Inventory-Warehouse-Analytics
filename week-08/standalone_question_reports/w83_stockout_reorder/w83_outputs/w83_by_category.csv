@@ -1,0 +1,16 @@
+category,pairs,existing_below_95,raise_reorder_point,label
+Attachments,6,3,4,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Belts,6,2,6,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Brakes,6,3,6,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Cabin,6,2,6,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Cooling,6,3,6,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Electrical,18,8,16,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Engine,24,11,24,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Filters,12,4,11,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Hydraulic,36,11,34,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Lubricants,6,3,6,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Pins & Bushes,6,2,6,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Seals,12,8,11,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Sensors,6,5,6,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Transmission,6,3,6,Sales scale assumed (Q10 unresolved); results rest on this assumption
+Undercarriage,24,10,20,Sales scale assumed (Q10 unresolved); results rest on this assumption

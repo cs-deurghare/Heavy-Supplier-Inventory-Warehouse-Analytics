@@ -1,0 +1,9 @@
+supplier_id,supplier_name,region,late_rate_pct,cancel_rate_pct,spend_share_pct,lead_time_sd_days,reliability_pillar,concentration_pillar,spread_pillar,risk_score,risk_rank,label
+SUP0003,Shanghai Distributor Supplies,East China,14.9835,10.2209,12.5594,1.7835,0.6037,0.5799,1.0,72.7848,1,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive
+SUP0008,Hangzhou OEM Supplies,East China,15.7972,9.5681,12.5778,1.7248,0.5887,0.6024,0.5616,58.4234,2,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive
+SUP0007,Suzhou Local Vendor Supplies,East China,15.3282,9.9406,12.5135,1.7267,0.5951,0.5235,0.5758,56.4807,3,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive
+SUP0001,Shenzhen OEM Supplies,South China,15.0773,9.8845,12.6396,1.7215,0.4516,0.6784,0.5368,55.56,4,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive
+SUP0002,Guangzhou Local Vendor Supplies,South China,15.0285,10.2826,12.0873,1.7241,0.6591,0.0,0.5567,40.5272,5,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive
+SUP0006,Qingdao Distributor Supplies,East China,14.7892,9.4141,12.5345,1.7218,0.0531,0.5493,0.5394,38.0598,6,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive
+SUP0005,Tianjin OEM Supplies,North China,14.6696,9.5269,12.9014,1.6497,0.065,1.0,0.0,35.4989,7,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive
+SUP0004,Ningbo Distributor Supplies,East China,15.1652,10.1821,12.1864,1.6869,0.6619,0.1218,0.2784,35.4004,8,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive

@@ -1,0 +1,9 @@
+supplier_id,supplier_name,base_score,base_rank,rank_lo,rank_median,rank_hi,p_riskiest,p_top3,score_lo,score_hi,rank_interval_width,label
+SUP0003,Shanghai Distributor Supplies,72.7848,1,1.0,2.0,7.0,0.4146,0.7782,37.906,90.8958,6.0,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive
+SUP0008,Hangzhou OEM Supplies,58.4234,2,1.0,3.0,8.0,0.1526,0.5356,24.3359,85.1156,7.0,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive
+SUP0007,Suzhou Local Vendor Supplies,56.4807,3,1.0,4.0,8.0,0.1422,0.4714,20.8263,85.4533,7.0,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive
+SUP0001,Shenzhen OEM Supplies,55.56,4,1.0,4.0,8.0,0.1472,0.4788,22.2182,85.9344,7.0,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive
+SUP0002,Guangzhou Local Vendor Supplies,40.5272,5,1.0,6.0,8.0,0.038,0.2038,14.3667,72.614,7.0,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive
+SUP0006,Qingdao Distributor Supplies,38.0598,6,1.0,5.0,8.0,0.0582,0.2506,13.935,77.4283,7.0,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive
+SUP0005,Tianjin OEM Supplies,35.4989,7,1.975,6.0,8.0,0.025,0.1576,18.7478,71.0044,6.025,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive
+SUP0004,Ningbo Distributor Supplies,35.4004,8,2.0,7.0,8.0,0.0222,0.124,10.8367,70.2131,6.0,PROCUREMENT SCALE - purchase spend is about 14x sales revenue (Q10 unresolved); money figures are descriptive

@@ -1,0 +1,32 @@
+Check_ID,Check_Item,Expected,Actual,Status
+1,ledger IN is about 18.1 times OUT (Q10 reproduces),18.13 +/- 0.1,18.13,PASS
+2,180 product-branch pairs,180,180,PASS
+3,demand matrix total equals ledger OUT total,1124832,1124832,PASS
+4,"full daily calendar of 2,203 days","(180, 2203)","(180, 2203)",PASS
+5,train window is 2019 to 2022 and the test window holds at least two years,>= 730 test days,"train 1459, test 744",PASS
+6,lead_time_actual_days equals received date minus order date for every received line,100%,1.0000,PASS
+7,supplier_lead_days equals expected delivery minus order date for every received line,100%,1.0000,PASS
+8,every pair has at least 400 training and 200 test received lines,>= 400 / >= 200,457 / 206,PASS
+9,training demand uses only 2019 to 2022 days,mean over first 1459 days,ok,PASS
+10,every pair is supplied by all 8 suppliers,8 per pair,8-8,PASS
+11,"more than 90% of lead-time variance is between suppliers (the supplier mix, not delay, drives the spread)",> 0.90,0.934,PASS
+12,delay against the promised date runs from -3 to +7 days for every supplier,-3 to +7,-3 to 7,PASS
+13,vectorised simulator equals a plain day-by-day loop on 5 pairs (A existing),identical,identical,PASS
+14,vectorised simulator equals a plain day-by-day loop on 5 pairs (B-LT 95%),identical,identical,PASS
+15,fill rate lies between 0 and 1 for every policy and pair,0 to 1,ok,PASS
+16,"500 replications, seed 42, 5,000 bootstrap resamples",500 / 42 / 5000,500 / 42 / 5000,PASS
+17,higher service factor never lowers back-test fill (B-LT 90 < 95 < 99),monotone,monotone,PASS
+18,policies were counted over the same test window (744 days) after a 60-day warm-up,T - t_cut days,744,PASS
+19,fitted B-LT 95% beats A in 100% of out-of-sample paths,1.0,1.0,PASS
+20,pair-level bootstrap interval for the B-LT 95% fill gain excludes zero,low > 0,4.4,PASS
+21,existing reorder levels are not related to the lead-time demand they should cover (|Spearman| < 0.3),< 0.3,0.088,PASS
+22,AUC by ranks equals AUC by brute-force pair comparison,equal,equal,PASS
+23,cycle stockout probabilities lie between 0 and 1,0 to 1,ok,PASS
+24,test period has both at-risk and adequate pairs under A,mixed,78 at risk,PASS
+25,every pair has a reorder point of at least 1 unit and an order-up-to level above it,all 180,all 180,PASS
+26,one row per pair in the reorder table,180,180,PASS
+27,reorder points rise with the service level for every pair (90 <= 95 <= 99),all pairs,all pairs,PASS
+28,three charts written,3,3,PASS
+29,every output table carries the sales-scale label,7 of 7,7 of 7,PASS
+30,"summary, pair and comparison tables carry an assumptions column",3 of 3,3 of 3,PASS
+31,output tables written (seven),7,7,PASS

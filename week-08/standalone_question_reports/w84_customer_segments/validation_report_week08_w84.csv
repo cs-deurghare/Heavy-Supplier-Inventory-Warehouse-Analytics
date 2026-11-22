@@ -1,0 +1,23 @@
+Check_ID,Check_Item,Expected,Actual,Status
+1,delivered orders,18033,18033,PASS
+2,delivered revenue before GST (INR B),22.96,22.96,PASS
+3,500 customers in the master and in the orders,500,500,PASS
+4,each order belongs to one customer,18033,18033,PASS
+5,every customer ordered in both halves,500,500,PASS
+6,"full-window orders sum to 18,033",18033,18033,PASS
+7,half-window orders add up to the full window,18033,18033,PASS
+8,"R, F and M recomputed with a plain filter for 25 customers",0,0,PASS
+9,scores run from 1 to 5 with 100 customers in each fifth,100,100,PASS
+10,every customer lands in exactly one of the five segments,500,500,PASS
+11,segment sizes add up to 500,500,500,PASS
+12,segment revenue shares add up to 100%,100.0,100.0,PASS
+13,transition matrix covers 500 customers,500,500,PASS
+14,segments are not stable: adjusted Rand index is within chance (permutation p above 0.05),>0.05,0.085,PASS
+15,ARI recomputed from the transition matrix by the pair-counting formula,0.005095,0.005095,PASS
+16,no prediction effect: Holm-adjusted p above 0.05 for both outcomes,>0.05,0.147,PASS
+17,null clouds keep each measure's mean and spread (within 0.05 SD),0.05,0.032,PASS
+18,null clouds keep the rank correlation between measures (within 0.1),0.1,0.016,PASS
+19,five values of k tested,5,5,PASS
+20,three profile tables cover 500 customers each,1500,1500,PASS
+21,"no segment differs by region, type or industry after Holm adjustment",0,0,PASS
+22,three charts written,3,3,PASS

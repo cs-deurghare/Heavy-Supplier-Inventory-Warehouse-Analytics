@@ -1,0 +1,9 @@
+supplier_id,received_lines,promised_lead_days,actual_lead_mean,actual_lead_sd,share_late,share_early,delay_min,delay_max,label
+SUP0001,17490,19,19.479,1.678,0.147,0.045,-3.0,7.0,Sales scale assumed (Q10 unresolved); results rest on this assumption
+SUP0002,17227,10,10.511,1.722,0.15,0.042,-3.0,7.0,Sales scale assumed (Q10 unresolved); results rest on this assumption
+SUP0003,17450,16,16.525,1.779,0.146,0.051,-3.0,7.0,Sales scale assumed (Q10 unresolved); results rest on this assumption
+SUP0004,17057,18,18.512,1.706,0.156,0.047,-3.0,7.0,Sales scale assumed (Q10 unresolved); results rest on this assumption
+SUP0005,17987,28,28.479,1.642,0.147,0.045,-3.0,7.0,Sales scale assumed (Q10 unresolved); results rest on this assumption
+SUP0006,17908,10,10.481,1.704,0.144,0.046,-3.0,7.0,Sales scale assumed (Q10 unresolved); results rest on this assumption
+SUP0007,17579,12,12.546,1.743,0.157,0.041,-3.0,7.0,Sales scale assumed (Q10 unresolved); results rest on this assumption
+SUP0008,17379,26,26.54,1.723,0.159,0.042,-3.0,7.0,Sales scale assumed (Q10 unresolved); results rest on this assumption

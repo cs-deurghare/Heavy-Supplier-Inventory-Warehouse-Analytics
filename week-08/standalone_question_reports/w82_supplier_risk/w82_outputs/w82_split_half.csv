@@ -1,0 +1,3 @@
+version,mean_rho,sd_rho,p5,p95,auc_true_beats_shuffled,mannwhitney_p_true_better,mannwhitney_p_true_worse,splits
+true supplier labels,-0.3119,0.3026,-0.7381,0.2381,0.2801,1.0,0.0,5000
+shuffled supplier labels (no real differences),-0.0282,0.378,-0.6667,0.5952,0.2801,1.0,0.0,5000
